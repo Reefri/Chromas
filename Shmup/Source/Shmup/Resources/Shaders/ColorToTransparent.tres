@@ -1,0 +1,116 @@
+[gd_resource type="VisualShader" load_steps=11 format=3 uid="uid://cjmopi72pclim"]
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_6tly6"]
+expanded_output_ports = [0]
+constant = Color(1, 0.3, 0.3, 1)
+
+[sub_resource type="VisualShaderNodeCompare" id="VisualShaderNodeCompare_173nf"]
+
+[sub_resource type="VisualShaderNodeCompare" id="VisualShaderNodeCompare_y4rhi"]
+
+[sub_resource type="VisualShaderNodeCompare" id="VisualShaderNodeCompare_mliyn"]
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_82b7p"]
+parameter_name = "tolerance"
+hint = 1
+max = 1.001
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_t6cyw"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_rj8l8"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_5ms28"]
+expanded_output_ports = [0]
+parameter_name = "color"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_5jocg"]
+input_name = "screen_uv"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_xov76"]
+expanded_output_ports = [0]
+source = 1
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform sampler2D screen_tex_frg_4 : hint_screen_texture;
+uniform vec4 color : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+uniform float tolerance : hint_range(0, 1.00100004673004);
+
+
+
+void fragment() {
+// Input:3
+	vec2 n_out3p0 = SCREEN_UV;
+
+
+	vec4 n_out4p0;
+// Texture2D:4
+	n_out4p0 = texture(screen_tex_frg_4, n_out3p0);
+	float n_out4p1 = n_out4p0.r;
+	float n_out4p2 = n_out4p0.g;
+	float n_out4p3 = n_out4p0.b;
+
+
+// ColorParameter:2
+	vec4 n_out2p0 = color;
+	float n_out2p1 = n_out2p0.r;
+	float n_out2p2 = n_out2p0.g;
+	float n_out2p3 = n_out2p0.b;
+
+
+// FloatParameter:14
+	float n_out14p0 = tolerance;
+
+
+// Compare:11
+	bool n_out11p0 = (abs(n_out4p1 - n_out2p1) < n_out14p0);
+
+// Compare:12
+	bool n_out12p0 = (abs(n_out4p2 - n_out2p2) < n_out14p0);
+
+// FloatOp:16
+	float n_out16p0 = (n_out11p0 ? 1.0 : 0.0) * (n_out12p0 ? 1.0 : 0.0);
+
+
+// Compare:13
+	bool n_out13p0 = (abs(n_out4p3 - n_out2p3) < n_out14p0);
+
+// FloatOp:15
+	float n_out15p0 = n_out16p0 * (n_out13p0 ? 1.0 : 0.0);
+
+
+// Output:0
+	COLOR.a = n_out15p0;
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(860, 340)
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_5ms28")
+nodes/fragment/2/position = Vector2(-540, 60)
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_5jocg")
+nodes/fragment/3/position = Vector2(-620, 520)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_xov76")
+nodes/fragment/4/position = Vector2(-420, 700)
+nodes/fragment/10/node = SubResource("VisualShaderNodeColorConstant_6tly6")
+nodes/fragment/10/position = Vector2(-740, 320)
+nodes/fragment/11/node = SubResource("VisualShaderNodeCompare_173nf")
+nodes/fragment/11/position = Vector2(220, 300)
+nodes/fragment/12/node = SubResource("VisualShaderNodeCompare_y4rhi")
+nodes/fragment/12/position = Vector2(220, 520)
+nodes/fragment/13/node = SubResource("VisualShaderNodeCompare_mliyn")
+nodes/fragment/13/position = Vector2(220, 740)
+nodes/fragment/14/node = SubResource("VisualShaderNodeFloatParameter_82b7p")
+nodes/fragment/14/position = Vector2(-200, 1000)
+nodes/fragment/15/node = SubResource("VisualShaderNodeFloatOp_t6cyw")
+nodes/fragment/15/position = Vector2(633.752, 679.245)
+nodes/fragment/16/node = SubResource("VisualShaderNodeFloatOp_rj8l8")
+nodes/fragment/16/position = Vector2(480, 360)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 14, 0, 12, 2, 14, 0, 11, 2, 4, 1, 11, 0, 4, 2, 12, 0, 4, 3, 13, 0, 11, 0, 16, 0, 12, 0, 16, 1, 13, 0, 15, 1, 16, 0, 15, 0, 15, 0, 0, 1, 2, 1, 11, 1, 2, 2, 12, 1, 14, 0, 13, 2, 2, 3, 13, 1)

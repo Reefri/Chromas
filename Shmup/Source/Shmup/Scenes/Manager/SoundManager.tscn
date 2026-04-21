@@ -1,0 +1,190 @@
+[gd_scene load_steps=35 format=3 uid="uid://un0lgc16vvt0"]
+
+[ext_resource type="Script" path="res://Scripts/Manager/SoundManager.cs" id="1_vblpj"]
+[ext_resource type="AudioStream" uid="uid://my3bpbykn0ad" path="res://Audio/Musics/boss_loop.ogg" id="3_fkigm"]
+[ext_resource type="AudioStream" uid="uid://df5gg6cy43xug" path="res://Audio/Musics/level_loop.ogg" id="4_1yccc"]
+[ext_resource type="AudioStream" uid="uid://g8d4b33klh45" path="res://Audio/Musics/ui_loop.ogg" id="5_spc8d"]
+[ext_resource type="AudioStream" uid="uid://by0sy814st2d4" path="res://Audio/Sounds/Boss/boss_explosion.ogg" id="6_j2wrj"]
+[ext_resource type="AudioStream" uid="uid://wk1ljh4mn6ju" path="res://Audio/Sounds/Boss/boss_pre_explosion.ogg" id="7_ugo4u"]
+[ext_resource type="AudioStream" uid="uid://fs6nskck2wwb" path="res://Audio/Sounds/Boss/boss_shoot.ogg" id="8_e6jkx"]
+[ext_resource type="AudioStream" uid="uid://cch0jucy5p31v" path="res://Audio/Sounds/Collectable/powerup_bomb.ogg" id="9_rmevv"]
+[ext_resource type="AudioStream" uid="uid://dcy8mldqycqci" path="res://Audio/Sounds/Collectable/powerup_fireUpgrade.ogg" id="10_fugmy"]
+[ext_resource type="AudioStream" uid="uid://cjlg6tjuy3dgm" path="res://Audio/Sounds/Collectable/powerup_life.ogg" id="11_2f2eh"]
+[ext_resource type="AudioStream" uid="uid://l7igqj4mrroy" path="res://Audio/Sounds/Enemy/enemy0_explosion0.ogg" id="12_edsad"]
+[ext_resource type="AudioStream" uid="uid://cgsqds675lo" path="res://Audio/Sounds/Enemy/enemy0_explosion1.ogg" id="13_eihsc"]
+[ext_resource type="AudioStream" uid="uid://cll0mig0gx6pm" path="res://Audio/Sounds/Enemy/enemy0_explosion2.ogg" id="14_ao08y"]
+[ext_resource type="AudioStream" uid="uid://cnxho0lc2fxrq" path="res://Audio/Sounds/Enemy/enemy0_explosion3.ogg" id="15_kmo46"]
+[ext_resource type="AudioStream" uid="uid://wwt4axpyl0as" path="res://Audio/Sounds/Enemy/enemy_explosion.ogg" id="16_mfqpc"]
+[ext_resource type="AudioStream" uid="uid://da4oyqre5upkb" path="res://Audio/Sounds/Enemy/enemy_shoot.ogg" id="17_lvxm2"]
+[ext_resource type="AudioStream" uid="uid://bu3qa4ijsvdhr" path="res://Audio/Sounds/Other/explosion_bomb.ogg" id="18_yeuss"]
+[ext_resource type="AudioStream" uid="uid://gl7hw7v0p8yc" path="res://Audio/Sounds/Other/obstacle_destruction.ogg" id="19_gnkyv"]
+[ext_resource type="AudioStream" uid="uid://bwabo8kw8gu57" path="res://Audio/Sounds/Other/sf_construction.ogg" id="20_3y1gh"]
+[ext_resource type="AudioStream" uid="uid://bo5fmp7vl6w22" path="res://Audio/Sounds/Player/loselife.ogg" id="21_nuxvh"]
+[ext_resource type="AudioStream" uid="uid://h5aanxtvhsyh" path="res://Audio/Sounds/Player/player_explosion.ogg" id="22_uvm6g"]
+[ext_resource type="AudioStream" uid="uid://byrcrn88hda24" path="res://Audio/Sounds/Player/player_shoot0.ogg" id="23_jlhyo"]
+[ext_resource type="AudioStream" uid="uid://dj6dloo2svnwa" path="res://Audio/Sounds/Player/player_shoot1.ogg" id="24_pf6ve"]
+[ext_resource type="AudioStream" uid="uid://bic3lngb0mgbw" path="res://Audio/Sounds/Player/player_shoot2.ogg" id="25_ynmwc"]
+[ext_resource type="AudioStream" uid="uid://3ixy2uli2kp2" path="res://Audio/Sounds/Player/player_shoot3.ogg" id="26_e8j2x"]
+[ext_resource type="AudioStream" uid="uid://ci5tdsxfkymoc" path="res://Audio/Musics/ambiance_loop.ogg" id="26_n35o7"]
+[ext_resource type="AudioStream" uid="uid://cfxenk4g6iveh" path="res://Audio/Sounds/Player/sf_camouflage_in.ogg" id="27_j8cbw"]
+[ext_resource type="AudioStream" uid="uid://bwxh81uop6wmh" path="res://Audio/Sounds/Player/sf_camouflage_out.ogg" id="28_gciwc"]
+[ext_resource type="AudioStream" uid="uid://bolb1t8ilhtqu" path="res://Audio/Sounds/Player/sf_color_change.ogg" id="29_f3cw3"]
+[ext_resource type="AudioStream" uid="uid://b6avoakyk1piw" path="res://Audio/Sounds/UI/gameover_jingle.ogg" id="30_1b35n"]
+[ext_resource type="AudioStream" uid="uid://dlnoyai4drpoi" path="res://Audio/Sounds/UI/ui_click.ogg" id="31_84ikr"]
+[ext_resource type="AudioStream" uid="uid://crved7x46rok1" path="res://Audio/Sounds/UI/ui_pause.ogg" id="32_8g37f"]
+[ext_resource type="AudioStream" uid="uid://dqi6su62rp75r" path="res://Audio/Sounds/UI/ui_start.ogg" id="33_elpl6"]
+[ext_resource type="AudioStream" uid="uid://cdat5qfk0vxg4" path="res://Audio/Sounds/UI/win_jingle.ogg" id="34_l65g8"]
+
+[node name="SoundManager" type="Node" node_paths=PackedStringArray("ambiance", "level", "boss", "UI", "bossExplosion", "bossPreExplosion", "bossShoot", "smartBombCollectable", "healCollectable", "levelUpCollectable", "enemyOneExplosionOne", "enemyOneExplosionTwo", "enemyOneExplosionThree", "enemyOneExplosionFour", "enemyExplosion", "enemyShoot", "bomb", "obstacleDestruction", "construction", "loselife", "playerExplosion", "playerShoot0", "playerShoot1", "playerShoot2", "playerShoot3", "colorSwap", "camouflage_IN", "camouflage_OUT", "gameOverJingle", "uiClick", "uiPause", "uiStart", "winJingle")]
+script = ExtResource("1_vblpj")
+ambiance = NodePath("Musics/Music_Ambiance")
+level = NodePath("Musics/Music_Level")
+boss = NodePath("Musics/Music_Boss")
+UI = NodePath("Musics/Music_UI")
+bossExplosion = NodePath("Sounds/Boss/Boss_Explosion")
+bossPreExplosion = NodePath("Sounds/Boss/Boss_Pre_Explosion")
+bossShoot = NodePath("Sounds/Boss/Boss_Shoot")
+smartBombCollectable = NodePath("Sounds/Collectable/Collectable_Bomb")
+healCollectable = NodePath("Sounds/Collectable/Collectable_Heal")
+levelUpCollectable = NodePath("Sounds/Collectable/Collectable_LevelUp")
+enemyOneExplosionOne = NodePath("Sounds/Enemy/Popcorn_Explosion0")
+enemyOneExplosionTwo = NodePath("Sounds/Enemy/Popcorn_Explosion1")
+enemyOneExplosionThree = NodePath("Sounds/Enemy/Popcorn_Explosion2")
+enemyOneExplosionFour = NodePath("Sounds/Enemy/Popcorn_Explosion3")
+enemyExplosion = NodePath("Sounds/Enemy/Enemy_Explosion")
+enemyShoot = NodePath("Sounds/Enemy/Enemy_Shoot")
+bomb = NodePath("Sounds/Other/Bomb")
+obstacleDestruction = NodePath("Sounds/Other/Obstacle_Destruction")
+construction = NodePath("Sounds/Other/Construction")
+loselife = NodePath("Sounds/Player/Loselife")
+playerExplosion = NodePath("Sounds/Player/Player_explosion")
+playerShoot0 = NodePath("Sounds/Player/Player_Shoot0")
+playerShoot1 = NodePath("Sounds/Player/Player_Shoot1")
+playerShoot2 = NodePath("Sounds/Player/Player_Shoot2")
+playerShoot3 = NodePath("Sounds/Player/Player_Shoot3")
+colorSwap = NodePath("Sounds/Player/Player_SF_ColorSwap")
+camouflage_IN = NodePath("Sounds/Player/Player_SF_Camouflage_In")
+camouflage_OUT = NodePath("Sounds/Player/Player_SF_Camouflage_Out")
+gameOverJingle = NodePath("Sounds/UI/GameOver_Jingle")
+uiClick = NodePath("Sounds/UI/UI_Click")
+uiPause = NodePath("Sounds/UI/UI_Pause")
+uiStart = NodePath("Sounds/UI/UI_Start")
+winJingle = NodePath("Sounds/UI/Win_Jingle")
+
+[node name="Musics" type="Node" parent="."]
+
+[node name="Music_Ambiance" type="AudioStreamPlayer" parent="Musics"]
+process_mode = 3
+stream = ExtResource("26_n35o7")
+
+[node name="Music_Boss" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource("3_fkigm")
+
+[node name="Music_Level" type="AudioStreamPlayer" parent="Musics"]
+process_mode = 3
+stream = ExtResource("4_1yccc")
+
+[node name="Music_UI" type="AudioStreamPlayer" parent="Musics"]
+process_mode = 3
+stream = ExtResource("5_spc8d")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Boss" type="Node" parent="Sounds"]
+
+[node name="Boss_Explosion" type="AudioStreamPlayer" parent="Sounds/Boss"]
+stream = ExtResource("6_j2wrj")
+
+[node name="Boss_Pre_Explosion" type="AudioStreamPlayer" parent="Sounds/Boss"]
+stream = ExtResource("7_ugo4u")
+
+[node name="Boss_Shoot" type="AudioStreamPlayer" parent="Sounds/Boss"]
+stream = ExtResource("8_e6jkx")
+
+[node name="Collectable" type="Node" parent="Sounds"]
+
+[node name="Collectable_Bomb" type="AudioStreamPlayer" parent="Sounds/Collectable"]
+stream = ExtResource("9_rmevv")
+
+[node name="Collectable_LevelUp" type="AudioStreamPlayer" parent="Sounds/Collectable"]
+stream = ExtResource("10_fugmy")
+
+[node name="Collectable_Heal" type="AudioStreamPlayer" parent="Sounds/Collectable"]
+stream = ExtResource("11_2f2eh")
+
+[node name="Enemy" type="Node" parent="Sounds"]
+
+[node name="Popcorn_Explosion0" type="AudioStreamPlayer" parent="Sounds/Enemy"]
+stream = ExtResource("12_edsad")
+
+[node name="Popcorn_Explosion1" type="AudioStreamPlayer" parent="Sounds/Enemy"]
+stream = ExtResource("13_eihsc")
+
+[node name="Popcorn_Explosion2" type="AudioStreamPlayer" parent="Sounds/Enemy"]
+stream = ExtResource("14_ao08y")
+
+[node name="Popcorn_Explosion3" type="AudioStreamPlayer" parent="Sounds/Enemy"]
+stream = ExtResource("15_kmo46")
+
+[node name="Enemy_Explosion" type="AudioStreamPlayer" parent="Sounds/Enemy"]
+stream = ExtResource("16_mfqpc")
+
+[node name="Enemy_Shoot" type="AudioStreamPlayer" parent="Sounds/Enemy"]
+stream = ExtResource("17_lvxm2")
+
+[node name="Other" type="Node" parent="Sounds"]
+
+[node name="Bomb" type="AudioStreamPlayer" parent="Sounds/Other"]
+stream = ExtResource("18_yeuss")
+
+[node name="Obstacle_Destruction" type="AudioStreamPlayer" parent="Sounds/Other"]
+stream = ExtResource("19_gnkyv")
+
+[node name="Construction" type="AudioStreamPlayer" parent="Sounds/Other"]
+stream = ExtResource("20_3y1gh")
+
+[node name="Player" type="Node" parent="Sounds"]
+
+[node name="Loselife" type="AudioStreamPlayer" parent="Sounds/Player"]
+stream = ExtResource("21_nuxvh")
+
+[node name="Player_explosion" type="AudioStreamPlayer" parent="Sounds/Player"]
+stream = ExtResource("22_uvm6g")
+
+[node name="Player_Shoot0" type="AudioStreamPlayer" parent="Sounds/Player"]
+stream = ExtResource("23_jlhyo")
+
+[node name="Player_Shoot1" type="AudioStreamPlayer" parent="Sounds/Player"]
+stream = ExtResource("24_pf6ve")
+
+[node name="Player_Shoot2" type="AudioStreamPlayer" parent="Sounds/Player"]
+stream = ExtResource("25_ynmwc")
+
+[node name="Player_Shoot3" type="AudioStreamPlayer" parent="Sounds/Player"]
+stream = ExtResource("26_e8j2x")
+
+[node name="Player_SF_Camouflage_In" type="AudioStreamPlayer" parent="Sounds/Player"]
+stream = ExtResource("27_j8cbw")
+
+[node name="Player_SF_Camouflage_Out" type="AudioStreamPlayer" parent="Sounds/Player"]
+stream = ExtResource("28_gciwc")
+
+[node name="Player_SF_ColorSwap" type="AudioStreamPlayer" parent="Sounds/Player"]
+stream = ExtResource("29_f3cw3")
+
+[node name="UI" type="Node" parent="Sounds"]
+
+[node name="GameOver_Jingle" type="AudioStreamPlayer" parent="Sounds/UI"]
+stream = ExtResource("30_1b35n")
+
+[node name="UI_Click" type="AudioStreamPlayer" parent="Sounds/UI"]
+stream = ExtResource("31_84ikr")
+
+[node name="UI_Pause" type="AudioStreamPlayer" parent="Sounds/UI"]
+stream = ExtResource("32_8g37f")
+
+[node name="UI_Start" type="AudioStreamPlayer" parent="Sounds/UI"]
+stream = ExtResource("33_elpl6")
+
+[node name="Win_Jingle" type="AudioStreamPlayer" parent="Sounds/UI"]
+stream = ExtResource("34_l65g8")

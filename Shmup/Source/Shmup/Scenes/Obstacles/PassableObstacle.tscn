@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://dnukak3ipfocp"]
+
+[ext_resource type="PackedScene" uid="uid://d3ighn07byywo" path="res://Scenes/Obstacles/Obstacles.tscn" id="1_cckvy"]
+[ext_resource type="Script" path="res://Scripts/Obstacles/PassableObstacle.cs" id="2_tb61e"]
+[ext_resource type="Texture2D" uid="uid://gqqa1mpro433" path="res://Assets/ColorWheel/ColorCircle.png" id="3_gvs26"]
+[ext_resource type="Texture2D" uid="uid://dh33dmx1pn370" path="res://Assets/Star.png" id="4_u7bya"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vi65o"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 100, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.3
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="Curve" id="Curve_of1ec"]
+_data = [Vector2(0, 0), 0.0, 3.93976, 0, 0, Vector2(0.510989, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), -4.08804, -4.08804, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_q2sb4"]
+curve = SubResource("Curve_of1ec")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wxxfa"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(100, 100, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+flatness = 1.0
+initial_velocity_max = 250.0
+angular_velocity_min = -333.33
+angular_velocity_max = 320.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+scale_max = 0.6
+scale_curve = SubResource("CurveTexture_q2sb4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7j3o"]
+size = Vector2(112, 832)
+
+[node name="PassableObstacle" node_paths=PackedStringArray("visibleRect", "enableParticles", "disableParticles") instance=ExtResource("1_cckvy")]
+script = ExtResource("2_tb61e")
+visibleRect = NodePath("Renderer/ColorRect")
+enableParticles = NodePath("Renderer/ColorRect/GPUParticles2D")
+disableParticles = NodePath("Renderer/ColorRect/GPUParticles2D2")
+
+[node name="Sprite2D" parent="Renderer" index="0"]
+visible = false
+position = Vector2(4.76837e-07, 368)
+scale = Vector2(0.0426667, 0.448419)
+
+[node name="ColorRect" type="ColorRect" parent="Renderer" index="1"]
+offset_left = -56.0
+offset_top = -40.0
+offset_right = 56.0
+offset_bottom = 792.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Renderer/ColorRect" index="0"]
+visible = false
+position = Vector2(56, 416)
+scale = Vector2(0.591498, 4.17755)
+amount = 120
+process_material = SubResource("ParticleProcessMaterial_vi65o")
+texture = ExtResource("3_gvs26")
+preprocess = 10.0
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Renderer/ColorRect" index="1"]
+position = Vector2(56, 416)
+scale = Vector2(0.591498, 4.17755)
+emitting = false
+amount = 120
+process_material = SubResource("ParticleProcessMaterial_wxxfa")
+texture = ExtResource("4_u7bya")
+one_shot = true
+explosiveness = 1.0
+
+[node name="CollisionShape2D" parent="Collider" index="0"]
+position = Vector2(0, 376)
+shape = SubResource("RectangleShape2D_x7j3o")

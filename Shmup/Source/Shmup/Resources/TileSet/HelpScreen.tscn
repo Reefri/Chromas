@@ -1,0 +1,220 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4f74utg2d5em"]
+
+[ext_resource type="Script" path="res://Scripts/UI/HelpScreen.cs" id="1_phhsf"]
+[ext_resource type="TileSet" uid="uid://cn4fvavfcnwy6" path="res://Resources/TileSet/SpamControlsTileSet.tres" id="1_q2hdh"]
+[ext_resource type="Shader" uid="uid://bj22xl0e7jjgj" path="res://Resources/Shaders/Gradient.tres" id="3_lo7x3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_85tyg"]
+font_size = 50
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8hl0"]
+shader = ExtResource("3_lo7x3")
+shader_parameter/ToggleUpDown = null
+shader_parameter/margin = 0.465
+
+[node name="Help" type="Control" node_paths=PackedStringArray("moveBlock", "shootBlock", "smartbombBlock", "sfBlock")]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_phhsf")
+moveBlock = NodePath("Move")
+shootBlock = NodePath("Shoot")
+smartbombBlock = NodePath("SmartBomb")
+sfBlock = NodePath("SF")
+
+[node name="Move" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.25
+
+[node name="Controler" type="Node2D" parent="Move"]
+position = Vector2(-104, -41)
+
+[node name="TileMap" type="TileMap" parent="Move/Controler"]
+position = Vector2(20, -8)
+scale = Vector2(6, 6)
+tile_set = ExtResource("1_q2hdh")
+format = 2
+layer_0/tile_data = PackedInt32Array(65539, 0, 1, 65537, 524288, 6)
+
+[node name="Keyboard" type="Node2D" parent="Move"]
+position = Vector2(96, -41)
+
+[node name="TileMap2" type="TileMap" parent="Move/Keyboard"]
+position = Vector2(2, -11)
+scale = Vector2(3, 3)
+tile_set = ExtResource("1_q2hdh")
+format = 2
+layer_0/tile_data = PackedInt32Array(196624, 1114114, 2, 196625, 1245186, 3, 131089, 1245186, 4, 196626, 1310722, 3)
+
+[node name="Label" type="Label" parent="Move"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.434
+anchor_top = 0.364
+anchor_right = 0.549
+anchor_bottom = 0.79
+offset_left = 0.0319824
+offset_top = 0.0319977
+offset_right = 0.552002
+offset_bottom = 0.0199966
+grow_horizontal = 2
+text = "KEY_MOVE"
+label_settings = SubResource("LabelSettings_85tyg")
+uppercase = true
+
+[node name="Shoot" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.5
+
+[node name="Controler" type="Node2D" parent="Shoot"]
+position = Vector2(-104, -41)
+
+[node name="TileMap" type="TileMap" parent="Shoot/Controler"]
+position = Vector2(48, 56)
+scale = Vector2(2, 2)
+tile_set = ExtResource("1_q2hdh")
+format = 2
+layer_0/tile_data = PackedInt32Array(65542, 786434, 0, 131077, 786434, 0, 131079, 786434, 0, 196614, 786434, 1)
+
+[node name="Keyboard" type="Node2D" parent="Shoot"]
+position = Vector2(96, -41)
+
+[node name="TileMap2" type="TileMap" parent="Shoot/Keyboard"]
+position = Vector2(3, 16)
+scale = Vector2(3, 3)
+tile_set = ExtResource("1_q2hdh")
+format = 2
+layer_0/tile_data = PackedInt32Array(131089, 1638402, 3)
+
+[node name="Label" type="Label" parent="Shoot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.434
+anchor_top = 0.364
+anchor_right = 0.556
+anchor_bottom = 0.79
+offset_left = 0.0319824
+offset_top = 0.0319977
+offset_right = -7.51208
+offset_bottom = 0.0199966
+grow_horizontal = 2
+text = "KEY_SHOOT"
+label_settings = SubResource("LabelSettings_85tyg")
+uppercase = true
+
+[node name="SmartBomb" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.748
+offset_bottom = 1.29599
+
+[node name="Controler" type="Node2D" parent="SmartBomb"]
+position = Vector2(-104, -41)
+
+[node name="TileMap" type="TileMap" parent="SmartBomb/Controler"]
+position = Vector2(48, 56)
+scale = Vector2(2, 2)
+tile_set = ExtResource("1_q2hdh")
+format = 2
+layer_0/tile_data = PackedInt32Array(65542, 786434, 0, 131079, 786434, 0, 196614, 786434, 0, 131077, 786434, 1)
+
+[node name="Keyboard" type="Node2D" parent="SmartBomb"]
+position = Vector2(96, -41)
+
+[node name="TileMap2" type="TileMap" parent="SmartBomb/Keyboard"]
+position = Vector2(3, 16)
+scale = Vector2(3, 3)
+tile_set = ExtResource("1_q2hdh")
+format = 2
+layer_0/tile_data = PackedInt32Array(131089, 1703938, 3)
+
+[node name="Label" type="Label" parent="SmartBomb"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.434
+anchor_top = 0.364
+anchor_right = 0.549
+anchor_bottom = 0.79
+offset_left = 0.0319824
+offset_top = 0.0319977
+offset_right = 0.552002
+offset_bottom = 0.0199966
+grow_horizontal = 2
+text = "KEY_SMARTBOMB"
+label_settings = SubResource("LabelSettings_85tyg")
+uppercase = true
+
+[node name="SF" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.25
+offset_top = 486.0
+offset_bottom = 486.0
+
+[node name="Controler" type="Node2D" parent="SF"]
+position = Vector2(-104, -41)
+
+[node name="TileMap" type="TileMap" parent="SF/Controler"]
+position = Vector2(48, 56)
+scale = Vector2(2, 2)
+tile_set = ExtResource("1_q2hdh")
+format = 2
+layer_0/tile_data = PackedInt32Array(65542, 786434, 0, 131077, 786434, 0, 196614, 786434, 0, 131079, 786434, 1)
+
+[node name="Keyboard" type="Node2D" parent="SF"]
+position = Vector2(96, -41)
+
+[node name="TileMap2" type="TileMap" parent="SF/Keyboard"]
+position = Vector2(3, 16)
+scale = Vector2(3, 3)
+tile_set = ExtResource("1_q2hdh")
+format = 2
+layer_0/tile_data = PackedInt32Array(131089, 1638402, 4)
+
+[node name="Label" type="Label" parent="SF"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.434
+anchor_top = 0.364
+anchor_right = 0.549
+anchor_bottom = 0.79
+offset_left = 0.0319824
+offset_top = 0.0319977
+offset_right = 0.552002
+offset_bottom = 0.0199966
+grow_horizontal = 2
+text = "KEY_SF"
+label_settings = SubResource("LabelSettings_85tyg")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_c8hl0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.552941)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.22, 1)

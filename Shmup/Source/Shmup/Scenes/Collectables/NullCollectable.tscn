@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmjyphyfcgxjg"]
+
+[ext_resource type="PackedScene" uid="uid://bc2myea7tv33a" path="res://Scenes/Collectables/GenericCollectable.tscn" id="1_lw3qa"]
+[ext_resource type="Script" path="res://Scripts/Collectables/NullCollectable.cs" id="2_ghug2"]
+
+[node name="NullCollectable" instance=ExtResource("1_lw3qa")]
+script = ExtResource("2_ghug2")

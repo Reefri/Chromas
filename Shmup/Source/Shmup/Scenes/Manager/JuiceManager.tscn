@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://f8843dp22jl7"]
+
+[ext_resource type="Script" path="res://Scripts/Manager/JuiceManager.cs" id="1_svl2v"]
+
+[node name="JuiceManager" type="Node2D"]
+script = ExtResource("1_svl2v")

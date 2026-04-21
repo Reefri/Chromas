@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0wwvosoryoyc"]
+
+[ext_resource type="Shader" uid="uid://5adfoay6us72" path="res://Resources/Shaders/CoreShader.tres" id="1_y74b4"]
+[ext_resource type="Script" path="res://Scripts/Player/CoreShaderSupport.cs" id="2_qdyw2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8o71"]
+shader = ExtResource("1_y74b4")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/progression = 1.0
+
+[node name="ColorRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_c8o71")
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+scale = Vector2(20.2102, 20.2102)
+pivot_offset = Vector2(20, 20)
+script = ExtResource("2_qdyw2")

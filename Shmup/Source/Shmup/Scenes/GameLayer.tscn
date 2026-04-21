@@ -1,0 +1,646 @@
+[gd_scene load_steps=16 format=3 uid="uid://b5rhtfc0p8yj2"]
+
+[ext_resource type="PackedScene" uid="uid://cgbn3co3v65sy" path="res://Scenes/LevelParralaxe.tscn" id="1_i800k"]
+[ext_resource type="PackedScene" uid="uid://be2rpqdomxopo" path="res://Scenes/Spawner/PlayerSpawner.tscn" id="2_0oyr2"]
+[ext_resource type="PackedScene" uid="uid://chv7p4iumjiwl" path="res://Scenes/Spawner/PopcornSpawner_A.tscn" id="3_saw5n"]
+[ext_resource type="PackedScene" uid="uid://d3ighn07byywo" path="res://Scenes/Obstacles/Obstacles.tscn" id="4_it8ly"]
+[ext_resource type="PackedScene" uid="uid://8ihpnxmrdai1" path="res://Scenes/Obstacles/DestroyableObstacles.tscn" id="5_852pr"]
+[ext_resource type="PackedScene" uid="uid://dltdrg7y3g1b4" path="res://Scenes/Spawner/EnemyTwoSpawner.tscn" id="6_mtke5"]
+[ext_resource type="PackedScene" uid="uid://dnukak3ipfocp" path="res://Scenes/Obstacles/PassableObstacle.tscn" id="7_tfwsr"]
+[ext_resource type="PackedScene" uid="uid://cxfjky4yxcxov" path="res://Scenes/Spawner/PopcornSpawner_B.tscn" id="8_c05ep"]
+[ext_resource type="PackedScene" uid="uid://dkhx10kht8sdc" path="res://Scenes/Spawner/EnemyThreeSpawner.tscn" id="9_5i7wl"]
+[ext_resource type="PackedScene" uid="uid://b815j3hvkx0vh" path="res://Scenes/Collectables/Heal.tscn" id="9_d8o7w"]
+[ext_resource type="PackedScene" uid="uid://c0s06hb5svoiw" path="res://Scenes/Spawner/PopcornSpawner_C.tscn" id="10_sik33"]
+[ext_resource type="PackedScene" uid="uid://dtkx84xpw20fd" path="res://Scenes/Spawner/PopcornSpawner_D.tscn" id="11_fdfe2"]
+[ext_resource type="PackedScene" uid="uid://dyssm5472bl7l" path="res://Scenes/Manager/BossManager.tscn" id="12_u312k"]
+[ext_resource type="PackedScene" uid="uid://bxfs12e1e2mng" path="res://Scenes/Collectables/LevelUp.tscn" id="13_a6sth"]
+[ext_resource type="PackedScene" uid="uid://chyahv5rt4jrq" path="res://Scenes/Collectables/SmartBombCollectable.tscn" id="14_82khn"]
+
+[node name="GameLayer" node_paths=PackedStringArray("playerSpawner") instance=ExtResource("1_i800k")]
+isBackground = false
+playerSpawner = NodePath("PlayerSpawner")
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+visible = false
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 21096.0
+offset_bottom = 136.0
+
+[node name="ColorRect2" type="ColorRect" parent="." index="1"]
+visible = false
+offset_top = 649.0
+offset_right = 21312.0
+offset_bottom = 761.0
+
+[node name="PlayerSpawner" parent="." index="2" instance=ExtResource("2_0oyr2")]
+position = Vector2(328, 352)
+
+[node name="PO_TEASE" type="Node2D" parent="." index="3"]
+position = Vector2(613, -8)
+
+[node name="PassableObstacle2" parent="PO_TEASE" index="0" instance=ExtResource("7_tfwsr")]
+position = Vector2(379, -528)
+
+[node name="PassableObstacle3" parent="PO_TEASE" index="1" node_paths=PackedStringArray("visibleRect") instance=ExtResource("7_tfwsr")]
+position = Vector2(387, 592)
+visibleRect = NodePath("../PassableObstacle2/Renderer/ColorRect")
+
+[node name="O_TEASE" type="Node2D" parent="." index="4"]
+position = Vector2(2360, -88)
+
+[node name="Obstacle" parent="O_TEASE" index="0" instance=ExtResource("4_it8ly")]
+position = Vector2(72, 272)
+colorIndex = 4
+
+[node name="Obstacle2" parent="O_TEASE" index="1" instance=ExtResource("4_it8ly")]
+position = Vector2(72, 128)
+colorIndex = 4
+
+[node name="Obstacle3" parent="O_TEASE" index="2" instance=ExtResource("4_it8ly")]
+position = Vector2(592, 768)
+colorIndex = 5
+
+[node name="Obstacle5" parent="O_TEASE" index="3" instance=ExtResource("4_it8ly")]
+position = Vector2(1160, 768)
+colorIndex = 6
+
+[node name="Obstacle6" parent="O_TEASE" index="4" instance=ExtResource("4_it8ly")]
+position = Vector2(1160, 192)
+colorIndex = 6
+
+[node name="Obstacle7" parent="O_TEASE" index="5" instance=ExtResource("4_it8ly")]
+position = Vector2(1160, 48)
+colorIndex = 6
+
+[node name="DestroyableObstacle" parent="O_TEASE" index="6" instance=ExtResource("5_852pr")]
+position = Vector2(592, 624)
+colorIndex = 5
+
+[node name="EnemySpawner" parent="O_TEASE" index="7" instance=ExtResource("3_saw5n")]
+position = Vector2(1160, 560)
+colorIndex = 2
+
+[node name="EnemySpawner4" parent="O_TEASE" index="8" instance=ExtResource("3_saw5n")]
+position = Vector2(592, 392)
+colorIndex = 3
+
+[node name="EnemySpawner2" parent="O_TEASE" index="9" instance=ExtResource("3_saw5n")]
+position = Vector2(1168, 360)
+colorIndex = 6
+
+[node name="EnemySpawner3" parent="O_TEASE" index="10" instance=ExtResource("3_saw5n")]
+position = Vector2(80, 512)
+colorIndex = 4
+
+[node name="PO_LEARN" type="Node2D" parent="." index="5"]
+position = Vector2(3616, 32)
+
+[node name="PassableObstacle4" parent="PO_LEARN" index="0" node_paths=PackedStringArray("visibleRect") instance=ExtResource("7_tfwsr")]
+position = Vector2(488, -512)
+visibleRect = NodePath("../../PO_TEASE/PassableObstacle2/Renderer/ColorRect")
+colorIndex = 4
+
+[node name="PassableObstacle3" parent="PO_LEARN" index="1" node_paths=PackedStringArray("visibleRect") instance=ExtResource("7_tfwsr")]
+position = Vector2(488, 464)
+visibleRect = NodePath("../../PO_TEASE/PassableObstacle2/Renderer/ColorRect")
+colorIndex = 6
+
+[node name="DestroyableObstacle" parent="PO_LEARN" index="2" instance=ExtResource("5_852pr")]
+position = Vector2(488, 352)
+colorIndex = 2
+
+[node name="O_TEACH" type="Node2D" parent="." index="6"]
+position = Vector2(4560, 352)
+
+[node name="DestroyableObstacle" parent="O_TEACH" index="0" instance=ExtResource("5_852pr")]
+position = Vector2(160, 272)
+colorIndex = 8
+
+[node name="DestroyableObstacle2" parent="O_TEACH" index="1" instance=ExtResource("5_852pr")]
+position = Vector2(160, -160)
+colorIndex = 1
+
+[node name="Obstacle" parent="O_TEACH" index="2" instance=ExtResource("4_it8ly")]
+position = Vector2(160, -304)
+colorIndex = 1
+
+[node name="Obstacle2" parent="O_TEACH" index="3" instance=ExtResource("4_it8ly")]
+position = Vector2(304, 480)
+colorIndex = 8
+
+[node name="Obstacle8" parent="O_TEACH" index="4" instance=ExtResource("4_it8ly")]
+position = Vector2(304, -376)
+colorIndex = 2
+
+[node name="Obstacle3" parent="O_TEACH" index="5" instance=ExtResource("4_it8ly")]
+position = Vector2(160, 416)
+colorIndex = 8
+
+[node name="Obstacle4" parent="O_TEACH" index="6" instance=ExtResource("4_it8ly")]
+position = Vector2(304, 336)
+colorIndex = 8
+
+[node name="Obstacle5" parent="O_TEACH" index="7" instance=ExtResource("4_it8ly")]
+position = Vector2(304, 200)
+colorIndex = 8
+
+[node name="Obstacle6" parent="O_TEACH" index="8" instance=ExtResource("4_it8ly")]
+position = Vector2(304, -88)
+colorIndex = 2
+
+[node name="Obstacle7" parent="O_TEACH" index="9" instance=ExtResource("4_it8ly")]
+position = Vector2(304, -232)
+colorIndex = 2
+
+[node name="LevelUp" parent="O_TEACH" index="10" instance=ExtResource("13_a6sth")]
+position = Vector2(160, -152)
+
+[node name="SmartBombCollectable" parent="O_TEACH" index="11" instance=ExtResource("14_82khn")]
+position = Vector2(160, 272)
+
+[node name="PO_LEARN2" type="Node2D" parent="." index="7"]
+position = Vector2(5344, 24)
+
+[node name="PassableObstacle4" parent="PO_LEARN2" index="0" node_paths=PackedStringArray("visibleRect", "particles") instance=ExtResource("7_tfwsr")]
+position = Vector2(488, -416)
+visibleRect = NodePath("../../PO_TEASE/PassableObstacle2/Renderer/ColorRect")
+particles = NodePath("../../PO_LEARN/PassableObstacle4/Renderer/ColorRect/GPUParticles2D")
+
+[node name="PassableObstacle3" parent="PO_LEARN2" index="1" node_paths=PackedStringArray("visibleRect", "particles") instance=ExtResource("7_tfwsr")]
+position = Vector2(488, 416)
+visibleRect = NodePath("../../PO_TEASE/PassableObstacle2/Renderer/ColorRect")
+particles = NodePath("../../PO_LEARN/PassableObstacle3/Renderer/ColorRect/GPUParticles2D")
+colorIndex = 5
+
+[node name="DestroyableObstacle" parent="PO_LEARN2" index="2" instance=ExtResource("5_852pr")]
+position = Vector2(616, 184)
+
+[node name="DestroyableObstacle2" parent="PO_LEARN2" index="3" instance=ExtResource("5_852pr")]
+position = Vector2(616, 552)
+colorIndex = 4
+
+[node name="Obstacle" parent="PO_LEARN2" index="4" instance=ExtResource("4_it8ly")]
+position = Vector2(616, 40)
+
+[node name="Obstacle2" parent="PO_LEARN2" index="5" instance=ExtResource("4_it8ly")]
+position = Vector2(616, 696)
+colorIndex = 4
+
+[node name="Heal" parent="PO_LEARN2" index="6" instance=ExtResource("9_d8o7w")]
+position = Vector2(616, 552)
+
+[node name="LevelUp" parent="PO_LEARN2" index="7" instance=ExtResource("13_a6sth")]
+position = Vector2(624, 184)
+
+[node name="O_PRACTICE" type="Node2D" parent="." index="8"]
+position = Vector2(8200, 384)
+
+[node name="Obstacle" parent="O_PRACTICE" index="0" instance=ExtResource("4_it8ly")]
+position = Vector2(2, -281)
+colorIndex = 5
+
+[node name="Obstacle6" parent="O_PRACTICE" index="1" instance=ExtResource("4_it8ly")]
+position = Vector2(1, -424)
+colorIndex = 5
+
+[node name="Obstacle2" parent="O_PRACTICE" index="2" instance=ExtResource("4_it8ly")]
+position = Vector2(2, -137)
+colorIndex = 5
+
+[node name="DestroyableObstacle" parent="O_PRACTICE" index="3" instance=ExtResource("5_852pr")]
+position = Vector2(1, 5)
+colorIndex = 2
+
+[node name="Obstacle3" parent="O_PRACTICE" index="4" instance=ExtResource("4_it8ly")]
+position = Vector2(0, 293)
+colorIndex = 8
+
+[node name="Obstacle4" parent="O_PRACTICE" index="5" instance=ExtResource("4_it8ly")]
+position = Vector2(0, 149)
+colorIndex = 8
+
+[node name="Obstacle5" parent="O_PRACTICE" index="6" instance=ExtResource("4_it8ly")]
+position = Vector2(0, 432)
+colorIndex = 8
+
+[node name="EnemyTwoSpawner" parent="O_PRACTICE" index="7" instance=ExtResource("6_mtke5")]
+position = Vector2(296, 160)
+
+[node name="EnemyTwoSpawner4" parent="O_PRACTICE" index="8" instance=ExtResource("6_mtke5")]
+position = Vector2(376, -80)
+
+[node name="EnemyTwoSpawner5" parent="O_PRACTICE" index="9" instance=ExtResource("6_mtke5")]
+position = Vector2(376, 80)
+
+[node name="EnemyTwoSpawner2" parent="O_PRACTICE" index="10" instance=ExtResource("6_mtke5")]
+position = Vector2(296, 0)
+
+[node name="EnemyTwoSpawner3" parent="O_PRACTICE" index="11" instance=ExtResource("6_mtke5")]
+position = Vector2(296, -160)
+
+[node name="TWO_TEACH" type="Node2D" parent="." index="9"]
+position = Vector2(2008, 272)
+
+[node name="EnemyTwoSpawner" parent="TWO_TEACH" index="0" instance=ExtResource("6_mtke5")]
+position = Vector2(-8, 53)
+marginBeforeActivating = 100.0
+colorIndex = 4
+
+[node name="EnemyTwoSpawner2" parent="TWO_TEACH" index="1" instance=ExtResource("6_mtke5")]
+position = Vector2(-13, 186)
+marginBeforeActivating = 100.0
+colorIndex = 4
+
+[node name="PO_PRACTICE" type="Node2D" parent="." index="10"]
+position = Vector2(9336, 144)
+
+[node name="PassableObstacle" parent="PO_PRACTICE" index="0" instance=ExtResource("7_tfwsr")]
+position = Vector2(32, -136)
+colorIndex = 5
+
+[node name="PopcornSpawner_B" parent="PO_PRACTICE" index="1" instance=ExtResource("8_c05ep")]
+position = Vector2(224, 240)
+marginBeforeActivating = 0.0
+
+[node name="THREE_TEASE" type="Node2D" parent="." index="11"]
+position = Vector2(6728, 336)
+
+[node name="EnemyThreeSpawner" parent="THREE_TEASE" index="0" instance=ExtResource("9_5i7wl")]
+position = Vector2(-40, -131)
+colorIndex = 1
+
+[node name="EnemyThreeSpawner2" parent="THREE_TEASE" index="1" instance=ExtResource("9_5i7wl")]
+position = Vector2(-48, 245)
+colorIndex = 3
+
+[node name="EnemyTwoSpawner2" parent="THREE_TEASE" index="2" instance=ExtResource("6_mtke5")]
+position = Vector2(96, 53)
+colorIndex = 1
+
+[node name="THREE_LEARN1" type="Node2D" parent="." index="12"]
+
+[node name="EnemyThreeSpawner" parent="THREE_LEARN1" index="0" instance=ExtResource("9_5i7wl")]
+position = Vector2(5232, 512)
+colorIndex = 3
+
+[node name="EnemyThreeSpawner2" parent="THREE_LEARN1" index="1" instance=ExtResource("9_5i7wl")]
+position = Vector2(5232, 312)
+colorIndex = 7
+
+[node name="THREE_PRACTICE" type="Node2D" parent="." index="13"]
+position = Vector2(576, 8)
+
+[node name="EnemyThreeSpawner" parent="THREE_PRACTICE" index="0" instance=ExtResource("9_5i7wl")]
+position = Vector2(12240, 296)
+colorIndex = 2
+
+[node name="EnemyThreeSpawner2" parent="THREE_PRACTICE" index="1" instance=ExtResource("9_5i7wl")]
+position = Vector2(12240, 448)
+colorIndex = 7
+
+[node name="EnemyThreeSpawner4" parent="THREE_PRACTICE" index="2" instance=ExtResource("9_5i7wl")]
+position = Vector2(12368, 528)
+colorIndex = 2
+
+[node name="EnemyThreeSpawner3" parent="THREE_PRACTICE" index="3" instance=ExtResource("9_5i7wl")]
+position = Vector2(12368, 240)
+colorIndex = 7
+
+[node name="REWARD_03" parent="." index="14" instance=ExtResource("10_sik33")]
+position = Vector2(7368, 392)
+colorIndex = 4
+
+[node name="REWARD_01" type="Node2D" parent="." index="15"]
+position = Vector2(680, 344)
+
+[node name="PopcornSpawner_D" parent="REWARD_01" index="0" instance=ExtResource("11_fdfe2")]
+position = Vector2(969, 143)
+
+[node name="PopcornSpawner_D2" parent="REWARD_01" index="1" instance=ExtResource("11_fdfe2")]
+position = Vector2(977, -129)
+colorIndex = 2
+
+[node name="PopcornSpawner_D3" parent="REWARD_01" index="2" instance=ExtResource("11_fdfe2")]
+position = Vector2(537, -9)
+colorIndex = 4
+
+[node name="O_PRACTICE2" type="Node2D" parent="." index="16"]
+position = Vector2(144, 0)
+
+[node name="Obstacle" parent="O_PRACTICE2" index="0" instance=ExtResource("4_it8ly")]
+position = Vector2(10168, 175)
+colorIndex = 1
+
+[node name="Obstacle2" parent="O_PRACTICE2" index="1" instance=ExtResource("4_it8ly")]
+position = Vector2(10168, 607)
+colorIndex = 1
+
+[node name="Obstacle6" parent="O_PRACTICE2" index="2" instance=ExtResource("4_it8ly")]
+position = Vector2(10456, 607)
+colorIndex = 2
+
+[node name="Obstacle3" parent="O_PRACTICE2" index="3" instance=ExtResource("4_it8ly")]
+position = Vector2(10456, 175)
+colorIndex = 2
+
+[node name="Obstacle4" parent="O_PRACTICE2" index="4" instance=ExtResource("4_it8ly")]
+position = Vector2(10312, 247)
+
+[node name="Obstacle7" parent="O_PRACTICE2" index="5" instance=ExtResource("4_it8ly")]
+position = Vector2(10312, 104)
+colorIndex = 6
+
+[node name="Obstacle13" parent="O_PRACTICE2" index="6" instance=ExtResource("4_it8ly")]
+position = Vector2(10312, -40)
+colorIndex = 3
+
+[node name="Obstacle12" parent="O_PRACTICE2" index="7" instance=ExtResource("4_it8ly")]
+position = Vector2(10456, 751)
+colorIndex = 5
+
+[node name="Obstacle10" parent="O_PRACTICE2" index="8" instance=ExtResource("4_it8ly")]
+position = Vector2(10168, 751)
+colorIndex = 4
+
+[node name="Obstacle11" parent="O_PRACTICE2" index="9" instance=ExtResource("4_it8ly")]
+position = Vector2(10168, 32)
+colorIndex = 7
+
+[node name="Obstacle8" parent="O_PRACTICE2" index="10" instance=ExtResource("4_it8ly")]
+position = Vector2(10456, 32)
+colorIndex = 8
+
+[node name="Obstacle9" parent="O_PRACTICE2" index="11" instance=ExtResource("4_it8ly")]
+position = Vector2(10312, 679)
+
+[node name="Obstacle5" parent="O_PRACTICE2" index="12" instance=ExtResource("4_it8ly")]
+position = Vector2(10312, 535)
+colorIndex = 6
+
+[node name="DestroyableObstacle2" parent="O_PRACTICE2" index="13" instance=ExtResource("5_852pr")]
+position = Vector2(10312, 391)
+colorIndex = 3
+
+[node name="DestroyableObstacle4" parent="O_PRACTICE2" index="14" instance=ExtResource("5_852pr")]
+position = Vector2(10456, 463)
+colorIndex = 8
+
+[node name="DestroyableObstacle5" parent="O_PRACTICE2" index="15" instance=ExtResource("5_852pr")]
+position = Vector2(10456, 319)
+colorIndex = 5
+
+[node name="SmartBombCollectable" parent="O_PRACTICE2" index="16" instance=ExtResource("14_82khn")]
+position = Vector2(10456, 319)
+
+[node name="LevelUp" parent="O_PRACTICE2" index="17" instance=ExtResource("13_a6sth")]
+position = Vector2(10456, 463)
+
+[node name="PO_MASTER" type="Node2D" parent="." index="17"]
+position = Vector2(15728, -384)
+
+[node name="PassableObstacle" parent="PO_MASTER" index="0" instance=ExtResource("7_tfwsr")]
+position = Vector2(-576, -96)
+colorIndex = 2
+
+[node name="PassableObstacle3" parent="PO_MASTER" index="1" node_paths=PackedStringArray("visibleRect", "particles") instance=ExtResource("7_tfwsr")]
+position = Vector2(432, 376)
+visibleRect = NodePath("../PassableObstacle/Renderer/ColorRect")
+particles = NodePath("../PassableObstacle/Renderer/ColorRect/GPUParticles2D")
+colorIndex = 7
+
+[node name="PassableObstacle2" parent="PO_MASTER" index="2" node_paths=PackedStringArray("visibleRect", "particles") instance=ExtResource("7_tfwsr")]
+position = Vector2(-576, 880)
+visibleRect = NodePath("../PassableObstacle/Renderer/ColorRect")
+particles = NodePath("../PassableObstacle/Renderer/ColorRect/GPUParticles2D")
+colorIndex = 5
+
+[node name="EnemyThreeSpawner" parent="PO_MASTER" index="3" instance=ExtResource("9_5i7wl")]
+position = Vector2(-368, 608)
+
+[node name="EnemyThreeSpawner2" parent="PO_MASTER" index="4" instance=ExtResource("9_5i7wl")]
+position = Vector2(-368, 944)
+
+[node name="Obstacle" parent="PO_MASTER" index="5" instance=ExtResource("4_it8ly")]
+position = Vector2(-560, 768)
+
+[node name="Obstacle6" parent="PO_MASTER" index="6" instance=ExtResource("4_it8ly")]
+position = Vector2(304, 768)
+colorIndex = 6
+
+[node name="DestroyableObstacle3" parent="PO_MASTER" index="7" instance=ExtResource("5_852pr")]
+position = Vector2(304, 624)
+colorIndex = 6
+
+[node name="DestroyableObstacle4" parent="PO_MASTER" index="8" instance=ExtResource("5_852pr")]
+position = Vector2(304, 480)
+colorIndex = 6
+
+[node name="Obstacle7" parent="PO_MASTER" index="9" instance=ExtResource("4_it8ly")]
+position = Vector2(160, 768)
+colorIndex = 5
+
+[node name="Obstacle2" parent="PO_MASTER" index="10" instance=ExtResource("4_it8ly")]
+position = Vector2(16, 768)
+colorIndex = 4
+
+[node name="Obstacle3" parent="PO_MASTER" index="11" instance=ExtResource("4_it8ly")]
+position = Vector2(-128, 768)
+colorIndex = 3
+
+[node name="Obstacle4" parent="PO_MASTER" index="12" instance=ExtResource("4_it8ly")]
+position = Vector2(-272, 768)
+colorIndex = 2
+
+[node name="Obstacle5" parent="PO_MASTER" index="13" instance=ExtResource("4_it8ly")]
+position = Vector2(-416, 768)
+colorIndex = 1
+
+[node name="Heal2" parent="PO_MASTER" index="14" instance=ExtResource("9_d8o7w")]
+position = Vector2(296, 888)
+
+[node name="LevelUp2" parent="PO_MASTER" index="15" instance=ExtResource("13_a6sth")]
+position = Vector2(296, 984)
+
+[node name="SmartBombCollectable" parent="PO_MASTER" index="16" instance=ExtResource("14_82khn")]
+position = Vector2(208, 936)
+
+[node name="REWARD_04" type="Node2D" parent="." index="18"]
+position = Vector2(11624, 200)
+
+[node name="Node2D3" type="Node2D" parent="REWARD_04" index="0"]
+position = Vector2(-88, 368)
+
+[node name="PopCornSpawner1" parent="REWARD_04/Node2D3" index="0" instance=ExtResource("3_saw5n")]
+
+[node name="PopcornSpawner_D" parent="REWARD_04/Node2D3" index="1" instance=ExtResource("11_fdfe2")]
+position = Vector2(-280, -8)
+
+[node name="Node2D4" type="Node2D" parent="REWARD_04" index="1"]
+
+[node name="PopCornSpawner1" parent="REWARD_04/Node2D4" index="0" instance=ExtResource("3_saw5n")]
+position = Vector2(-96, 48)
+
+[node name="PopcornSpawner_D" parent="REWARD_04/Node2D4" index="1" instance=ExtResource("11_fdfe2")]
+position = Vector2(-360, 40)
+
+[node name="Node2D5" type="Node2D" parent="REWARD_04" index="2"]
+position = Vector2(-424, 200)
+
+[node name="PopCornSpawner1" parent="REWARD_04/Node2D5" index="0" instance=ExtResource("3_saw5n")]
+
+[node name="PopcornSpawner_D" parent="REWARD_04/Node2D5" index="1" instance=ExtResource("11_fdfe2")]
+position = Vector2(-280, -8)
+
+[node name="BossManager" parent="." index="19" instance=ExtResource("12_u312k")]
+position = Vector2(19216, 368)
+
+[node name="Node2D" type="Node2D" parent="." index="20"]
+position = Vector2(11880, 392)
+
+[node name="Obstacle" parent="Node2D" index="0" instance=ExtResource("4_it8ly")]
+position = Vector2(240, 280)
+colorIndex = 7
+
+[node name="Obstacle2" parent="Node2D" index="1" instance=ExtResource("4_it8ly")]
+position = Vector2(240, -288)
+colorIndex = 3
+
+[node name="Obstacle3" parent="Node2D" index="2" instance=ExtResource("4_it8ly")]
+position = Vector2(384, -368)
+colorIndex = 2
+
+[node name="Obstacle4" parent="Node2D" index="3" instance=ExtResource("4_it8ly")]
+position = Vector2(240, -432)
+colorIndex = 3
+
+[node name="PassableObstacle" parent="Node2D" index="4" instance=ExtResource("7_tfwsr")]
+position = Vector2(112, 24)
+colorIndex = 7
+
+[node name="PassableObstacle2" parent="Node2D" index="5" node_paths=PackedStringArray("visibleRect", "particles") instance=ExtResource("7_tfwsr")]
+position = Vector2(112, -808)
+visibleRect = NodePath("../PassableObstacle/Renderer/ColorRect")
+particles = NodePath("../PassableObstacle/Renderer/ColorRect/GPUParticles2D")
+colorIndex = 3
+
+[node name="DestroyableObstacle" parent="Node2D" index="6" instance=ExtResource("5_852pr")]
+position = Vector2(240, -8)
+colorIndex = 5
+
+[node name="DestroyableObstacle5" parent="Node2D" index="7" instance=ExtResource("5_852pr")]
+position = Vector2(384, 208)
+colorIndex = 8
+
+[node name="DestroyableObstacle2" parent="Node2D" index="8" instance=ExtResource("5_852pr")]
+position = Vector2(384, -224)
+colorIndex = 2
+
+[node name="DestroyableObstacle3" parent="Node2D" index="9" instance=ExtResource("5_852pr")]
+position = Vector2(240, -152)
+colorIndex = 4
+
+[node name="DestroyableObstacle4" parent="Node2D" index="10" instance=ExtResource("5_852pr")]
+position = Vector2(240, 136)
+colorIndex = 6
+
+[node name="Heal" parent="Node2D" index="11" instance=ExtResource("9_d8o7w")]
+position = Vector2(384, 208)
+
+[node name="LevelUp" parent="Node2D" index="12" instance=ExtResource("13_a6sth")]
+position = Vector2(384, -224)
+
+[node name="PO_MASTER2" type="Node2D" parent="." index="21"]
+position = Vector2(13944, 32)
+
+[node name="PassableObstacle" parent="PO_MASTER2" index="0" instance=ExtResource("7_tfwsr")]
+colorIndex = 5
+
+[node name="PassableObstacle2" parent="PO_MASTER2" index="1" node_paths=PackedStringArray("visibleRect", "particles") instance=ExtResource("7_tfwsr")]
+position = Vector2(112, 0)
+visibleRect = NodePath("../PassableObstacle/Renderer/ColorRect")
+particles = NodePath("../PassableObstacle/Renderer/ColorRect/GPUParticles2D")
+colorIndex = 6
+
+[node name="PassableObstacle3" parent="PO_MASTER2" index="2" node_paths=PackedStringArray("visibleRect", "particles") instance=ExtResource("7_tfwsr")]
+position = Vector2(224, 0)
+visibleRect = NodePath("../PassableObstacle/Renderer/ColorRect")
+particles = NodePath("../PassableObstacle/Renderer/ColorRect/GPUParticles2D")
+colorIndex = 7
+
+[node name="PassableObstacle4" parent="PO_MASTER2" index="3" node_paths=PackedStringArray("visibleRect", "particles") instance=ExtResource("7_tfwsr")]
+position = Vector2(336, 0)
+visibleRect = NodePath("../PassableObstacle/Renderer/ColorRect")
+particles = NodePath("../PassableObstacle/Renderer/ColorRect/GPUParticles2D")
+colorIndex = 8
+
+[node name="ULTIMATE" type="Node2D" parent="." index="22"]
+position = Vector2(16656, -376)
+
+[node name="DestroyableObstacle" parent="ULTIMATE" index="0" instance=ExtResource("5_852pr")]
+position = Vector2(656, 584)
+colorIndex = 1
+
+[node name="DestroyableObstacle2" parent="ULTIMATE" index="1" instance=ExtResource("5_852pr")]
+position = Vector2(656, 952)
+colorIndex = 7
+
+[node name="Obstacle" parent="ULTIMATE" index="2" instance=ExtResource("4_it8ly")]
+position = Vector2(656, 1096)
+
+[node name="Obstacle2" parent="ULTIMATE" index="3" instance=ExtResource("4_it8ly")]
+position = Vector2(656, 440)
+
+[node name="PassableObstacle" parent="ULTIMATE" index="4" instance=ExtResource("7_tfwsr")]
+position = Vector2(1024, 384)
+colorIndex = 4
+
+[node name="PopCornSpawner1" parent="ULTIMATE" index="5" instance=ExtResource("3_saw5n")]
+position = Vector2(1352, 600)
+colorIndex = 8
+
+[node name="PopCornSpawner2" parent="ULTIMATE" index="6" instance=ExtResource("3_saw5n")]
+position = Vector2(1352, 928)
+colorIndex = 2
+
+[node name="PopCornSpawner3" parent="ULTIMATE" index="7" instance=ExtResource("3_saw5n")]
+position = Vector2(1536, 768)
+colorIndex = 5
+
+[node name="PopcornSpawner_D" parent="ULTIMATE" index="8" instance=ExtResource("11_fdfe2")]
+position = Vector2(168, 760)
+
+[node name="PopcornSpawner_D2" parent="ULTIMATE" index="9" instance=ExtResource("11_fdfe2")]
+position = Vector2(-64, 880)
+
+[node name="PopcornSpawner_D3" parent="ULTIMATE" index="10" instance=ExtResource("11_fdfe2")]
+position = Vector2(-56, 624)
+
+[node name="EnemyTwoSpawner" parent="ULTIMATE" index="11" instance=ExtResource("6_mtke5")]
+position = Vector2(696, 760)
+colorIndex = 5
+
+[node name="EnemyTwoSpawner2" parent="ULTIMATE" index="12" instance=ExtResource("6_mtke5")]
+position = Vector2(448, 952)
+colorIndex = 8
+
+[node name="EnemyTwoSpawner3" parent="ULTIMATE" index="13" instance=ExtResource("6_mtke5")]
+position = Vector2(448, 592)
+colorIndex = 6
+
+[node name="EnemyThreeSpawner" parent="ULTIMATE" index="14" instance=ExtResource("9_5i7wl")]
+position = Vector2(792, 600)
+colorIndex = 3
+
+[node name="EnemyThreeSpawner2" parent="ULTIMATE" index="15" instance=ExtResource("9_5i7wl")]
+position = Vector2(792, 960)
+colorIndex = 2
+
+[node name="LevelUp" parent="ULTIMATE" index="16" instance=ExtResource("13_a6sth")]
+position = Vector2(656, 584)
+
+[node name="Heal" parent="ULTIMATE" index="17" instance=ExtResource("9_d8o7w")]
+position = Vector2(656, 952)
+
+[node name="Marker2D" type="Marker2D" parent="." index="23"]
+position = Vector2(19216, 368)

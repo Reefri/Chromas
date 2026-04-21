@@ -1,0 +1,175 @@
+[gd_scene load_steps=11 format=3 uid="uid://cb6sd0nfs25ec"]
+
+[ext_resource type="Script" path="res://Scripts/UI/PauseMenu.cs" id="1_kwvgy"]
+[ext_resource type="Texture2D" uid="uid://dfotu1l2qkl0y" path="res://Assets/icon/exit.png" id="2_3x8jn"]
+[ext_resource type="Shader" uid="uid://bj22xl0e7jjgj" path="res://Resources/Shaders/Gradient.tres" id="2_n1k87"]
+[ext_resource type="LabelSettings" uid="uid://cfgekojycq25m" path="res://Resources/Theme/Label.tres" id="3_d1b4e"]
+[ext_resource type="Texture2D" uid="uid://dglx5hpke4ah1" path="res://Assets/icon/continue.png" id="3_uar13"]
+[ext_resource type="Texture2D" uid="uid://qu2jjqsof7b6" path="res://Assets/icon/pause.png" id="4_vonsy"]
+[ext_resource type="Script" path="res://Scripts/UI/CustomButton.cs" id="6_2qtxd"]
+[ext_resource type="Texture2D" uid="uid://byv1keivlex6v" path="res://Assets/icon/retry.png" id="8_j0yg3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_guct3"]
+shader = ExtResource("2_n1k87")
+shader_parameter/ToggleUpDown = false
+shader_parameter/margin = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ulbmd"]
+shader = ExtResource("2_n1k87")
+shader_parameter/ToggleUpDown = true
+shader_parameter/margin = 1.0
+
+[node name="PauseMenu" type="Control" node_paths=PackedStringArray("top", "bottom", "pauseLabel", "quitButton", "resumeButton", "pauseIcon")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_kwvgy")
+top = NodePath("TOP")
+bottom = NodePath("BOTTOM")
+pauseLabel = NodePath("TOP/pauseLabel")
+quitButton = NodePath("BOTTOM/Control/QUIT")
+resumeButton = NodePath("BOTTOM/Control/RESUME")
+pauseIcon = NodePath("PAUSE")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.294118)
+metadata/_edit_use_anchors_ = true
+
+[node name="TOP" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_guct3")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.296296
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="pauseLabel" type="Label" parent="TOP"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.0
+offset_top = -34.5
+offset_right = 219.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_PAUSE_MENU"
+label_settings = ExtResource("3_d1b4e")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="BOTTOM" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ulbmd")
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.703704
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="BOTTOM"]
+layout_mode = 1
+anchor_left = 0.239583
+anchor_top = 0.25
+anchor_right = 0.774306
+anchor_bottom = 0.770834
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="RESUME" type="Button" parent="BOTTOM/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.357
+anchor_top = -0.48
+anchor_right = 0.627
+anchor_bottom = 1.52
+offset_left = 0.0880737
+offset_top = -0.000118256
+offset_right = -0.232117
+offset_bottom = -2.00014
+shortcut_feedback = false
+icon = ExtResource("3_uar13")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("6_2qtxd")
+metadata/_edit_use_anchors_ = true
+
+[node name="QUIT" type="Button" parent="BOTTOM/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.644
+anchor_right = 0.825
+anchor_bottom = 1.08
+offset_left = 0.295258
+offset_top = -9.53674e-05
+offset_right = -0.200378
+offset_bottom = -9.91821e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+icon = ExtResource("2_3x8jn")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("6_2qtxd")
+metadata/_edit_use_anchors_ = true
+
+[node name="RETRY" type="Button" parent="BOTTOM/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0840254
+anchor_top = -0.159999
+anchor_right = 0.319596
+anchor_bottom = 1.24
+offset_left = 0.240295
+offset_top = -0.000125885
+offset_right = -0.871353
+offset_bottom = -0.0001297
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+icon = ExtResource("8_j0yg3")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("6_2qtxd")
+metadata/_edit_use_anchors_ = true
+
+[node name="PAUSE" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = -75.0
+offset_right = 79.5
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vonsy")

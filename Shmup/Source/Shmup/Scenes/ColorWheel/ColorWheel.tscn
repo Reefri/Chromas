@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bycjwdo82ei3w"]
+
+[ext_resource type="Script" path="res://Scripts/Player/ColorWheel.cs" id="1_8ptre"]
+[ext_resource type="Shader" uid="uid://f65dtbcdmo30" path="res://Resources/Shaders/ColorWheel.tres" id="2_cdwox"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kf1bb"]
+shader = ExtResource("2_cdwox")
+shader_parameter/Rotation = 0.055
+shader_parameter/colorNumber = 9
+shader_parameter/rotationOffset = 0.5
+shader_parameter/ShowCircle = 1.0
+shader_parameter/CircleVisibility = 0.344
+shader_parameter/radius = 0.954
+shader_parameter/Edge = 0.347
+
+[node name="ColorWheel" type="Node2D"]
+script = ExtResource("1_8ptre")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_kf1bb")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2

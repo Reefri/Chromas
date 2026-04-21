@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm752wak4flpg"]
+
+[ext_resource type="Script" path="res://Scripts/UI/LanguagePanel.cs" id="1_5veau"]
+[ext_resource type="Texture2D" uid="uid://42phjbo3a3hm" path="res://Assets/icon/langue.png" id="2_cmtjr"]
+[ext_resource type="Script" path="res://Scripts/UI/MyBaseButton.cs" id="2_cyjcs"]
+[ext_resource type="Script" path="res://Scripts/UI/CustomButton.cs" id="3_hxkix"]
+
+[node name="LanguagePanel" type="Control" node_paths=PackedStringArray("mainButton", "panel", "buttons")]
+layout_mode = 3
+anchor_left = 0.46
+anchor_top = 0.579
+anchor_right = 0.516
+anchor_bottom = 0.677
+offset_left = 0.0800171
+offset_top = -0.192047
+offset_right = -0.432007
+offset_bottom = 0.303955
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5veau")
+mainButton = NodePath("ColorFiltreButton")
+panel = NodePath("ColorFilterPanel")
+buttons = [NodePath("ColorFilterPanel/ColorFilterContainer/FrenchButton"), NodePath("ColorFilterPanel/ColorFilterContainer/EnglishButton")]
+
+[node name="ColorFilterPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -134.0
+offset_top = -132.0
+offset_right = 134.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorFilterContainer" type="VBoxContainer" parent="ColorFilterPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 34.5
+offset_right = -18.0
+offset_bottom = -34.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="FrenchButton" type="Button" parent="ColorFilterPanel/ColorFilterContainer"]
+layout_mode = 2
+text = "Français"
+script = ExtResource("2_cyjcs")
+
+[node name="EnglishButton" type="Button" parent="ColorFilterPanel/ColorFilterContainer"]
+layout_mode = 2
+text = "English"
+script = ExtResource("2_cyjcs")
+
+[node name="ColorFiltreButton" type="Button" parent="."]
+z_index = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -54.0
+offset_right = 54.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("2_cmtjr")
+flat = true
+script = ExtResource("3_hxkix")

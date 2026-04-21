@@ -1,0 +1,149 @@
+[gd_scene load_steps=22 format=3 uid="uid://c4gltg0o6jalp"]
+
+[ext_resource type="PackedScene" uid="uid://c1yqr246fwp8w" path="res://Scenes/ColoredEntity/ColoredEntity.tscn" id="1_bjel0"]
+[ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="2_8a5q6"]
+[ext_resource type="PackedScene" uid="uid://clivltxmuq518" path="res://Scenes/JUICE/healParticules.tscn" id="3_oau87"]
+[ext_resource type="PackedScene" uid="uid://bde6kn620r2qa" path="res://Scenes/JUICE/levelUpParticules.tscn" id="4_67nvv"]
+[ext_resource type="Texture2D" uid="uid://bp7x1m78wu5lq" path="res://Assets/Player/Nouveau dossier/c.png" id="4_dmavd"]
+[ext_resource type="Texture2D" uid="uid://bie4q5hp6x3vl" path="res://Assets/Player/Nouveau dossier/a.png" id="5_d7ixj"]
+[ext_resource type="PackedScene" uid="uid://su8fjfpug5m7" path="res://Scenes/JUICE/BombCollectable.tscn" id="5_e26ca"]
+[ext_resource type="Shader" uid="uid://bwx21avv53vd0" path="res://Resources/Shaders/FlashDamage.tres" id="6_0iy8y"]
+[ext_resource type="Texture2D" uid="uid://cxbt13dagukwx" path="res://Assets/Player/Nouveau dossier/d.png" id="7_5jbdp"]
+[ext_resource type="Texture2D" uid="uid://cg0ciabwlksnp" path="res://Assets/Player/Nouveau dossier/b.png" id="8_hsaqb"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerCore.cs" id="9_0ywlh"]
+[ext_resource type="PackedScene" uid="uid://bycjwdo82ei3w" path="res://Scenes/ColorWheel/ColorWheel.tscn" id="9_gawy8"]
+[ext_resource type="PackedScene" uid="uid://vsxbcxrmchv6" path="res://Resources/Utils/Effects/Trail/Trail.tscn" id="11_2fdln"]
+[ext_resource type="Texture2D" uid="uid://cq0os3fylqt4r" path="res://Assets/Player/Nouveau dossier/e.png" id="11_8abak"]
+[ext_resource type="Shader" uid="uid://f65dtbcdmo30" path="res://Resources/Shaders/ColorWheel.tres" id="12_x2suj"]
+[ext_resource type="Texture2D" uid="uid://betda7sqyrpp7" path="res://Assets/Player/Nouveau dossier/f.png" id="12_ymqd4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2xc2i"]
+shader = ExtResource("6_0iy8y")
+shader_parameter/isActive = false
+shader_parameter/Color = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_euhc4"]
+shader = ExtResource("12_x2suj")
+shader_parameter/Rotation = 0.056
+shader_parameter/colorNumber = 9
+shader_parameter/rotationOffset = 0.5
+shader_parameter/ShowCircle = 1.0
+shader_parameter/CircleVisibility = 0.434
+shader_parameter/radius = 0.954
+shader_parameter/Edge = 0.347
+
+[sub_resource type="Curve" id="Curve_1dqjd"]
+_data = [Vector2(0, 0.329412), 0.0, 0.0, 0, 0, Vector2(1, 0.117647), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_rj23c"]
+offsets = PackedFloat32Array(0, 0.989362)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0.498039)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqiwf"]
+radius = 37.8358
+height = 155.136
+
+[node name="Player" node_paths=PackedStringArray("colorWheel", "bulletSpawnPosition", "particulesContainer", "weaponContainer") instance=ExtResource("1_bjel0")]
+scale = Vector2(0.234481, 0.234481)
+script = ExtResource("2_8a5q6")
+colorWheel = NodePath("Renderer/ColorWheel")
+bulletSpawnPosition = NodePath("BulletSpawnPosition")
+particulesContainer = NodePath("ParticulesContainer")
+healParticulesFactory = ExtResource("3_oau87")
+levelUpParticulesFactory = ExtResource("4_67nvv")
+bombParticulesFactory = ExtResource("5_e26ca")
+weaponContainer = NodePath("Renderer/Weapons")
+
+[node name="BulletSpawnPosition" type="Node2D" parent="." index="0"]
+
+[node name="LevelOne" type="Node2D" parent="BulletSpawnPosition" index="0"]
+
+[node name="Marker2D" type="Marker2D" parent="BulletSpawnPosition/LevelOne" index="0"]
+position = Vector2(110.883, 0)
+
+[node name="LevelTwo" type="Node2D" parent="BulletSpawnPosition" index="1"]
+
+[node name="Marker2D" type="Marker2D" parent="BulletSpawnPosition/LevelTwo" index="0"]
+position = Vector2(81.03, -51.1769)
+
+[node name="Marker2D2" type="Marker2D" parent="BulletSpawnPosition/LevelTwo" index="1"]
+position = Vector2(81.03, 51.1768)
+
+[node name="LevelThree" type="Node2D" parent="BulletSpawnPosition" index="2"]
+
+[node name="Marker2D" type="Marker2D" parent="BulletSpawnPosition/LevelThree" index="0"]
+position = Vector2(21.3237, 110.883)
+
+[node name="Marker2D2" type="Marker2D" parent="BulletSpawnPosition/LevelThree" index="1"]
+position = Vector2(21.3237, -110.883)
+
+[node name="Renderer" parent="." index="1"]
+material = SubResource("ShaderMaterial_2xc2i")
+scale = Vector2(0.0937883, 0.0937883)
+
+[node name="connector" type="Sprite2D" parent="Renderer" index="0"]
+texture = ExtResource("4_dmavd")
+
+[node name="mainCannon" type="Sprite2D" parent="Renderer" index="1"]
+texture = ExtResource("7_5jbdp")
+
+[node name="selector" type="Sprite2D" parent="Renderer" index="2"]
+texture = ExtResource("8_hsaqb")
+
+[node name="Core" type="Sprite2D" parent="Renderer" index="3"]
+texture = ExtResource("5_d7ixj")
+script = ExtResource("9_0ywlh")
+
+[node name="ColorWheel" parent="Renderer" index="4" node_paths=PackedStringArray("playerCore") instance=ExtResource("9_gawy8")]
+z_index = -1
+position = Vector2(-115.268, 0)
+scale = Vector2(11.1297, 11.1297)
+playerCore = NodePath("../Core")
+
+[node name="ColorRect" parent="Renderer/ColorWheel" index="0"]
+material = SubResource("ShaderMaterial_euhc4")
+offset_left = -121.0
+offset_top = -126.0
+offset_right = 135.0
+offset_bottom = 130.0
+
+[node name="Weapons" type="Node2D" parent="Renderer" index="5"]
+
+[node name="secondaryCannon" type="Sprite2D" parent="Renderer/Weapons" index="0"]
+visible = false
+position = Vector2(-1.90735e-06, 0)
+texture = ExtResource("11_8abak")
+
+[node name="Sprite2D" type="Sprite2D" parent="Renderer/Weapons" index="1"]
+visible = false
+z_index = 1
+texture = ExtResource("12_ymqd4")
+
+[node name="Trail" parent="." index="2" node_paths=PackedStringArray("reparentTarget", "positionTarget") instance=ExtResource("11_2fdln")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(104, 96)
+points = PackedVector2Array(0, 0, 408, -16, 848, -16, 928, 240, 928, 464, 584, 480, 360, 448, 104, 432, 56, 176, 384, 296, 512, 152, 696, 272)
+width_curve = SubResource("Curve_1dqjd")
+gradient = SubResource("Gradient_rj23c")
+length = 50
+reparent = true
+reparentTarget = NodePath("..")
+changePosition = true
+positionTarget = NodePath("../TrailPosition")
+isScrolling = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" index="0"]
+position = Vector2(-48.6486, 3.6036)
+rotation = 1.56029
+shape = SubResource("CapsuleShape2D_wqiwf")
+
+[node name="CamouflageShaderSupportContainer" type="Node2D" parent="." index="4"]
+position = Vector2(-112, -112)
+
+[node name="TrailPosition" type="Marker2D" parent="." index="5"]
+position = Vector2(-102, 1)
+
+[node name="ParticulesContainer" type="Node2D" parent="." index="6"]
+
+[editable path="Renderer/ColorWheel"]

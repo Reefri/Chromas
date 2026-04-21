@@ -1,0 +1,28 @@
+key,fr,en
+KEY_SCORE,SCORE,SCORE
+KEY_PAUSE_MENU,PAUSE,PAUSE
+KEY_LEFT_TITLE,CHR,CHR
+KEY_RIGHT_TITLE,MAS,MAS
+KEY_START,COMMENCER,START
+KEY_CREDITS,CREDITS,CREDITS
+KEY_MAKE_COLORBLIND,Rendre Daltonien,Make Me Colour Blind
+KEY_CORRECT_COLORBLIND,Corriger Mon Daltonisme,Correct My Colour Blindness
+KEY_NORMAL_VISION,Utiliser Une Vision Normal,Use Normal Vision
+KEY_GAME_BY,Jeu Créé Par : ,Game By : 
+KEY_PROJECT_MANAGER,Directeur De Projet,Project Manager
+KEY_GAME_DIRECTOR,Directeur Du Jeu,Game Director
+KEY_LEAD_GAME_DESIGNER,Directeur Game Design,Lead Game Designer
+KEY_ART_DIRECTOR,Directeur Art,Art Director
+KEY_LEAD_UX,Directeur Experience Utilisateur,Lead UX
+KEY_LEAD_SOUND_DESIGNER,Directeur Sound Design,Lead Sound Designer
+KEY_MS,Sound Designer,Sound Designer
+KEY_GDP,Programmeur GamePlay,GamePlay Programmer
+KEY_SPECIAL_THANKS_LABEL,Remerciements,Special Thanks
+KEY_SPECIAL_THANKS_TEXT,"Nous remercions chaleuresement nos amis, nos famille, nos proches et toutes les personnes qui nous ont apportés leur soutiens pendant la création de ce projet.","We would like to extend our warmest thanks to our friends, family, loved ones, and everyone who supported us during the creation of this project."
+KEY_MOVE,Bouger,Move
+KEY_SHOOT,Tirer,Shoot
+KEY_SMARTBOMB,SmartBomb,SmartBomb
+KEY_SF,Changer De Couleur,Swap Colour
+KEY_GAMEOVER,Fin de Jeu,Game Over
+KEY_DEFEAT,Vous avez perdu...,You lose...
+KEY_VICTORY,Vous avez Gagne !,You Won !

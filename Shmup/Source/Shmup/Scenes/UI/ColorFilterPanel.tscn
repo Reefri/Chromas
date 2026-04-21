@@ -1,0 +1,127 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdlvug6c55y62"]
+
+[ext_resource type="Script" path="res://Scripts/UI/ColorFilterPanel.cs" id="1_r8kd4"]
+[ext_resource type="Texture2D" uid="uid://dw8rp5e2e42mc" path="res://Assets/icon/ColorFiltre/eye.png" id="1_u5d6q"]
+[ext_resource type="Script" path="res://Scripts/UI/CustomButton.cs" id="2_p4vlj"]
+[ext_resource type="Script" path="res://Scripts/UI/MyBaseButton.cs" id="2_s4bqo"]
+[ext_resource type="Texture2D" uid="uid://c3e6snuir8al" path="res://Assets/icon/ColorFiltre/eyeBackground.png" id="3_cmwd0"]
+[ext_resource type="Shader" uid="uid://f65dtbcdmo30" path="res://Resources/Shaders/ColorWheel.tres" id="4_gjfns"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3eo4v"]
+shader = ExtResource("4_gjfns")
+shader_parameter/Rotation = 0.138
+shader_parameter/colorNumber = 9
+shader_parameter/rotationOffset = 0.0
+shader_parameter/ShowCircle = 1.0
+shader_parameter/CircleVisibility = 1.0
+shader_parameter/radius = 1.0
+shader_parameter/Edge = 1.0
+
+[node name="ColorFilterPanel" type="Control" node_paths=PackedStringArray("mainButton", "panel", "buttons")]
+layout_mode = 3
+anchor_left = 0.46
+anchor_top = 0.579
+anchor_right = 0.516
+anchor_bottom = 0.677
+offset_left = 0.0800171
+offset_top = -0.192047
+offset_right = -0.432007
+offset_bottom = 0.303955
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r8kd4")
+mainButton = NodePath("ColorFiltreButton")
+panel = NodePath("ColorFilterPanel")
+buttons = [NodePath("ColorFilterPanel/ColorFilterContainer/BeColorblind"), NodePath("ColorFilterPanel/ColorFilterContainer/CorrectColorBlindness"), NodePath("ColorFilterPanel/ColorFilterContainer/NormalVision")]
+
+[node name="ColorFilterPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -134.0
+offset_top = -132.0
+offset_right = 134.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorFilterContainer" type="VBoxContainer" parent="ColorFilterPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 34.5
+offset_right = -18.0
+offset_bottom = -34.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="BeColorblind" type="Button" parent="ColorFilterPanel/ColorFilterContainer"]
+layout_mode = 2
+text = "KEY_MAKE_COLORBLIND"
+script = ExtResource("2_s4bqo")
+
+[node name="CorrectColorBlindness" type="Button" parent="ColorFilterPanel/ColorFilterContainer"]
+layout_mode = 2
+text = "KEY_CORRECT_COLORBLIND"
+script = ExtResource("2_s4bqo")
+
+[node name="NormalVision" type="Button" parent="ColorFilterPanel/ColorFilterContainer"]
+layout_mode = 2
+text = "KEY_NORMAL_VISION"
+script = ExtResource("2_s4bqo")
+
+[node name="ColorFiltreButton" type="Button" parent="."]
+z_index = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -54.0
+offset_right = 54.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_u5d6q")
+flat = true
+script = ExtResource("2_p4vlj")
+
+[node name="TextureRect" type="TextureRect" parent="ColorFiltreButton"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -48.0
+offset_right = 50.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_cmwd0")
+
+[node name="ColorRect" type="ColorRect" parent="ColorFiltreButton"]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_3eo4v")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -17.0
+offset_right = 17.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

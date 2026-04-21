@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://be2rpqdomxopo"]
+
+[ext_resource type="Script" path="res://Scripts/Player/PlayerSpawner.cs" id="1_tstku"]
+[ext_resource type="PackedScene" uid="uid://dgky6fb515kki" path="res://Scenes/UI/SpamControls.tscn" id="2_u0sbl"]
+
+[node name="PlayerSpawner" type="Node2D"]
+script = ExtResource("1_tstku")
+
+[node name="SpamControls" parent="." instance=ExtResource("2_u0sbl")]
+position = Vector2(-528, -360)

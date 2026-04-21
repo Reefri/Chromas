@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccjabk2euu8yx"]
+
+[ext_resource type="PackedScene" uid="uid://dhfxd2fnfb7it" path="res://Scenes/ColoredEntity/Enemy/Enemy.tscn" id="1_4acdq"]
+[ext_resource type="Script" path="res://Scripts/Enemy/EnemyThree.cs" id="2_s52yt"]
+[ext_resource type="Texture2D" uid="uid://3q1j235v24gl" path="res://Assets/Enemies/EnemyThree.png" id="3_xmp8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywno2"]
+size = Vector2(62, 54)
+
+[node name="EnemyThree" instance=ExtResource("1_4acdq")]
+script = ExtResource("2_s52yt")
+
+[node name="CannonContainer" type="Node2D" parent="." index="0"]
+position = Vector2(-15, 0)
+scale = Vector2(0.417285, 0.427066)
+
+[node name="Cannon" type="Marker2D" parent="CannonContainer" index="0"]
+position = Vector2(51, -60)
+
+[node name="Cannon2" type="Marker2D" parent="CannonContainer" index="1"]
+position = Vector2(6, -105)
+
+[node name="Cannon3" type="Marker2D" parent="CannonContainer" index="2"]
+position = Vector2(8, 104)
+
+[node name="Cannon4" type="Marker2D" parent="CannonContainer" index="3"]
+position = Vector2(53, 59)
+
+[node name="Sprite2D" parent="Renderer" index="0"]
+position = Vector2(-24, 0)
+scale = Vector2(0.0406667, 0.0406667)
+texture = ExtResource("3_xmp8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" index="0"]
+position = Vector2(-8, 1)
+shape = SubResource("RectangleShape2D_ywno2")

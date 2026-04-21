@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmfds70mmc6ov"]
+
+[ext_resource type="Shader" uid="uid://bag1jea4np1gt" path="res://Resources/Shaders/circleRainbow.tres" id="1_vindp"]
+[ext_resource type="Script" path="res://Scripts/UI/LoadingScreen.cs" id="2_gvd05"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e0120"]
+shader = ExtResource("1_vindp")
+shader_parameter/speed = -20.0
+shader_parameter/centerPosition = Vector2(0.5, 0.5)
+shader_parameter/xCut = 0.283
+shader_parameter/Intensity = 0.025
+shader_parameter/xSpeed = 0.522
+shader_parameter/xOffSet = 0.241
+shader_parameter/yCut = 0.155
+shader_parameter/ySpeed = 0.21
+shader_parameter/yOffSet = 0.0
+shader_parameter/circleSize = 1.172
+shader_parameter/colorNumber = 9
+shader_parameter/saturation = 0.823
+shader_parameter/value = 0.691
+shader_parameter/close = 0.0
+
+[node name="LoadingScreen" type="ColorRect"]
+material = SubResource("ShaderMaterial_e0120")
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.79012
+script = ExtResource("2_gvd05")
+metadata/_edit_use_anchors_ = true

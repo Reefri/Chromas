@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjon7lpsccly"]
+
+[ext_resource type="Shader" uid="uid://dgxbrelgdf48b" path="res://CyclingColor.tres" id="1_od3pv"]
+[ext_resource type="Texture2D" uid="uid://dgna6aygmi21u" path="res://Assets/icon.svg" id="2_21vsx"]
+[ext_resource type="Shader" uid="uid://fdydib0mlodd" path="res://Resources/Shaders/NegatifCircle.tres" id="3_xf1cl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m047k"]
+shader = ExtResource("1_od3pv")
+shader_parameter/FloatParameter = 0.473
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y26ae"]
+shader = ExtResource("3_xf1cl")
+shader_parameter/ExplosionProgression = 0.444
+shader_parameter/Duration = 1.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_m047k")
+texture = ExtResource("2_21vsx")
+
+[node name="ColorRect" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_y26ae")
+position = Vector2(144, 64)
+texture = ExtResource("2_21vsx")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://k8eq08km8ucv"]
+
+[ext_resource type="PackedScene" uid="uid://c1yqr246fwp8w" path="res://Scenes/ColoredEntity/ColoredEntity.tscn" id="1_mjohg"]
+[ext_resource type="Script" path="res://Scripts/Boss/BossBullet.cs" id="2_6kacv"]
+[ext_resource type="Texture2D" uid="uid://gqqa1mpro433" path="res://Assets/ColorWheel/ColorCircle.png" id="3_ia6jj"]
+[ext_resource type="PackedScene" uid="uid://vsxbcxrmchv6" path="res://Resources/Utils/Effects/Trail/Trail.tscn" id="4_peenl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iigyl"]
+radius = 13.0384
+
+[sub_resource type="Curve" id="Curve_32ph5"]
+_data = [Vector2(0, 0.103448), 0.0, 0.0, 0, 0, Vector2(0.313333, 0.175172), 0.0, 0.0, 0, 0, Vector2(0.473333, 0.255862), 0.0, 0.0, 0, 0, Vector2(0.796667, 0.255862), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_tkdmn"]
+offsets = PackedFloat32Array(0.176692, 0.458647, 0.639098, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0.443137)
+
+[node name="BossBullet" node_paths=PackedStringArray("myTrail") instance=ExtResource("1_mjohg")]
+script = ExtResource("2_6kacv")
+myTrail = NodePath("Trail")
+
+[node name="Sprite2D" type="Sprite2D" parent="Renderer" index="0"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_ia6jj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" index="0"]
+shape = SubResource("CircleShape2D_iigyl")
+
+[node name="Trail" parent="." index="2" node_paths=PackedStringArray("reparentTarget", "positionTarget") instance=ExtResource("4_peenl")]
+width_curve = SubResource("Curve_32ph5")
+gradient = SubResource("Gradient_tkdmn")
+length = 50
+reparentTarget = NodePath("..")
+changePosition = true
+positionTarget = NodePath("..")

@@ -1,0 +1,405 @@
+[gd_scene load_steps=22 format=3 uid="uid://dsgeu7fpn8byw"]
+
+[ext_resource type="Texture2D" uid="uid://bol4f3xr63b64" path="res://Assets/HUD/HealthBar.png" id="1_2h5fq"]
+[ext_resource type="Texture2D" uid="uid://b68hv6y2iwh1d" path="res://Assets/HUD/UnderHealthBar.png" id="1_cbp0p"]
+[ext_resource type="Script" path="res://Scripts/UI/HUD.cs" id="1_q6ccl"]
+[ext_resource type="Texture2D" uid="uid://f60avgoo26ji" path="res://Assets/HUD/HealthBarFollow.png" id="2_inucl"]
+[ext_resource type="Texture2D" uid="uid://dse22rbw6ymwk" path="res://Assets/HUD/OverHealthBar.png" id="3_uefbe"]
+[ext_resource type="Texture2D" uid="uid://dnwb8psx7m3bn" path="res://Assets/Collectables/SmartBombHUD.png" id="6_qmgyv"]
+[ext_resource type="PackedScene" uid="uid://h8fbgcr6chyo" path="res://Resources/Utils/Effects/Shake/shaker.tscn" id="6_v3gun"]
+[ext_resource type="Texture2D" uid="uid://dh33dmx1pn370" path="res://Assets/Star.png" id="7_6m11y"]
+[ext_resource type="Texture2D" uid="uid://dpc6oc5708ugi" path="res://Assets/Boss/healthbar.png" id="7_p5cf1"]
+[ext_resource type="Texture2D" uid="uid://b8myc6wxp50xo" path="res://Assets/HUD/particules/part1.png" id="8_f0a4g"]
+[ext_resource type="Texture2D" uid="uid://df7x5h3iywbgt" path="res://Assets/HUD/particules/part2.png" id="9_j1r3m"]
+[ext_resource type="Texture2D" uid="uid://xi4m2ltjkk4u" path="res://Assets/HUD/particules/part3.png" id="10_8xdnp"]
+[ext_resource type="Texture2D" uid="uid://cru2xvdr237gh" path="res://Assets/HUD/particules/part4.png" id="11_o8xyn"]
+
+[sub_resource type="Gradient" id="Gradient_kujqj"]
+offsets = PackedFloat32Array(0.00212314, 0.673036, 1)
+colors = PackedColorArray(0.43, 0.43, 0.43, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mby2e"]
+gradient = SubResource("Gradient_kujqj")
+
+[sub_resource type="Curve" id="Curve_8a7ck"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.115619, 0.835506), 0.0, 0.0, 0, 0, Vector2(0.194726, 0.990031), 0.0, 0.0, 0, 0, Vector2(0.235294, 0.71089), 0.0, 0.0, 0, 0, Vector2(0.290061, 0.945169), 0.0, 0.0, 0, 0, Vector2(0.340771, 0.591258), 0.0, 0.0, 0, 0, Vector2(0.421907, 0.930215), 0.0, 0.0, 0, 0, Vector2(0.46856, 0.416794), 0.0, 0.0, 0, 0, Vector2(0.535497, 0.885353), 0.0, 0.0, 0, 0, Vector2(0.586207, 0.327071), 0.0, 0.0, 0, 0, Vector2(0.675456, 0.780675), 0.0, 0.0, 0, 0, Vector2(0.728195, 0.217408), 0.0, 0.0, 0, 0, Vector2(0.815416, 0.715874), 0.0, 0.0, 0, 0, Vector2(0.853955, 0.11273), 0.0, 0.0, 0, 0, Vector2(0.959432, 0.621166), 0.0, 0.0, 0, 0, Vector2(1, 0.00805211), 0.0, 0.0, 0, 0]
+point_count = 16
+
+[sub_resource type="CurveTexture" id="CurveTexture_6w6pf"]
+curve = SubResource("Curve_8a7ck")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uigge"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(10, 30, 0)
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(0, -1, 0)
+spread = 23.477
+initial_velocity_min = 515.54
+initial_velocity_max = 717.39
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+gravity = Vector3(0, 500, 0)
+scale_min = 0.2
+scale_max = 0.4
+scale_curve = SubResource("CurveTexture_6w6pf")
+color_ramp = SubResource("GradientTexture1D_mby2e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qsa2a"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(10, 50, 1)
+angle_min = -127.5
+angle_max = 720.0
+direction = Vector3(0, -1, 0)
+spread = 26.459
+initial_velocity_min = 81.55
+initial_velocity_max = 167.38
+angular_velocity_min = -327.55
+angular_velocity_max = 315.19
+gravity = Vector3(0, 100, 0)
+scale_min = 0.01
+scale_max = 0.02
+
+[sub_resource type="LabelSettings" id="LabelSettings_ou0o5"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_abgsd"]
+line_spacing = 40.0
+font_size = 40
+
+[node name="HUD" type="Control" node_paths=PackedStringArray("healthBar", "followBar", "partsContainer", "scoreLabel", "smartBombContainer", "godLabel", "bossBar", "bossHealthBar", "bossFollowBar", "bossAfterBar", "locker", "lockerShaker", "bossBarShaker", "lockerParticules")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q6ccl")
+healthBar = NodePath("HealthBar/TopBar")
+followBar = NodePath("HealthBar/BottomBar")
+partsContainer = NodePath("BossHealthBar/PartsContainer")
+scoreLabel = NodePath("ScoreLabel")
+smartBombContainer = NodePath("SmartBombContainer")
+godLabel = NodePath("GodLabel")
+bossBar = NodePath("BossHealthBar")
+bossHealthBar = NodePath("BossHealthBar/TopBar")
+bossFollowBar = NodePath("BossHealthBar/BottomBar")
+bossAfterBar = NodePath("BossHealthBar/AfterBar")
+locker = NodePath("BossHealthBar/TextureRect")
+lockerShaker = NodePath("LockerShaker")
+bossBarShaker = NodePath("BossBarShaker")
+lockerParticules = NodePath("BossHealthBar/GPUParticles2D")
+
+[node name="HealthBar" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 0.375
+anchor_bottom = 0.122
+offset_left = 3.0
+offset_right = -3.05176e-05
+offset_bottom = -0.0560074
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BottomBar" type="TextureProgressBar" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 10.0
+offset_right = -2.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 70.0
+nine_patch_stretch = true
+stretch_margin_top = 26
+stretch_margin_right = 100
+stretch_margin_bottom = 26
+texture_under = ExtResource("1_cbp0p")
+texture_progress = ExtResource("2_inucl")
+tint_progress = Color(1, 0.32, 0.32, 1)
+
+[node name="TopBar" type="TextureProgressBar" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 10.0
+offset_right = 1.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_top = 26
+stretch_margin_right = 100
+stretch_margin_bottom = 26
+texture_over = ExtResource("3_uefbe")
+texture_progress = ExtResource("1_2h5fq")
+tint_over = Color(1, 0, 0, 1)
+
+[node name="BossHealthBar" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.867
+anchor_right = 1.0
+anchor_bottom = 0.989
+offset_top = 0.18396
+offset_bottom = 0.127991
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BottomBar" type="TextureProgressBar" parent="BossHealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 577.0
+offset_top = 10.0
+offset_right = -2.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 70.0
+allow_lesser = true
+nine_patch_stretch = true
+stretch_margin_top = 26
+stretch_margin_right = 100
+stretch_margin_bottom = 26
+texture_under = ExtResource("1_cbp0p")
+texture_progress = ExtResource("2_inucl")
+tint_progress = Color(1, 0.32, 0.32, 1)
+
+[node name="AfterBar" type="TextureProgressBar" parent="BossHealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 577.0
+offset_top = 62.0
+offset_right = 23.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-1, -1)
+value = 58.0
+allow_greater = true
+allow_lesser = true
+nine_patch_stretch = true
+stretch_margin_top = 26
+stretch_margin_right = 100
+stretch_margin_bottom = 26
+texture_progress = ExtResource("2_inucl")
+tint_progress = Color(1, 0.32, 0.32, 1)
+
+[node name="TopBar" type="TextureProgressBar" parent="BossHealthBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.006
+anchor_right = 1.0
+anchor_bottom = 0.785
+offset_left = 583.912
+offset_top = 10.0
+offset_right = 1.0
+offset_bottom = -0.0150032
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_top = 26
+stretch_margin_right = 100
+stretch_margin_bottom = 26
+texture_over = ExtResource("3_uefbe")
+texture_progress = ExtResource("1_2h5fq")
+tint_over = Color(1, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="BossHealthBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.451
+anchor_top = -0.405
+anchor_right = 0.548
+anchor_bottom = 1.38
+offset_left = 0.447937
+offset_top = -0.00499725
+offset_right = -0.296021
+offset_bottom = -0.0200119
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_p5cf1")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Marker2D" type="Marker2D" parent="BossHealthBar/TextureRect"]
+position = Vector2(55.0001, 67.0001)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="BossHealthBar"]
+position = Vector2(575, 37)
+emitting = false
+amount = 120
+process_material = SubResource("ParticleProcessMaterial_uigge")
+texture = ExtResource("7_6m11y")
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.82
+
+[node name="PartsContainer" type="Node2D" parent="BossHealthBar"]
+
+[node name="Parts1" type="GPUParticles2D" parent="BossHealthBar/PartsContainer"]
+position = Vector2(575, 38.0001)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_qsa2a")
+texture = ExtResource("8_f0a4g")
+lifetime = 3.0
+
+[node name="Parts2" type="GPUParticles2D" parent="BossHealthBar/PartsContainer"]
+position = Vector2(575, 38.0001)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_qsa2a")
+texture = ExtResource("9_j1r3m")
+lifetime = 3.0
+
+[node name="Parts3" type="GPUParticles2D" parent="BossHealthBar/PartsContainer"]
+position = Vector2(575, 38.0001)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_qsa2a")
+texture = ExtResource("10_8xdnp")
+lifetime = 3.0
+
+[node name="Parts4" type="GPUParticles2D" parent="BossHealthBar/PartsContainer"]
+position = Vector2(575, 38.0001)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_qsa2a")
+texture = ExtResource("11_o8xyn")
+lifetime = 3.0
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.372
+anchor_right = 0.628
+anchor_bottom = 0.173
+offset_left = 0.455994
+offset_right = -0.456055
+offset_bottom = -0.104004
+grow_horizontal = 2
+text = "KEY_SCORE_LABEL
+"
+label_settings = SubResource("LabelSettings_ou0o5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SmartBombContainer" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.048
+anchor_top = 0.108
+anchor_right = 0.42
+anchor_bottom = 0.182
+offset_left = -0.296001
+offset_top = -1.984
+offset_right = 0.160004
+offset_bottom = 53.064
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="SmartBombContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.103
+anchor_top = -0.35
+anchor_right = 0.272
+anchor_bottom = 1.15
+offset_left = 0.187004
+offset_top = 0.0500031
+offset_right = -53.688
+offset_bottom = -51.45
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+size_flags_vertical = 4
+texture = ExtResource("6_qmgyv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="SmartBombContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.233
+anchor_top = -0.33
+anchor_right = 0.607
+anchor_bottom = 1.17
+offset_left = 0.0429993
+offset_top = -0.00999832
+offset_right = -53.403
+offset_bottom = -51.51
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+size_flags_vertical = 4
+texture = ExtResource("6_qmgyv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="SmartBombContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.566
+anchor_top = -0.359
+anchor_right = 0.941
+anchor_bottom = 1.141
+offset_left = 0.185974
+offset_top = -0.0229988
+offset_right = -53.689
+offset_bottom = -51.523
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+size_flags_vertical = 4
+texture = ExtResource("6_qmgyv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="GodLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.758
+anchor_top = 0.681
+anchor_right = 0.968
+anchor_bottom = 0.852
+offset_left = -0.216003
+offset_top = -0.288025
+offset_right = -0.136108
+offset_bottom = 2.90399
+grow_horizontal = 2
+grow_vertical = 2
+text = "GOD MODE"
+label_settings = SubResource("LabelSettings_abgsd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockerShaker" parent="." node_paths=PackedStringArray("_targets") instance=ExtResource("6_v3gun")]
+position = Vector2(0, 562)
+_targets = [NodePath("../BossHealthBar/TextureRect")]
+duration = 0.1
+amplitude = Vector2(7, 7)
+step = 0.024
+duration_ = 0.0
+_duration = 0.0
+
+[node name="BossBarShaker" parent="." node_paths=PackedStringArray("_targets") instance=ExtResource("6_v3gun")]
+position = Vector2(0, 562)
+_targets = [NodePath("../BossHealthBar")]
+duration = 0.0
+amplitudeMult = 3.0
+step = 0.024
+duration_ = 0.0
+_transition = 0
+_duration = 3.0

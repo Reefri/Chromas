@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://8ihpnxmrdai1"]
+
+[ext_resource type="PackedScene" uid="uid://c1yqr246fwp8w" path="res://Scenes/ColoredEntity/ColoredEntity.tscn" id="1_l1gob"]
+[ext_resource type="Script" path="res://Scripts/Obstacles/DestroyableObstacle.cs" id="2_7x0mj"]
+[ext_resource type="Texture2D" uid="uid://dyyaylyl276u1" path="res://Assets/destroyable2/1.png" id="3_jybi6"]
+[ext_resource type="Texture2D" uid="uid://bbvmq7an1slli" path="res://Assets/destroyable2/2.png" id="4_2uasq"]
+[ext_resource type="Texture2D" uid="uid://cfjqitrg5mdgk" path="res://Assets/destroyable2/3.png" id="5_qyvqx"]
+[ext_resource type="Texture2D" uid="uid://ua5oik6thvhv" path="res://Assets/destroyable2/4.png" id="6_vv1gl"]
+[ext_resource type="Texture2D" uid="uid://baetk7ndjngwv" path="res://Assets/destroyable2/5.png" id="7_o6dlc"]
+[ext_resource type="Texture2D" uid="uid://bootnv1a4x0bo" path="res://Assets/destroyable2/6.png" id="8_c2qfd"]
+[ext_resource type="Texture2D" uid="uid://clmcbvi26bcyg" path="res://Assets/destroyable2/7.png" id="9_74dqs"]
+[ext_resource type="Texture2D" uid="uid://ckb6if35g8mdj" path="res://Assets/destroyable2/8.png" id="10_0q6nm"]
+[ext_resource type="Texture2D" uid="uid://jy1p58sck50o" path="res://Assets/destroyable2/9.png" id="11_pdyxw"]
+[ext_resource type="Texture2D" uid="uid://ddvwnr46e6n1g" path="res://Assets/destroyable2/10.png" id="12_hoysa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67kp0"]
+size = Vector2(128, 128)
+
+[node name="DestroyableObstacle" instance=ExtResource("1_l1gob")]
+scale = Vector2(1.179, 1.179)
+script = ExtResource("2_7x0mj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Renderer" index="0"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_jybi6")
+
+[node name="Marker2D" type="Marker2D" parent="Renderer/Sprite2D" index="0"]
+position = Vector2(152.672, -474.979)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Renderer" index="1"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_2uasq")
+
+[node name="Marker2D3" type="Marker2D" parent="Renderer/Sprite2D2" index="0"]
+position = Vector2(491.942, -491.942)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Renderer" index="2"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_qyvqx")
+
+[node name="Marker2D4" type="Marker2D" parent="Renderer/Sprite2D3" index="0"]
+position = Vector2(949.958, -474.979)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Renderer" index="3"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_vv1gl")
+
+[node name="Marker2D5" type="Marker2D" parent="Renderer/Sprite2D4" index="0"]
+position = Vector2(610.687, -966.921)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Renderer" index="4"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_o6dlc")
+
+[node name="Marker2D7" type="Marker2D" parent="Renderer/Sprite2D5" index="0"]
+position = Vector2(-542.833, 932.994)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Renderer" index="5"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("8_c2qfd")
+
+[node name="Marker2D6" type="Marker2D" parent="Renderer/Sprite2D6" index="0"]
+position = Vector2(-983.885, 949.958)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Renderer" index="6"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("9_74dqs")
+
+[node name="Marker2D8" type="Marker2D" parent="Renderer/Sprite2D7" index="0"]
+position = Vector2(-152.672, 627.651)
+
+[node name="Sprite2D8" type="Sprite2D" parent="Renderer" index="7"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("10_0q6nm")
+
+[node name="Marker2D4" type="Marker2D" parent="Renderer/Sprite2D8" index="0"]
+position = Vector2(-763.359, 356.234)
+
+[node name="Sprite2D9" type="Sprite2D" parent="Renderer" index="8"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("11_pdyxw")
+
+[node name="Marker2D2" type="Marker2D" parent="Renderer/Sprite2D9" index="0"]
+position = Vector2(627.651, 474.979)
+
+[node name="Sprite2D10" type="Sprite2D" parent="Renderer" index="9"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_hoysa")
+
+[node name="Marker2D3" type="Marker2D" parent="Renderer/Sprite2D10" index="0"]
+position = Vector2(-610.687, -593.723)
+
+[node name="Collider" parent="." index="1"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" index="0"]
+shape = SubResource("RectangleShape2D_67kp0")

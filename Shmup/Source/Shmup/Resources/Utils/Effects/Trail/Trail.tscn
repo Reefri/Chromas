@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://vsxbcxrmchv6"]
+
+[ext_resource type="Script" path="res://Resources/Utils/Effects/Trail/Trail.cs" id="1_msrsf"]
+
+[sub_resource type="Curve" id="Curve_sn5kx"]
+_data = [Vector2(0.00514138, 0.72179), 0.0, 0.0, 0, 0, Vector2(0.285347, 0.374027), 0.0, 0.0, 0, 0, Vector2(0.48329, 0.203307), 0.0, 0.0, 0, 0, Vector2(0.81491, 0.140078), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[node name="Trail" type="Line2D"]
+points = PackedVector2Array(495, 123, 746, 340, 646, 531, 240, 462)
+width = 60.0
+width_curve = SubResource("Curve_sn5kx")
+begin_cap_mode = 1
+end_cap_mode = 2
+round_precision = 32
+script = ExtResource("1_msrsf")
+start = true

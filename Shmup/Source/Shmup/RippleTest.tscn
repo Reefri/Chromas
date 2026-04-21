@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://beuv1vqjtl7xq"]
+
+[ext_resource type="Shader" uid="uid://blktssgndrl0y" path="res://Resources/Shaders/RippleEffect.tres" id="1_pelfk"]
+[ext_resource type="Script" path="res://Scripts/Player/RippleEffect.cs" id="2_27lgu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqsm4"]
+shader = ExtResource("1_pelfk")
+shader_parameter/CenterPosition = null
+shader_parameter/radius = 0.0
+shader_parameter/maxRadius = 0.316
+shader_parameter/edge = 0.08
+shader_parameter/intensity = 20.0
+
+[node name="ColorRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_fqsm4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(10, 10)
+script = ExtResource("2_27lgu")

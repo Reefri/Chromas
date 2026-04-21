@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dem6ns6p21vq4"]
+
+[ext_resource type="PackedScene" uid="uid://c1yqr246fwp8w" path="res://Scenes/ColoredEntity/ColoredEntity.tscn" id="1_dhxns"]
+[ext_resource type="Texture2D" uid="uid://tnllco3rkngc" path="res://Assets/ColorWheel/CircleSelector.png" id="2_8augv"]
+[ext_resource type="Script" path="res://Scripts/Enemy/EnemyBullet.cs" id="2_yxqq2"]
+[ext_resource type="Shader" uid="uid://bwx21avv53vd0" path="res://Resources/Shaders/FlashDamage.tres" id="3_pmspp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_br8vr"]
+shader = ExtResource("3_pmspp")
+shader_parameter/isActive = false
+shader_parameter/Color = null
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q57ts"]
+size = Vector2(32, 32)
+
+[node name="EnemyBullet" instance=ExtResource("1_dhxns")]
+script = ExtResource("2_yxqq2")
+
+[node name="Renderer" parent="." index="0"]
+material = SubResource("ShaderMaterial_br8vr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Renderer" index="0"]
+visible = false
+use_parent_material = true
+scale = Vector2(0.254283, 0.254283)
+texture = ExtResource("2_8augv")
+
+[node name="ColorRect" type="ColorRect" parent="Renderer" index="1"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" index="0"]
+shape = SubResource("RectangleShape2D_q57ts")

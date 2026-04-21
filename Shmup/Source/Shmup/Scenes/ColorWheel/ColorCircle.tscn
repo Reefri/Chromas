@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt6ik1u5tymgi"]
+
+[ext_resource type="Texture2D" uid="uid://gqqa1mpro433" path="res://Assets/ColorWheel/ColorCircle.png" id="1_o8kh4"]
+
+[node name="ColorCircle" type="Sprite2D"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_o8kh4")

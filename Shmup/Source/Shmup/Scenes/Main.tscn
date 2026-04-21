@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://dhv1kngwgoolr"]
+
+[ext_resource type="Shader" uid="uid://dk4shguktbsp5" path="res://Resources/Shaders/ColorblindShader.tres" id="1_flwcb"]
+[ext_resource type="Script" path="res://Scripts/Manager/Main.cs" id="1_k7igh"]
+[ext_resource type="PackedScene" uid="uid://dnvq1cfyx3rvm" path="res://Scenes/UI/UIManager.tscn" id="2_8o6yi"]
+[ext_resource type="PackedScene" uid="uid://un0lgc16vvt0" path="res://Scenes/Manager/SoundManager.tscn" id="2_hbbvx"]
+[ext_resource type="Shader" uid="uid://cwharojmmtsm5" path="res://Resources/Shaders/ColorAberation.tres" id="3_rl6s5"]
+[ext_resource type="Script" path="res://Scripts/ColorAberation.cs" id="4_it2ac"]
+[ext_resource type="Script" path="res://Scripts/GlitchShake.cs" id="5_cfmd2"]
+[ext_resource type="Shader" uid="uid://bk0fxo4ycep3b" path="res://Resources/Shaders/Glitch.tres" id="5_nstdo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bf2aj"]
+shader = ExtResource("3_rl6s5")
+shader_parameter/red = Vector2(0, 0)
+shader_parameter/green = Vector2(0, 0)
+shader_parameter/blue = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j2kg4"]
+shader = ExtResource("5_nstdo")
+shader_parameter/accuracy = 10.06
+shader_parameter/position = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_maqvo"]
+shader = ExtResource("1_flwcb")
+shader_parameter/Color = Color(1, 1, 1, 1)
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("colorblindRect", "postProcessingNode", "chromaAberation", "glitchEffet")]
+script = ExtResource("1_k7igh")
+isFirstTimePlaying = false
+colorblindRect = NodePath("CanvasLayer/ColorRect")
+postProcessingNode = NodePath("PostProcessingContainer")
+chromaAberation = NodePath("PostProcessingContainer/CanvasLayer/ColorAberation")
+glitchEffet = NodePath("PostProcessingContainer/CanvasLayer2/Glitch")
+
+[node name="SoundManager" parent="." instance=ExtResource("2_hbbvx")]
+
+[node name="PostProcessingContainer" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PostProcessingContainer"]
+
+[node name="ColorAberation" type="ColorRect" parent="PostProcessingContainer/CanvasLayer"]
+material = SubResource("ShaderMaterial_bf2aj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_it2ac")
+duration = 0.1
+amplitude = Vector2(1, 1)
+amplitudeMult = 0.05
+duration_ = 0.0
+_transition = 4
+_ease = 1
+_duration = 1.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="PostProcessingContainer"]
+
+[node name="Glitch" type="ColorRect" parent="PostProcessingContainer/CanvasLayer2"]
+material = SubResource("ShaderMaterial_j2kg4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -179.0
+offset_top = -165.0
+offset_right = 255.0
+offset_bottom = 221.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_cfmd2")
+duration = 1.0
+amplitude = Vector2(1, 1)
+amplitudeMult = 0.08
+duration_ = 0.0
+_duration = 0.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UiManager" parent="CanvasLayer" instance=ExtResource("2_8o6yi")]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 1000
+material = SubResource("ShaderMaterial_maqvo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

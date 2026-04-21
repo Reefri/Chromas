@@ -1,0 +1,145 @@
+[gd_scene load_steps=22 format=3 uid="uid://dnvq1cfyx3rvm"]
+
+[ext_resource type="FontFile" uid="uid://cmm5jkoscerd0" path="res://Resources/Font/Paint Drops.ttf" id="1_1ou2w"]
+[ext_resource type="Script" path="res://Scripts/UI/UIManager.cs" id="1_mo5q3"]
+[ext_resource type="FontFile" uid="uid://srf3vkom0p7" path="res://Resources/Font/Savage Arcade.ttf" id="2_81yd3"]
+[ext_resource type="PackedScene" uid="uid://cb6sd0nfs25ec" path="res://Scenes/UI/PauseMenu.tscn" id="2_elxy4"]
+[ext_resource type="Texture2D" uid="uid://gqqa1mpro433" path="res://Assets/ColorWheel/ColorCircle.png" id="3_73vww"]
+[ext_resource type="Texture2D" uid="uid://tnllco3rkngc" path="res://Assets/ColorWheel/CircleSelector.png" id="4_f5wjw"]
+[ext_resource type="PackedScene" uid="uid://cojvggq2o2bx0" path="res://Scenes/UI/GameOver.tscn" id="4_gj38y"]
+[ext_resource type="PackedScene" uid="uid://cmfds70mmc6ov" path="res://Scenes/UI/LoadingScreen.tscn" id="4_io6m6"]
+[ext_resource type="Script" path="res://Scripts/Particules/MouseParticule.cs" id="4_ts6ui"]
+[ext_resource type="PackedScene" uid="uid://b34lmxrrk4iqd" path="res://Scenes/UI/IsartLogo.tscn" id="9_47xpq"]
+[ext_resource type="PackedScene" uid="uid://m3bdi4b5kyio" path="res://Scenes/UI/TitleScreen.tscn" id="10_jndnv"]
+[ext_resource type="PackedScene" uid="uid://d4f74utg2d5em" path="res://Resources/TileSet/HelpScreen.tscn" id="11_i5yvr"]
+[ext_resource type="PackedScene" uid="uid://dsgeu7fpn8byw" path="res://Scenes/UI/HUD.tscn" id="12_i82m3"]
+[ext_resource type="PackedScene" uid="uid://dk26f4op5eorx" path="res://Scenes/UI/Credits.tscn" id="13_32un1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nwh7r"]
+
+[sub_resource type="Theme" id="Theme_jsqn3"]
+default_font = ExtResource("2_81yd3")
+default_font_size = 20
+Button/fonts/font = ExtResource("1_1ou2w")
+Button/styles/focus = SubResource("StyleBoxEmpty_nwh7r")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.698039)
+Label/constants/outline_size = 8
+Label/constants/shadow_offset_x = 10
+Label/constants/shadow_offset_y = 10
+Label/fonts/font = ExtResource("2_81yd3")
+
+[sub_resource type="Curve" id="Curve_kbykq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.482422, 0.0639235), 0.0, 0.0, 0, 0, Vector2(0.878906, 0.0400441), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.565393), 0.0, 0.0, 0, 0, Vector2(1, 0), 1.4, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_t6qbt"]
+curve = SubResource("Curve_kbykq")
+
+[sub_resource type="Curve" id="Curve_if7r1"]
+max_value = 626.99
+_data = [Vector2(0, 626.99), 0.0, 0.0, 0, 0, Vector2(0.449219, 555.123), 0.0, 0.0, 0, 0, Vector2(0.580078, 1.15167), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_va07c"]
+curve = SubResource("Curve_if7r1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2jtwg"]
+lifetime_randomness = 0.09
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 13.556
+initial_velocity_min = 52.28
+initial_velocity_max = 52.28
+velocity_limit_curve = SubResource("CurveTexture_va07c")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_max = 0.25
+scale_curve = SubResource("CurveTexture_t6qbt")
+color = Color(1, 0, 0, 0.686275)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="UiManager" type="Control" node_paths=PackedStringArray("pauseMenu", "loadingScreen", "isartLogo", "titleScreen", "helpScreen", "hud", "creditsScreen", "background", "gameOver")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = SubResource("Theme_jsqn3")
+script = ExtResource("1_mo5q3")
+pauseMenu = NodePath("PauseMenu")
+loadingScreen = NodePath("LoadingScreen")
+isartLogo = NodePath("IsartLogo")
+titleScreen = NodePath("TitleScreen")
+helpScreen = NodePath("Help")
+hud = NodePath("HUD")
+creditsScreen = NodePath("Credits")
+background = NodePath("Background")
+gameOver = NodePath("GameOver")
+metadata/_edit_use_anchors_ = true
+
+[node name="HUD" parent="." instance=ExtResource("12_i82m3")]
+layout_mode = 1
+mouse_filter = 2
+
+[node name="LoadingScreen" parent="." instance=ExtResource("4_io6m6")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_elxy4")]
+layout_mode = 1
+
+[node name="MouseParticule" type="GPUParticles2D" parent="."]
+position = Vector2(320, 288)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_2jtwg")
+texture = ExtResource("3_73vww")
+lifetime = 5.0
+preprocess = 5.0
+script = ExtResource("4_ts6ui")
+
+[node name="MouseParticule2" type="GPUParticles2D" parent="."]
+position = Vector2(320, 288)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_2jtwg")
+texture = ExtResource("4_f5wjw")
+lifetime = 5.0
+preprocess = 2.5
+script = ExtResource("4_ts6ui")
+
+[node name="TitleScreen" parent="." instance=ExtResource("10_jndnv")]
+layout_mode = 1
+
+[node name="IsartLogo" parent="." instance=ExtResource("9_47xpq")]
+layout_mode = 1
+
+[node name="Help" parent="." instance=ExtResource("11_i5yvr")]
+layout_mode = 1
+
+[node name="Credits" parent="." instance=ExtResource("13_32un1")]
+z_index = 4
+layout_mode = 1
+
+[node name="GameOver" parent="." instance=ExtResource("4_gj38y")]
+z_index = -7
+layout_mode = 1
+
+[editable path="LoadingScreen"]

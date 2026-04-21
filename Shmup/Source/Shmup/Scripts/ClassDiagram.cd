@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Com.IsartDigital.Chromaberation.Player" Collapsed="true">
+    <Position X="15" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>WCDADKAEYqiAgATBAAbtMQABBEFJBawJSpoBcgGGYgA=</HashCode>
+      <FileName>Scripts\Player\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.MovableEntity" Collapsed="true">
+    <Position X="6.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAKAAIAAAAAAAAAAAAABAAQAAAgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\MovableEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.LevelParralaxe" Collapsed="true">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAgACGAAAAAAAAAQEAAAAEAAAAgAAAAAQAAA=</HashCode>
+      <FileName>Scripts\LevelParralaxe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.LevelManager" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCCUAAAgACAgAAAAIIIACRAFhIBQBAAAIgEADCBAgIE=</HashCode>
+      <FileName>Scripts\Manager\LevelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.ColorWheel" Collapsed="true">
+    <Position X="14" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAoAIBDGQAAAAAAAAAAgAAEAAAACAAAAgSAABAGAAA=</HashCode>
+      <FileName>Scripts\Player\ColorWheel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.ColorManager" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBAAAAIEAkAAAAwAAAQAAAIIARQAAAAACAAAAAAAIA=</HashCode>
+      <FileName>Scripts\Manager\ColorManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.Enemy" Collapsed="true">
+    <Position X="12.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAQAAAEACIABAAgAAAIAAACAABAAAAAAgAAACABAAA=</HashCode>
+      <FileName>Scripts\Enemy\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.Bullet" Collapsed="true">
+    <Position X="17.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAEACAAgAAAAAAAAAAAABAAABAAIgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Bullet\Bullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.ColorBlock" Collapsed="true">
+    <Position X="3" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAABAAAAAAAQAAQAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Level\ColorBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.EnemyBullet" Collapsed="true">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAEAAIAgAACABAAAEAAAAAAAMAAAgBAACCAAAI=</HashCode>
+      <FileName>Scripts\Enemy\EnemyBullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.EnemyOne" Collapsed="true">
+    <Position X="13.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAABAAAAAEAAAAgAABAAABEAABAAkAAAgAAAAAIAAA=</HashCode>
+      <FileName>Scripts\Enemy\EnemyOne.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.EnemyThree" Collapsed="true">
+    <Position X="11.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wIAAAAAAAAAgAAAKAAAAEAACIAhACACAAAAQAQAAAQA=</HashCode>
+      <FileName>Scripts\Enemy\EnemyThree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.EnemyTwo" Collapsed="true">
+    <Position X="11.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAgAAAEAABAAwWAAAAEgAAABAKgAAAwAAIAApACI=</HashCode>
+      <FileName>Scripts\Enemy\EnemyTwo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.PermanentMark" Collapsed="true">
+    <Position X="16.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAABAAAAAGAAAAAAAAAQAAAAABEAAQAAAgBAAACAAAA=</HashCode>
+      <FileName>Scripts\PermanentMark.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.Obstacle" Collapsed="true">
+    <Position X="10.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAQAAAEAABAAAAAAAAAAAAAAAAIAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Scripts\Obstacles\Obstacle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.DestroyableObstacle" Collapsed="true">
+    <Position X="10.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAABAAAAAAAABAAAAAAgAAAAACAAA=</HashCode>
+      <FileName>Scripts\Obstacles\DestroyableObstacle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.CameraManager" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QRAAoAIAiiAEAAAAAAAAMAhABABAAEgAAgAEIAAAAEA=</HashCode>
+      <FileName>Scripts\Manager\CameraManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.GameManager" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YABEABEAAiQAEAQgLAACAAAABAJJgISAJAABFRgKIAI=</HashCode>
+      <FileName>Scripts\Manager\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.GenericCollectable" Collapsed="true">
+    <Position X="23" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAAAAAAEAAAAAAAAAAAAgAAEAABAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Collectables\GenericCollectable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.Heal" Collapsed="true">
+    <Position X="20.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Collectables\Heal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.LevelUp" Collapsed="true">
+    <Position X="22" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Collectables\LevelUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.SmartBombCollectable" Collapsed="true">
+    <Position X="23.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Collectables\SmartBombCollectable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.NullCollectable" Collapsed="true">
+    <Position X="25.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Collectables\NullCollectable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.SmartBomb" Collapsed="true">
+    <Position X="4.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAEACAAgAAAAAAAAAAAAAAAAAAAAgAAAQAAAEA=</HashCode>
+      <FileName>Scripts\SmartBomb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.Explosion" Collapsed="true">
+    <Position X="4.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAQIAAAACAAAAAAAAAAACAAAASEAAAgAAAQAAAAA=</HashCode>
+      <FileName>Scripts\Enemy\Explosion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.HomingMissile" Collapsed="true">
+    <Position X="8.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAABRABAAACAAAAAEBAEAACCgADAAASAAkBACAgAEIA=</HashCode>
+      <FileName>Scripts\Enemy\HomingMissile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.ColoredEntity" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAABABFAAQACIAAAEAAAQIAAABgAICAAgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\ColoredEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.EnemySpawner" Collapsed="true">
+    <Position X="12.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAACAAAAAAAABAAAAAAAAAAAgAAAAACAAA=</HashCode>
+      <FileName>Scripts\Enemy\EnemySpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.BackgroundStarParticule" Collapsed="true">
+    <Position X="16.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Particules\BackgroundStarParticule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.MouseParticule" Collapsed="true">
+    <Position X="0.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAEA=</HashCode>
+      <FileName>Scripts\Particules\MouseParticule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.PauseMenu" Collapsed="true">
+    <Position X="4.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAACAAAbAEABBAAAAIACIgAAQAAAAAFYkIgQAQAAAA=</HashCode>
+      <FileName>Scripts\UI\PauseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.TitleScreen" Collapsed="true">
+    <Position X="0.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAABAAAAkAAAKAAACQAAAQAAAAIiABAAAAA=</HashCode>
+      <FileName>Scripts\UI\TitleScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.UIManager" Collapsed="true">
+    <Position X="1.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEALEJhEQNQBEIAAgICGAgQgDEBSIVBABggBQAQEJI8=</HashCode>
+      <FileName>Scripts\UI\UIManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.Main" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgBAgAACAgAAAAAEAAAAAABABgAIAAAAAAAEAABgA=</HashCode>
+      <FileName>Scripts\Manager\Main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.PlayerSpawner" Collapsed="true">
+    <Position X="15.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QABQQoAgACAgIQAAAAgCAAAKBQBAIZEBkAAAAAQGAEQ=</HashCode>
+      <FileName>Scripts\Player\PlayerSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.CustomButton" Collapsed="true">
+    <Position X="6" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAEgAAAAIIAAAAAAAEAAAAgAQCAAA=</HashCode>
+      <FileName>Scripts\UI\CustomButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.HelpScreen" Collapsed="true">
+    <Position X="4.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAgAAAAAAIAAAABEAKAAAAQAAAQAAAAAgAAAABAA=</HashCode>
+      <FileName>Scripts\UI\HelpScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.HUD" Collapsed="true">
+    <Position X="0.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>USAIJEQIAEACKhAQMAASChFgAQAAIgyAAlAgAiISAQI=</HashCode>
+      <FileName>Scripts\UI\HUD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.SpamControl" Collapsed="true">
+    <Position X="18" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QACAAAAAAAAAABAAAAAAAAgAAQAAAAgAAgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\UI\SpamControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.BossA" Collapsed="true">
+    <Position X="17.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UQKoBEUkCG5gQQcKCgAgAAtAJMBCAAgJCgBDNGAQByg=</HashCode>
+      <FileName>Scripts\Boss\BossA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.BossManager" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UQAAAQAAAiAiAIQACAAgABAgRABACgAAAgBDAAUDABA=</HashCode>
+      <FileName>Scripts\Boss\BossManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.CoreShaderSupport" Collapsed="true">
+    <Position X="16.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAAAAAAAACQAAAAAAAAAAAAAAAAAAAAAAgABAEAAAQA=</HashCode>
+      <FileName>Scripts\Player\CoreShaderSupport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.PlayerCore" Collapsed="true">
+    <Position X="15" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAIAAAAAAgAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Player\PlayerCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.LoadingScreen" Collapsed="true">
+    <Position X="4.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAARAAAAKAAAAAAAAAAIAIADAAAAgAAAgAAADA=</HashCode>
+      <FileName>Scripts\UI\LoadingScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.SoundManager" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAFCAxcCNYJgCQEABwDALFaIBAFgAAkgAIABKggWGQM=</HashCode>
+      <FileName>Scripts\Manager\SoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.ColorFilterPanel" Collapsed="true">
+    <Position X="1.5" Y="13" Width="1.5" />
+    <InheritanceLine Type="Com.IsartDigital.Chromaberation.UIPanel" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="12.691" />
+        <Point X="3.25" Y="12.846" />
+        <Point X="2.5" Y="12.846" />
+        <Point X="2.5" Y="13" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\UI\ColorFilterPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.Credits" Collapsed="true">
+    <Position X="2.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Scripts\UI\Credits.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.LanguagePanel" Collapsed="true">
+    <Position X="3.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\UI\LanguagePanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.UIPanel" Collapsed="true">
+    <Position X="2.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAKABAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Scripts\UI\UIPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.RippleEffect" Collapsed="true">
+    <Position X="18" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAoABAAAEAIAAAAEAAAAAAAACAAAAgUAQAECAAI=</HashCode>
+      <FileName>Scripts\Player\RippleEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.BossBullet" Collapsed="true">
+    <Position X="6.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAQIAAAACAAAAACAAAAAEAAAAAAAEAAIgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Boss\BossBullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.PassableObstacle" Collapsed="true">
+    <Position X="7.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAEAAAgAAACAAAAAJAAAAAAAIAQAgAAEAAAAAA=</HashCode>
+      <FileName>Scripts\Obstacles\PassableObstacle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.Particule" Collapsed="true">
+    <Position X="18" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCAAAAAAACAAAABAAIAAAAAAAAAAAAAAIgAAAAACAAA=</HashCode>
+      <FileName>Scripts\Particule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.KillableEntity" Collapsed="true">
+    <Position X="12.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAAQAAAAAAAAAAAEAAAAAAAgBDAAACAAgBACAAAAAA=</HashCode>
+      <FileName>Scripts\KillableEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.ControlProp" Collapsed="true">
+    <Position X="21.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAoAABAgAAAAAAACAAQAICAAAgAAAAAAgAAAA=</HashCode>
+      <FileName>Scripts\Enums\ControlProp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.GameOver" Collapsed="true">
+    <Position X="2.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIQAAAQQAAEAAAAAAAEQCAAAAAAAAAQAAkAgAAAAAAA=</HashCode>
+      <FileName>Scripts\UI\GameOver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.MyBaseButton" Collapsed="true">
+    <Position X="6" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\UI\MyBaseButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.BossBumpExplosion" Collapsed="true">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAEAAAAgAACAAAAAAQAAAAAAMBAAAAAAAAAECA=</HashCode>
+      <FileName>Scripts\Boss\BossBumpExplosion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.TickEvent" Collapsed="true">
+    <Position X="15.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAIgAAAAAAAAAAAAAgAIAAIAAAAAAEiCAEAAAAAA=</HashCode>
+      <FileName>Scripts\Ticks\TickEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TickEventAttack" Collapsed="true">
+    <Position X="21.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Ticks\TickEvents\TickEventAttack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TickEventBump" Collapsed="true">
+    <Position X="12.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Ticks\TickEvents\TickEventBump.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TickEventChangePhase" Collapsed="true">
+    <Position X="14.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Ticks\TickEvents\TickEventChangePhase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TickEventColor" Collapsed="true">
+    <Position X="16.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Ticks\TickEvents\TickEventColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TickEventExplosion" Collapsed="true">
+    <Position X="18" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Ticks\TickEvents\TickEventExplosion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.Spiner" Collapsed="true">
+    <Position X="17.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAAAAAAAAAAAAAAAAAAABAAAgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Boss\Spiner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.ColorProp" Collapsed="true">
+    <Position X="21.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAEABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Enums\ColorProp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.ShaderProp" Collapsed="true">
+    <Position X="23.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAQAAABAAAAAAACQAQICAgAAAAAYECAAAAAABAgAEA=</HashCode>
+      <FileName>Scripts\Enums\ShaderProp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.TweenProp" Collapsed="true">
+    <Position X="23.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAgAAAACAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Scripts\Enums\TweenProp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.LanguageProp" Collapsed="true">
+    <Position X="25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Enums\LanguageProp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.TickEventShake" Collapsed="true">
+    <Position X="19.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Ticks\TickEvents\TickEventShake.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.JuiceManager" Collapsed="true">
+    <Position X="22.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAgAAAAAAAAAAAARABAAAAAAgAQAgAAAAA=</HashCode>
+      <FileName>Scripts\Manager\JuiceManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.ConstrolSpiner" Collapsed="true">
+    <Position X="24.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAAAAAAAAAAAAAAAAAAABAAAgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\UI\ConstrolSpiner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.StartButton" Collapsed="true">
+    <Position X="6" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\UI\StartButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.ColorAberation" Collapsed="true">
+    <Position X="22.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCAAAYoIACAAGAAABBAAQAAEAIAgCBAEIgQACBJEAoA=</HashCode>
+      <FileName>Scripts\ColorAberation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.Chromaberation.GlitchShake" Collapsed="true">
+    <Position X="21" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAoIACAAGAAABBAAQAAEAIAgCBAEIgQACDJAAAA=</HashCode>
+      <FileName>Scripts\GlitchShake.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.ProjectName.BossExplosion" Collapsed="true">
+    <Position X="21" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Boss\BossExplosion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.ProjectName.UiScreen" Collapsed="true">
+    <Position X="21" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\UI\UiScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.IsartDigital.ProjectName.new_script" Collapsed="true">
+    <Position X="24.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAgAAAAAAAAAAAABABAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\new_script.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

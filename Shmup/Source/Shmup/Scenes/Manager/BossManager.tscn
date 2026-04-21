@@ -1,0 +1,69 @@
+[gd_scene load_steps=17 format=3 uid="uid://dyssm5472bl7l"]
+
+[ext_resource type="Script" path="res://Scripts/Boss/BossManager.cs" id="1_w11r1"]
+[ext_resource type="PackedScene" uid="uid://cmkcgsfth360i" path="res://Scenes/SmartBomb.tscn" id="2_4kyrb"]
+[ext_resource type="Texture2D" uid="uid://sowwb11wjyyh" path="res://Assets/colorBlock/inside.png" id="2_yjigq"]
+[ext_resource type="PackedScene" uid="uid://dagjchve17wj8" path="res://Scenes/Manager/BossA.tscn" id="3_idia4"]
+[ext_resource type="AudioStream" uid="uid://cn5mol2qvixpa" path="res://Audio/TickTracks/TickEventAttack.ogg" id="4_t80dc"]
+[ext_resource type="Script" path="res://Scripts/Ticks/TickEvents/TickEventAttack.cs" id="5_aw3y2"]
+[ext_resource type="AudioStream" uid="uid://doldufr5ni484" path="res://Audio/TickTracks/TickEventBump.ogg" id="6_wl6ro"]
+[ext_resource type="Script" path="res://Scripts/Ticks/TickEvents/TickEventBump.cs" id="7_ein3v"]
+[ext_resource type="AudioStream" uid="uid://dq336mvw1xraj" path="res://Audio/TickTracks/TickEventChangePhase.ogg" id="8_4lsf5"]
+[ext_resource type="Script" path="res://Scripts/Ticks/TickEvents/TickEventChangePhase.cs" id="9_erri1"]
+[ext_resource type="AudioStream" uid="uid://dvbmjh1ytj8l7" path="res://Audio/TickTracks/TickEventColor.ogg" id="10_yfamo"]
+[ext_resource type="Script" path="res://Scripts/Ticks/TickEvents/TickEventColor.cs" id="11_3nqaf"]
+[ext_resource type="AudioStream" uid="uid://cnlhi7yyvwroo" path="res://Audio/TickTracks/TickEventExplosion.ogg" id="12_4jcc8"]
+[ext_resource type="Script" path="res://Scripts/Ticks/TickEvents/TickEventExplosion.cs" id="13_5i18t"]
+[ext_resource type="AudioStream" uid="uid://b32yw1q7oq46q" path="res://Audio/TickTracks/TickEventShake.ogg" id="14_rturt"]
+[ext_resource type="Script" path="res://Scripts/Ticks/TickEvents/TickEventShake.cs" id="15_1nrf1"]
+
+[node name="BossManager" type="Node2D" node_paths=PackedStringArray("tickEventsContainer")]
+script = ExtResource("1_w11r1")
+tickEventsContainer = NodePath("TickEvents")
+smartBomb = ExtResource("2_4kyrb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(536, 352)
+scale = Vector2(0.350986, 0.334051)
+texture = ExtResource("2_yjigq")
+
+[node name="BossA" parent="." instance=ExtResource("3_idia4")]
+
+[node name="TickEvents" type="Node" parent="."]
+
+[node name="TickEventAttack" type="AudioStreamPlayer" parent="TickEvents"]
+stream = ExtResource("4_t80dc")
+autoplay = true
+bus = &"TickEventAttack"
+script = ExtResource("5_aw3y2")
+
+[node name="TickEventBump" type="AudioStreamPlayer" parent="TickEvents"]
+stream = ExtResource("6_wl6ro")
+autoplay = true
+bus = &"TickEventBump"
+script = ExtResource("7_ein3v")
+
+[node name="TickEventChangePhase" type="AudioStreamPlayer" parent="TickEvents"]
+stream = ExtResource("8_4lsf5")
+autoplay = true
+bus = &"TickEventChangePhase"
+script = ExtResource("9_erri1")
+
+[node name="TickEventColor" type="AudioStreamPlayer" parent="TickEvents"]
+stream = ExtResource("10_yfamo")
+autoplay = true
+bus = &"TickEventColor"
+script = ExtResource("11_3nqaf")
+
+[node name="TickEventExplosion" type="AudioStreamPlayer" parent="TickEvents"]
+stream = ExtResource("12_4jcc8")
+autoplay = true
+bus = &"TickEventExplosion"
+script = ExtResource("13_5i18t")
+
+[node name="TickEventShake" type="AudioStreamPlayer" parent="TickEvents"]
+stream = ExtResource("14_rturt")
+autoplay = true
+bus = &"TickEventShake"
+script = ExtResource("15_1nrf1")

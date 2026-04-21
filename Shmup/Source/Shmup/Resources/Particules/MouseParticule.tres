@@ -1,0 +1,30 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://dfgj6oscs2lf"]
+
+[sub_resource type="Curve" id="Curve_kbykq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.482422, 0.0639235), 0.0, 0.0, 0, 0, Vector2(0.878906, 0.0400441), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.565393), 0.0, 0.0, 0, 0, Vector2(1, 0), 1.4, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_t6qbt"]
+curve = SubResource("Curve_kbykq")
+
+[sub_resource type="Curve" id="Curve_if7r1"]
+max_value = 626.99
+_data = [Vector2(0, 626.99), 0.0, 0.0, 0, 0, Vector2(0.449219, 555.123), 0.0, 0.0, 0, 0, Vector2(0.580078, 1.15167), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_va07c"]
+curve = SubResource("Curve_if7r1")
+
+[resource]
+lifetime_randomness = 0.09
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 13.556
+initial_velocity_min = 52.28
+initial_velocity_max = 52.28
+velocity_limit_curve = SubResource("CurveTexture_va07c")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_t6qbt")
+hue_variation_max = 1.0

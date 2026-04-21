@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://b34lmxrrk4iqd"]
+
+[ext_resource type="Texture2D" uid="uid://dnd7e8s1gkrf2" path="res://Assets/Logos_Isart/LOGO-ISART_baselineEN_150DPI_white.png" id="1_3n0qa"]
+[ext_resource type="Shader" uid="uid://bj22xl0e7jjgj" path="res://Resources/Shaders/Gradient.tres" id="2_c3vp2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ax3di"]
+shader = ExtResource("2_c3vp2")
+shader_parameter/ToggleUpDown = null
+shader_parameter/margin = 0.41
+
+[node name="ColorRect" type="ColorRect"]
+z_index = -1
+material = SubResource("ShaderMaterial_ax3di")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.552941)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.180392, 1)
+
+[node name="IsartLogo2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.130208
+anchor_top = -0.135802
+anchor_right = 1.13021
+anchor_bottom = 1.1358
+offset_left = 400.0
+offset_top = 248.0
+offset_right = -400.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3n0qa")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true

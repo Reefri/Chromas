@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://d330w1fsc8kva"]
+
+[ext_resource type="PackedScene" uid="uid://dhfxd2fnfb7it" path="res://Scenes/ColoredEntity/Enemy/Enemy.tscn" id="1_thn8d"]
+[ext_resource type="Script" path="res://Scripts/Enemy/EnemyOne.cs" id="2_1koma"]
+[ext_resource type="Texture2D" uid="uid://jb0leoq516o7" path="res://Assets/Enemies/PopCorn/EnemyOne.png" id="2_14vim"]
+[ext_resource type="Texture2D" uid="uid://tnllco3rkngc" path="res://Assets/ColorWheel/CircleSelector.png" id="5_8io3a"]
+
+[sub_resource type="Gradient" id="Gradient_t30yl"]
+offsets = PackedFloat32Array(0.0443038, 0.237342, 0.996835)
+colors = PackedColorArray(0.24, 0.24, 0.24, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vfqob"]
+gradient = SubResource("Gradient_t30yl")
+
+[sub_resource type="Curve" id="Curve_wg86i"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.529586, 0.713349), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1o2ly"]
+curve = SubResource("Curve_wg86i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hubey"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 30, 1)
+angle_max = 720.0
+direction = Vector3(-1, 0, 0)
+spread = 11.129
+initial_velocity_min = 430.11
+initial_velocity_max = 618.28
+gravity = Vector3(0, 0, 0)
+scale_min = 0.07
+scale_max = 0.07
+scale_curve = SubResource("CurveTexture_1o2ly")
+color_ramp = SubResource("GradientTexture1D_vfqob")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkqvp"]
+size = Vector2(128, 128)
+
+[node name="EnemyOne" instance=ExtResource("1_thn8d")]
+position = Vector2(8, 0)
+scale = Vector2(0.293034, 0.293034)
+script = ExtResource("2_1koma")
+
+[node name="Renderer" parent="." index="0"]
+scale = Vector2(0.79214, 0.486044)
+
+[node name="Sprite2D" parent="Renderer" index="0"]
+scale = Vector2(0.349274, 0.420818)
+texture = ExtResource("2_14vim")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Renderer" index="1"]
+position = Vector2(-68.9287, 0)
+scale = Vector2(1.2624, 2.05743)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_hubey")
+texture = ExtResource("5_8io3a")
+preprocess = 2.0
+
+[node name="Collider" parent="." index="1"]
+position = Vector2(-8, 4.76837e-07)
+scale = Vector2(0.775058, 0.512802)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" index="0"]
+shape = SubResource("RectangleShape2D_rkqvp")

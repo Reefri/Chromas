@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dltdrg7y3g1b4"]
+
+[ext_resource type="PackedScene" uid="uid://dxwsbg3s8lha" path="res://Scenes/Spawner/EnemySpawner.tscn" id="1_ri2mq"]
+[ext_resource type="PackedScene" uid="uid://3e1dkaspgknx" path="res://Scenes/ColoredEntity/Enemy/EnemyTwo.tscn" id="2_7d3dk"]
+
+[node name="EnemyTwoSpawner" instance=ExtResource("1_ri2mq")]
+marginBeforeActivating = 10.0
+
+[node name="EnemyTwo" parent="." index="0" instance=ExtResource("2_7d3dk")]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://m4age58r4w2c"]
+
+[ext_resource type="PackedScene" uid="uid://c1yqr246fwp8w" path="res://Scenes/ColoredEntity/ColoredEntity.tscn" id="1_vxxsh"]
+[ext_resource type="Script" path="res://Scripts/Level/ColorBlock.cs" id="2_ha741"]
+[ext_resource type="Texture2D" uid="uid://sowwb11wjyyh" path="res://Assets/colorBlock/inside.png" id="3_50xb8"]
+[ext_resource type="Texture2D" uid="uid://crd8mmbicva74" path="res://Assets/colorBlock/outline.png" id="4_0hf4c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bbgp"]
+size = Vector2(130, 106)
+
+[node name="ColoredBlock" instance=ExtResource("1_vxxsh")]
+script = ExtResource("2_ha741")
+margin = 70.0
+color = Color(0, 0, 0, 1)
+
+[node name="Renderer" parent="." index="0"]
+position = Vector2(22, 28)
+scale = Vector2(0.368146, 0.368146)
+
+[node name="Sprite2D" type="Sprite2D" parent="Renderer" index="0"]
+position = Vector2(-65.1915, -73.3405)
+scale = Vector2(0.157546, 0.157546)
+texture = ExtResource("3_50xb8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Renderer" index="1"]
+visible = false
+texture = ExtResource("4_0hf4c")
+
+[node name="Collider" parent="." index="1"]
+position = Vector2(-64, -48)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" index="0"]
+position = Vector2(63, 51)
+scale = Vector2(1.17736, 1.46177)
+shape = SubResource("RectangleShape2D_6bbgp")

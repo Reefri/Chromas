@@ -1,0 +1,99 @@
+[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://5adfoay6us72"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_e007q"]
+parameter_name = "color"
+default_value_enabled = true
+default_value = Color(0, 0, 0, 1)
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_dmc03"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeVectorDistance" id="VisualShaderNodeVectorDistance_dagp8"]
+default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 0)]
+op_type = 0
+
+[sub_resource type="VisualShaderNodeVec2Constant" id="VisualShaderNodeVec2Constant_c5dhk"]
+constant = Vector2(0.5, 0.5)
+
+[sub_resource type="VisualShaderNodeCompare" id="VisualShaderNodeCompare_6gsfp"]
+function = 5
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_274jl"]
+constant = 0.5
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_uejir"]
+parameter_name = "progression"
+hint = 1
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_h1l7r"]
+operator = 2
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform vec4 color : source_color = vec4(0.000000, 0.000000, 0.000000, 1.000000);
+uniform float progression : hint_range(0, 1);
+
+
+
+void fragment() {
+// ColorParameter:10
+	vec4 n_out10p0 = color;
+
+
+// Input:2
+	vec2 n_out2p0 = UV;
+
+
+// Vector2Constant:5
+	vec2 n_out5p0 = vec2(0.500000, 0.500000);
+
+
+// Distance:3
+	float n_out3p0 = distance(n_out2p0, n_out5p0);
+
+
+// FloatParameter:8
+	float n_out8p0 = progression;
+
+
+// FloatConstant:7
+	float n_out7p0 = 0.500000;
+
+
+// FloatOp:9
+	float n_out9p0 = n_out8p0 * n_out7p0;
+
+
+// Compare:6
+	bool n_out6p0 = n_out3p0 <= n_out9p0;
+
+
+// Output:0
+	COLOR.rgb = vec3(n_out10p0.xyz);
+	COLOR.a = (n_out6p0 ? 1.0 : 0.0);
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(560, 60)
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_dmc03")
+nodes/fragment/2/position = Vector2(-580, 420)
+nodes/fragment/3/node = SubResource("VisualShaderNodeVectorDistance_dagp8")
+nodes/fragment/3/position = Vector2(-120, 500)
+nodes/fragment/5/node = SubResource("VisualShaderNodeVec2Constant_c5dhk")
+nodes/fragment/5/position = Vector2(-340, 580)
+nodes/fragment/6/node = SubResource("VisualShaderNodeCompare_6gsfp")
+nodes/fragment/6/position = Vector2(140, 500)
+nodes/fragment/7/node = SubResource("VisualShaderNodeFloatConstant_274jl")
+nodes/fragment/7/position = Vector2(-140, 920)
+nodes/fragment/8/node = SubResource("VisualShaderNodeFloatParameter_uejir")
+nodes/fragment/8/position = Vector2(-580, 800)
+nodes/fragment/9/node = SubResource("VisualShaderNodeFloatOp_h1l7r")
+nodes/fragment/9/position = Vector2(-20, 680)
+nodes/fragment/10/node = SubResource("VisualShaderNodeColorParameter_e007q")
+nodes/fragment/10/position = Vector2(-280, 40)
+nodes/fragment/connections = PackedInt32Array(5, 0, 3, 1, 2, 0, 3, 0, 3, 0, 6, 0, 6, 0, 0, 1, 7, 0, 9, 1, 8, 0, 9, 0, 9, 0, 6, 1, 10, 0, 0, 0)

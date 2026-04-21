@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdt6gnfdv3qoh"]
+
+[ext_resource type="Script" path="res://Scripts/Manager/CameraManager.cs" id="1_l70v6"]
+
+[node name="CameraContainer" type="Node2D"]
+script = ExtResource("1_l70v6")
+
+[node name="Camera" type="Camera2D" parent="."]

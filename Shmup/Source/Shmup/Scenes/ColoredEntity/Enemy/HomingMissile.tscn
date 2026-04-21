@@ -1,0 +1,92 @@
+[gd_scene load_steps=16 format=3 uid="uid://dmfs65144x1e2"]
+
+[ext_resource type="PackedScene" uid="uid://c1yqr246fwp8w" path="res://Scenes/ColoredEntity/ColoredEntity.tscn" id="1_cs7wn"]
+[ext_resource type="Script" path="res://Scripts/Enemy/HomingMissile.cs" id="2_yvu6m"]
+[ext_resource type="Texture2D" uid="uid://b3uahia67wfrm" path="res://Assets/HomingMissile.png" id="3_y366e"]
+[ext_resource type="PackedScene" uid="uid://vsxbcxrmchv6" path="res://Resources/Utils/Effects/Trail/Trail.tscn" id="4_y2x6h"]
+[ext_resource type="Texture2D" uid="uid://tnllco3rkngc" path="res://Assets/ColorWheel/CircleSelector.png" id="5_yhi82"]
+[ext_resource type="Texture2D" uid="uid://gqqa1mpro433" path="res://Assets/ColorWheel/ColorCircle.png" id="6_pouof"]
+
+[sub_resource type="Gradient" id="Gradient_2np1r"]
+offsets = PackedFloat32Array(0.16875, 0.20625)
+colors = PackedColorArray(0, 0, 0, 0.745098, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jp0g2"]
+gradient = SubResource("Gradient_2np1r")
+
+[sub_resource type="Curve" id="Curve_vd2jk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.123077, 0.580992), 0.0, 0.0, 0, 0, Vector2(0.526923, 0.355372), 0.0, 0.0, 0, 0, Vector2(0.792308, 0.709917), 0.0, 0.0, 0, 0, Vector2(0.884615, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="CurveTexture" id="CurveTexture_yk6uf"]
+curve = SubResource("Curve_vd2jk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ec0p8"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 9.376
+initial_velocity_min = 187.03
+initial_velocity_max = 187.03
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_yk6uf")
+color = Color(0.92, 0.92, 0.92, 1)
+color_ramp = SubResource("GradientTexture1D_jp0g2")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0oqhk"]
+radius = 20.0
+
+[sub_resource type="Curve" id="Curve_hmhqv"]
+_data = [Vector2(0, 0.118407), 0.0, 0.0, 0, 0, Vector2(1, 0.130345), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_0gri5"]
+_data = [Vector2(0, 0.363448), 0.0, 0.0, 0, 0, Vector2(0.13, 0.121379), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_d1xeg"]
+offsets = PackedFloat32Array(0, 0.989362)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0.498039)
+
+[node name="HomingMissile" instance=ExtResource("1_cs7wn")]
+script = ExtResource("2_yvu6m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Renderer" index="0"]
+scale = Vector2(0.0266667, 0.0266667)
+texture = ExtResource("3_y366e")
+
+[node name="Node2D" type="Node2D" parent="Renderer" index="1"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Renderer/Node2D" index="0"]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_ec0p8")
+texture = ExtResource("5_yhi82")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Renderer/Node2D" index="1"]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_ec0p8")
+texture = ExtResource("6_pouof")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" index="0"]
+shape = SubResource("CircleShape2D_0oqhk")
+
+[node name="Trail3" parent="." index="2" node_paths=PackedStringArray("reparentTarget") instance=ExtResource("4_y2x6h")]
+position = Vector2(104, 96)
+points = PackedVector2Array(0, 0, 408, -16, 848, -16, 928, 240, 928, 464, 584, 480, 360, 448, 104, 432, 56, 176, 384, 296, 512, 152, 696, 272)
+width_curve = SubResource("Curve_hmhqv")
+length = 50
+reparent = true
+reparentTarget = NodePath("..")
+changeColor = false
+
+[node name="Trail2" parent="." index="3" node_paths=PackedStringArray("reparentTarget") instance=ExtResource("4_y2x6h")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(104, 96)
+points = PackedVector2Array(0, 0, 408, -16, 848, -16, 928, 240, 928, 464, 584, 480, 360, 448, 104, 432, 56, 176, 384, 296, 512, 152, 696, 272)
+width_curve = SubResource("Curve_0gri5")
+gradient = SubResource("Gradient_d1xeg")
+length = 50
+reparent = true
+reparentTarget = NodePath("..")

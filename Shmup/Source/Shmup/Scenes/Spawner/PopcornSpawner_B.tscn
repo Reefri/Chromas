@@ -1,0 +1,130 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxfjky4yxcxov"]
+
+[ext_resource type="PackedScene" uid="uid://dxwsbg3s8lha" path="res://Scenes/Spawner/EnemySpawner.tscn" id="1_13waf"]
+[ext_resource type="PackedScene" uid="uid://d330w1fsc8kva" path="res://Scenes/ColoredEntity/Enemy/EnemyOne.tscn" id="1_mwtyv"]
+
+[node name="PopCornSpawner2" instance=ExtResource("1_13waf")]
+marginBeforeActivating = -100.0
+
+[node name="EnemyOne2" parent="." index="0" instance=ExtResource("1_mwtyv")]
+position = Vector2(62, -67)
+colorIndex = 4
+colorGivenTroughtCode = true
+
+[node name="EnemyOne5" parent="." index="1" instance=ExtResource("1_mwtyv")]
+position = Vector2(62, 46)
+colorIndex = 4
+colorGivenTroughtCode = true
+
+[node name="EnemyOne22" parent="." index="2" instance=ExtResource("1_mwtyv")]
+position = Vector2(19, -85)
+
+[node name="EnemyOne29" parent="." index="3" instance=ExtResource("1_mwtyv")]
+position = Vector2(41, -32)
+
+[node name="EnemyOne34" parent="." index="4" instance=ExtResource("1_mwtyv")]
+position = Vector2(40, 10)
+
+[node name="EnemyOne35" parent="." index="5" instance=ExtResource("1_mwtyv")]
+position = Vector2(18, 65)
+
+[node name="EnemyOne42" parent="." index="6" instance=ExtResource("1_mwtyv")]
+position = Vector2(59, 91)
+
+[node name="EnemyOne37" parent="." index="7" instance=ExtResource("1_mwtyv")]
+position = Vector2(58, -110)
+
+[node name="EnemyOne9" parent="." index="8" instance=ExtResource("1_mwtyv")]
+position = Vector2(103, -127)
+colorIndex = 8
+colorGivenTroughtCode = true
+
+[node name="EnemyOne10" parent="." index="9" instance=ExtResource("1_mwtyv")]
+position = Vector2(104, -88)
+colorIndex = 8
+colorGivenTroughtCode = true
+
+[node name="EnemyOne11" parent="." index="10" instance=ExtResource("1_mwtyv")]
+position = Vector2(107, -46)
+colorIndex = 8
+colorGivenTroughtCode = true
+
+[node name="EnemyOne12" parent="." index="11" instance=ExtResource("1_mwtyv")]
+position = Vector2(108, -8)
+colorIndex = 8
+colorGivenTroughtCode = true
+
+[node name="EnemyOne13" parent="." index="12" instance=ExtResource("1_mwtyv")]
+position = Vector2(107, 28)
+colorIndex = 8
+colorGivenTroughtCode = true
+
+[node name="EnemyOne14" parent="." index="13" instance=ExtResource("1_mwtyv")]
+position = Vector2(108, 75)
+colorIndex = 8
+colorGivenTroughtCode = true
+
+[node name="EnemyOne15" parent="." index="14" instance=ExtResource("1_mwtyv")]
+position = Vector2(108, 109)
+colorIndex = 8
+colorGivenTroughtCode = true
+
+[node name="EnemyOne17" parent="." index="15" instance=ExtResource("1_mwtyv")]
+position = Vector2(145, -26)
+colorIndex = 3
+colorGivenTroughtCode = true
+
+[node name="EnemyOne18" parent="." index="16" instance=ExtResource("1_mwtyv")]
+position = Vector2(146, 17)
+colorIndex = 3
+colorGivenTroughtCode = true
+
+[node name="EnemyOne20" parent="." index="17" instance=ExtResource("1_mwtyv")]
+position = Vector2(154, 64)
+colorIndex = 3
+colorGivenTroughtCode = true
+
+[node name="EnemyOne23" parent="." index="18" instance=ExtResource("1_mwtyv")]
+position = Vector2(153, -85)
+colorIndex = 3
+colorGivenTroughtCode = true
+
+[node name="EnemyOne26" parent="." index="19" instance=ExtResource("1_mwtyv")]
+position = Vector2(190, -5)
+colorIndex = 7
+colorGivenTroughtCode = true
+
+[node name="EnemyOne31" parent="." index="20" instance=ExtResource("1_mwtyv")]
+position = Vector2(230, -28)
+colorIndex = 2
+colorGivenTroughtCode = true
+
+[node name="EnemyOne32" parent="." index="21" instance=ExtResource("1_mwtyv")]
+position = Vector2(231, 16)
+colorIndex = 2
+colorGivenTroughtCode = true
+
+[node name="EnemyOne33" parent="." index="22" instance=ExtResource("1_mwtyv")]
+position = Vector2(196, 45)
+colorIndex = 2
+colorGivenTroughtCode = true
+
+[node name="EnemyOne38" parent="." index="23" instance=ExtResource("1_mwtyv")]
+position = Vector2(198, -66)
+colorIndex = 2
+colorGivenTroughtCode = true
+
+[node name="EnemyOne39" parent="." index="24" instance=ExtResource("1_mwtyv")]
+position = Vector2(272, -44)
+colorIndex = 6
+colorGivenTroughtCode = true
+
+[node name="EnemyOne41" parent="." index="25" instance=ExtResource("1_mwtyv")]
+position = Vector2(276, 37)
+colorIndex = 6
+colorGivenTroughtCode = true
+
+[node name="EnemyOne54" parent="." index="26" instance=ExtResource("1_mwtyv")]
+position = Vector2(275, -5)
+colorIndex = 5
+colorGivenTroughtCode = true

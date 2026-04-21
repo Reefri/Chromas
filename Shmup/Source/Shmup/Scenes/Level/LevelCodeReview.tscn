@@ -1,0 +1,1670 @@
+[gd_scene load_steps=12 format=3 uid="uid://3muiq6dhy5h3"]
+
+[ext_resource type="PackedScene" uid="uid://cgbn3co3v65sy" path="res://Scenes/LevelParralaxe.tscn" id="1_8p2xt"]
+[ext_resource type="PackedScene" uid="uid://be2rpqdomxopo" path="res://Scenes/Spawner/PlayerSpawner.tscn" id="2_dgppc"]
+[ext_resource type="PackedScene" uid="uid://dgcvvh41vi35x" path="res://Scenes/Spawner/EnemyOneSpawner.tscn" id="3_64thb"]
+[ext_resource type="PackedScene" uid="uid://d3ighn07byywo" path="res://Scenes/Obstacles/Obstacles.tscn" id="4_mme6r"]
+[ext_resource type="PackedScene" uid="uid://dltdrg7y3g1b4" path="res://Scenes/Spawner/EnemyTwoSpawner.tscn" id="5_cdp3q"]
+[ext_resource type="PackedScene" uid="uid://dyssm5472bl7l" path="res://Scenes/Manager/BossManager.tscn" id="5_vyblc"]
+[ext_resource type="PackedScene" uid="uid://8ihpnxmrdai1" path="res://Scenes/Obstacles/DestroyableObstacles.tscn" id="6_tjrw8"]
+[ext_resource type="PackedScene" uid="uid://dkhx10kht8sdc" path="res://Scenes/Spawner/EnemyThreeSpawner.tscn" id="7_3uuie"]
+[ext_resource type="PackedScene" uid="uid://b815j3hvkx0vh" path="res://Scenes/Collectables/Heal.tscn" id="8_xth4b"]
+[ext_resource type="PackedScene" uid="uid://chyahv5rt4jrq" path="res://Scenes/Collectables/SmartBombCollectable.tscn" id="9_1k3jd"]
+[ext_resource type="PackedScene" uid="uid://bxfs12e1e2mng" path="res://Scenes/Collectables/LevelUp.tscn" id="10_s5syx"]
+
+[node name="LevelCodeReview" node_paths=PackedStringArray("playerSpawner") instance=ExtResource("1_8p2xt")]
+isBackground = false
+playerSpawner = NodePath("PlayerSpawner")
+
+[node name="PlayerSpawner" parent="." index="0" instance=ExtResource("2_dgppc")]
+position = Vector2(104, 328)
+doSpawn = false
+
+[node name="EnemyOne" type="Node2D" parent="." index="1"]
+position = Vector2(728, 360)
+
+[node name="EnemyOneSpawner" parent="EnemyOne" index="0" instance=ExtResource("3_64thb")]
+position = Vector2(168, 0)
+
+[node name="EnemyOne" parent="EnemyOne/EnemyOneSpawner" index="0"]
+colorIndex = 4
+
+[node name="EnemyOneSpawner2" parent="EnemyOne" index="1" instance=ExtResource("3_64thb")]
+
+[node name="EnemyOne" parent="EnemyOne/EnemyOneSpawner2" index="0"]
+colorIndex = 4
+
+[node name="EnemyOneSpawner3" parent="EnemyOne" index="2" instance=ExtResource("3_64thb")]
+position = Vector2(-168, -8)
+
+[node name="EnemyOne" parent="EnemyOne/EnemyOneSpawner3" index="0"]
+colorIndex = 4
+
+[node name="Obstacle" type="Node2D" parent="." index="2"]
+position = Vector2(128, 8)
+
+[node name="Obstacle2" parent="Obstacle" index="0" instance=ExtResource("4_mme6r")]
+position = Vector2(1032, 288)
+
+[node name="Obstacle3" parent="Obstacle" index="1" instance=ExtResource("4_mme6r")]
+position = Vector2(1032, 432)
+
+[node name="EnemyTwo" type="Node2D" parent="." index="3"]
+position = Vector2(1792, 344)
+
+[node name="EnemyTwoSpawner" parent="EnemyTwo" index="0" instance=ExtResource("5_cdp3q")]
+position = Vector2(-280, 0)
+
+[node name="EnemyTwo" parent="EnemyTwo/EnemyTwoSpawner" index="0"]
+colorIndex = 7
+
+[node name="EnemyTwoSpawner2" parent="EnemyTwo" index="1" instance=ExtResource("5_cdp3q")]
+
+[node name="EnemyTwo" parent="EnemyTwo/EnemyTwoSpawner2" index="0"]
+colorIndex = 7
+
+[node name="EnemyTwoSpawner3" parent="EnemyTwo" index="2" instance=ExtResource("5_cdp3q")]
+position = Vector2(320, 0)
+
+[node name="EnemyTwo" parent="EnemyTwo/EnemyTwoSpawner3" index="0"]
+colorIndex = 7
+
+[node name="DestroyableObstacle" type="Node2D" parent="." index="4"]
+position = Vector2(2488, 288)
+
+[node name="DestroyableObstacle2" parent="DestroyableObstacle" index="0" instance=ExtResource("6_tjrw8")]
+colorIndex = 2
+
+[node name="DestroyableObstacle3" parent="DestroyableObstacle" index="1" instance=ExtResource("6_tjrw8")]
+position = Vector2(0, 120)
+colorIndex = 2
+
+[node name="EnemyThree" type="Node2D" parent="." index="5"]
+position = Vector2(2944, 336)
+
+[node name="EnemyThreeSpawner" parent="EnemyThree" index="0" instance=ExtResource("7_3uuie")]
+position = Vector2(-144, 16)
+
+[node name="EnemyThree" parent="EnemyThree/EnemyThreeSpawner" index="0"]
+colorIndex = 8
+
+[node name="EnemyThreeSpawner2" parent="EnemyThree" index="1" instance=ExtResource("7_3uuie")]
+position = Vector2(176, 0)
+
+[node name="EnemyThree" parent="EnemyThree/EnemyThreeSpawner2" index="0"]
+colorIndex = 8
+
+[node name="EnemyThreeSpawner3" parent="EnemyThree" index="2" instance=ExtResource("7_3uuie")]
+position = Vector2(536, -8)
+
+[node name="EnemyThree" parent="EnemyThree/EnemyThreeSpawner3" index="0"]
+colorIndex = 8
+
+[node name="DestroyableObstacle2" type="Node2D" parent="." index="6"]
+position = Vector2(3824, 272)
+
+[node name="DestroyableObstacle2" parent="DestroyableObstacle2" index="0" instance=ExtResource("6_tjrw8")]
+colorIndex = 1
+
+[node name="DestroyableObstacle3" parent="DestroyableObstacle2" index="1" instance=ExtResource("6_tjrw8")]
+position = Vector2(0, 120)
+colorIndex = 1
+
+[node name="UpBonus" type="Node2D" parent="." index="7"]
+position = Vector2(96, 160)
+
+[node name="Heal" parent="UpBonus" index="0" instance=ExtResource("8_xth4b")]
+position = Vector2(-88, 0)
+
+[node name="SmartBombCollectable" parent="UpBonus" index="1" instance=ExtResource("9_1k3jd")]
+position = Vector2(-16, 0)
+
+[node name="Heal2" parent="UpBonus" index="2" instance=ExtResource("8_xth4b")]
+position = Vector2(64, 0)
+
+[node name="SmartBombCollectable2" parent="UpBonus" index="3" instance=ExtResource("9_1k3jd")]
+position = Vector2(136, 0)
+
+[node name="Heal3" parent="UpBonus" index="4" instance=ExtResource("8_xth4b")]
+position = Vector2(216, 0)
+
+[node name="SmartBombCollectable3" parent="UpBonus" index="5" instance=ExtResource("9_1k3jd")]
+position = Vector2(288, 0)
+
+[node name="Heal4" parent="UpBonus" index="6" instance=ExtResource("8_xth4b")]
+position = Vector2(368, 0)
+
+[node name="SmartBombCollectable4" parent="UpBonus" index="7" instance=ExtResource("9_1k3jd")]
+position = Vector2(440, 0)
+
+[node name="Heal5" parent="UpBonus" index="8" instance=ExtResource("8_xth4b")]
+position = Vector2(520, 0)
+
+[node name="SmartBombCollectable5" parent="UpBonus" index="9" instance=ExtResource("9_1k3jd")]
+position = Vector2(592, 0)
+
+[node name="Heal6" parent="UpBonus" index="10" instance=ExtResource("8_xth4b")]
+position = Vector2(672, 0)
+
+[node name="SmartBombCollectable6" parent="UpBonus" index="11" instance=ExtResource("9_1k3jd")]
+position = Vector2(744, 0)
+
+[node name="Heal7" parent="UpBonus" index="12" instance=ExtResource("8_xth4b")]
+position = Vector2(824, 0)
+
+[node name="SmartBombCollectable7" parent="UpBonus" index="13" instance=ExtResource("9_1k3jd")]
+position = Vector2(896, 0)
+
+[node name="Heal8" parent="UpBonus" index="14" instance=ExtResource("8_xth4b")]
+position = Vector2(976, 0)
+
+[node name="SmartBombCollectable8" parent="UpBonus" index="15" instance=ExtResource("9_1k3jd")]
+position = Vector2(1048, 0)
+
+[node name="Heal9" parent="UpBonus" index="16" instance=ExtResource("8_xth4b")]
+position = Vector2(1120, 0)
+
+[node name="SmartBombCollectable9" parent="UpBonus" index="17" instance=ExtResource("9_1k3jd")]
+position = Vector2(1192, 0)
+
+[node name="Heal10" parent="UpBonus" index="18" instance=ExtResource("8_xth4b")]
+position = Vector2(1272, 0)
+
+[node name="SmartBombCollectable10" parent="UpBonus" index="19" instance=ExtResource("9_1k3jd")]
+position = Vector2(1344, 0)
+
+[node name="Heal11" parent="UpBonus" index="20" instance=ExtResource("8_xth4b")]
+position = Vector2(1424, 0)
+
+[node name="SmartBombCollectable11" parent="UpBonus" index="21" instance=ExtResource("9_1k3jd")]
+position = Vector2(1496, 0)
+
+[node name="Heal12" parent="UpBonus" index="22" instance=ExtResource("8_xth4b")]
+position = Vector2(1576, 0)
+
+[node name="SmartBombCollectable12" parent="UpBonus" index="23" instance=ExtResource("9_1k3jd")]
+position = Vector2(1648, 0)
+
+[node name="Heal13" parent="UpBonus" index="24" instance=ExtResource("8_xth4b")]
+position = Vector2(1728, 0)
+
+[node name="SmartBombCollectable13" parent="UpBonus" index="25" instance=ExtResource("9_1k3jd")]
+position = Vector2(1800, 0)
+
+[node name="Heal14" parent="UpBonus" index="26" instance=ExtResource("8_xth4b")]
+position = Vector2(1880, 0)
+
+[node name="SmartBombCollectable14" parent="UpBonus" index="27" instance=ExtResource("9_1k3jd")]
+position = Vector2(1952, 0)
+
+[node name="Heal15" parent="UpBonus" index="28" instance=ExtResource("8_xth4b")]
+position = Vector2(2032, 0)
+
+[node name="SmartBombCollectable15" parent="UpBonus" index="29" instance=ExtResource("9_1k3jd")]
+position = Vector2(2104, 0)
+
+[node name="Heal16" parent="UpBonus" index="30" instance=ExtResource("8_xth4b")]
+position = Vector2(2184, 0)
+
+[node name="SmartBombCollectable16" parent="UpBonus" index="31" instance=ExtResource("9_1k3jd")]
+position = Vector2(2256, 0)
+
+[node name="Heal17" parent="UpBonus" index="32" instance=ExtResource("8_xth4b")]
+position = Vector2(2336, 0)
+
+[node name="SmartBombCollectable17" parent="UpBonus" index="33" instance=ExtResource("9_1k3jd")]
+position = Vector2(2408, 0)
+
+[node name="Heal18" parent="UpBonus" index="34" instance=ExtResource("8_xth4b")]
+position = Vector2(2488, 0)
+
+[node name="SmartBombCollectable18" parent="UpBonus" index="35" instance=ExtResource("9_1k3jd")]
+position = Vector2(2560, 0)
+
+[node name="Heal19" parent="UpBonus" index="36" instance=ExtResource("8_xth4b")]
+position = Vector2(2640, 0)
+
+[node name="SmartBombCollectable19" parent="UpBonus" index="37" instance=ExtResource("9_1k3jd")]
+position = Vector2(2712, 0)
+
+[node name="Heal20" parent="UpBonus" index="38" instance=ExtResource("8_xth4b")]
+position = Vector2(2792, 0)
+
+[node name="SmartBombCollectable20" parent="UpBonus" index="39" instance=ExtResource("9_1k3jd")]
+position = Vector2(2864, 0)
+
+[node name="Heal21" parent="UpBonus" index="40" instance=ExtResource("8_xth4b")]
+position = Vector2(2944, 0)
+
+[node name="SmartBombCollectable21" parent="UpBonus" index="41" instance=ExtResource("9_1k3jd")]
+position = Vector2(3016, 0)
+
+[node name="Heal22" parent="UpBonus" index="42" instance=ExtResource("8_xth4b")]
+position = Vector2(3096, 0)
+
+[node name="SmartBombCollectable22" parent="UpBonus" index="43" instance=ExtResource("9_1k3jd")]
+position = Vector2(3168, 0)
+
+[node name="Heal23" parent="UpBonus" index="44" instance=ExtResource("8_xth4b")]
+position = Vector2(3248, 0)
+
+[node name="SmartBombCollectable23" parent="UpBonus" index="45" instance=ExtResource("9_1k3jd")]
+position = Vector2(3320, 0)
+
+[node name="Heal24" parent="UpBonus" index="46" instance=ExtResource("8_xth4b")]
+position = Vector2(3400, 0)
+
+[node name="SmartBombCollectable24" parent="UpBonus" index="47" instance=ExtResource("9_1k3jd")]
+position = Vector2(3472, 0)
+
+[node name="Heal25" parent="UpBonus" index="48" instance=ExtResource("8_xth4b")]
+position = Vector2(3544, 0)
+
+[node name="SmartBombCollectable25" parent="UpBonus" index="49" instance=ExtResource("9_1k3jd")]
+position = Vector2(3616, 0)
+
+[node name="Heal26" parent="UpBonus" index="50" instance=ExtResource("8_xth4b")]
+position = Vector2(3696, 0)
+
+[node name="SmartBombCollectable26" parent="UpBonus" index="51" instance=ExtResource("9_1k3jd")]
+position = Vector2(3768, 0)
+
+[node name="Heal27" parent="UpBonus" index="52" instance=ExtResource("8_xth4b")]
+position = Vector2(3848, 0)
+
+[node name="SmartBombCollectable27" parent="UpBonus" index="53" instance=ExtResource("9_1k3jd")]
+position = Vector2(3920, 0)
+
+[node name="Heal28" parent="UpBonus" index="54" instance=ExtResource("8_xth4b")]
+position = Vector2(4000, 0)
+
+[node name="SmartBombCollectable28" parent="UpBonus" index="55" instance=ExtResource("9_1k3jd")]
+position = Vector2(4072, 0)
+
+[node name="Heal29" parent="UpBonus" index="56" instance=ExtResource("8_xth4b")]
+position = Vector2(4152, 0)
+
+[node name="SmartBombCollectable29" parent="UpBonus" index="57" instance=ExtResource("9_1k3jd")]
+position = Vector2(4224, 0)
+
+[node name="Heal30" parent="UpBonus" index="58" instance=ExtResource("8_xth4b")]
+position = Vector2(4304, 0)
+
+[node name="SmartBombCollectable30" parent="UpBonus" index="59" instance=ExtResource("9_1k3jd")]
+position = Vector2(4376, 0)
+
+[node name="Heal31" parent="UpBonus" index="60" instance=ExtResource("8_xth4b")]
+position = Vector2(4456, 0)
+
+[node name="SmartBombCollectable31" parent="UpBonus" index="61" instance=ExtResource("9_1k3jd")]
+position = Vector2(4528, 0)
+
+[node name="Heal32" parent="UpBonus" index="62" instance=ExtResource("8_xth4b")]
+position = Vector2(4608, 0)
+
+[node name="SmartBombCollectable32" parent="UpBonus" index="63" instance=ExtResource("9_1k3jd")]
+position = Vector2(4680, 0)
+
+[node name="Heal33" parent="UpBonus" index="64" instance=ExtResource("8_xth4b")]
+position = Vector2(4760, 0)
+
+[node name="SmartBombCollectable33" parent="UpBonus" index="65" instance=ExtResource("9_1k3jd")]
+position = Vector2(4832, 0)
+
+[node name="Heal34" parent="UpBonus" index="66" instance=ExtResource("8_xth4b")]
+position = Vector2(4912, 0)
+
+[node name="SmartBombCollectable34" parent="UpBonus" index="67" instance=ExtResource("9_1k3jd")]
+position = Vector2(4984, 0)
+
+[node name="Heal35" parent="UpBonus" index="68" instance=ExtResource("8_xth4b")]
+position = Vector2(5064, 0)
+
+[node name="SmartBombCollectable35" parent="UpBonus" index="69" instance=ExtResource("9_1k3jd")]
+position = Vector2(5136, 0)
+
+[node name="Heal36" parent="UpBonus" index="70" instance=ExtResource("8_xth4b")]
+position = Vector2(5216, 0)
+
+[node name="SmartBombCollectable36" parent="UpBonus" index="71" instance=ExtResource("9_1k3jd")]
+position = Vector2(5288, 0)
+
+[node name="Heal37" parent="UpBonus" index="72" instance=ExtResource("8_xth4b")]
+position = Vector2(5368, 0)
+
+[node name="SmartBombCollectable37" parent="UpBonus" index="73" instance=ExtResource("9_1k3jd")]
+position = Vector2(5440, 0)
+
+[node name="Heal38" parent="UpBonus" index="74" instance=ExtResource("8_xth4b")]
+position = Vector2(5520, 0)
+
+[node name="SmartBombCollectable38" parent="UpBonus" index="75" instance=ExtResource("9_1k3jd")]
+position = Vector2(5592, 0)
+
+[node name="Heal39" parent="UpBonus" index="76" instance=ExtResource("8_xth4b")]
+position = Vector2(5672, 0)
+
+[node name="SmartBombCollectable39" parent="UpBonus" index="77" instance=ExtResource("9_1k3jd")]
+position = Vector2(5744, 0)
+
+[node name="Heal40" parent="UpBonus" index="78" instance=ExtResource("8_xth4b")]
+position = Vector2(5824, 0)
+
+[node name="SmartBombCollectable40" parent="UpBonus" index="79" instance=ExtResource("9_1k3jd")]
+position = Vector2(5896, 0)
+
+[node name="Heal41" parent="UpBonus" index="80" instance=ExtResource("8_xth4b")]
+position = Vector2(5968, 0)
+
+[node name="SmartBombCollectable41" parent="UpBonus" index="81" instance=ExtResource("9_1k3jd")]
+position = Vector2(6040, 0)
+
+[node name="Heal42" parent="UpBonus" index="82" instance=ExtResource("8_xth4b")]
+position = Vector2(6120, 0)
+
+[node name="SmartBombCollectable42" parent="UpBonus" index="83" instance=ExtResource("9_1k3jd")]
+position = Vector2(6192, 0)
+
+[node name="Heal43" parent="UpBonus" index="84" instance=ExtResource("8_xth4b")]
+position = Vector2(6272, 0)
+
+[node name="SmartBombCollectable43" parent="UpBonus" index="85" instance=ExtResource("9_1k3jd")]
+position = Vector2(6344, 0)
+
+[node name="Heal44" parent="UpBonus" index="86" instance=ExtResource("8_xth4b")]
+position = Vector2(6424, 0)
+
+[node name="SmartBombCollectable44" parent="UpBonus" index="87" instance=ExtResource("9_1k3jd")]
+position = Vector2(6496, 0)
+
+[node name="Heal45" parent="UpBonus" index="88" instance=ExtResource("8_xth4b")]
+position = Vector2(6576, 0)
+
+[node name="SmartBombCollectable45" parent="UpBonus" index="89" instance=ExtResource("9_1k3jd")]
+position = Vector2(6648, 0)
+
+[node name="Heal46" parent="UpBonus" index="90" instance=ExtResource("8_xth4b")]
+position = Vector2(6728, 0)
+
+[node name="SmartBombCollectable46" parent="UpBonus" index="91" instance=ExtResource("9_1k3jd")]
+position = Vector2(6800, 0)
+
+[node name="Heal47" parent="UpBonus" index="92" instance=ExtResource("8_xth4b")]
+position = Vector2(6880, 0)
+
+[node name="SmartBombCollectable47" parent="UpBonus" index="93" instance=ExtResource("9_1k3jd")]
+position = Vector2(6952, 0)
+
+[node name="Heal48" parent="UpBonus" index="94" instance=ExtResource("8_xth4b")]
+position = Vector2(7032, 0)
+
+[node name="SmartBombCollectable48" parent="UpBonus" index="95" instance=ExtResource("9_1k3jd")]
+position = Vector2(7104, 0)
+
+[node name="Heal49" parent="UpBonus" index="96" instance=ExtResource("8_xth4b")]
+position = Vector2(7184, 0)
+
+[node name="SmartBombCollectable49" parent="UpBonus" index="97" instance=ExtResource("9_1k3jd")]
+position = Vector2(7256, 0)
+
+[node name="Heal50" parent="UpBonus" index="98" instance=ExtResource("8_xth4b")]
+position = Vector2(7336, 0)
+
+[node name="SmartBombCollectable50" parent="UpBonus" index="99" instance=ExtResource("9_1k3jd")]
+position = Vector2(7408, 0)
+
+[node name="Heal51" parent="UpBonus" index="100" instance=ExtResource("8_xth4b")]
+position = Vector2(7488, 0)
+
+[node name="SmartBombCollectable51" parent="UpBonus" index="101" instance=ExtResource("9_1k3jd")]
+position = Vector2(7560, 0)
+
+[node name="Heal52" parent="UpBonus" index="102" instance=ExtResource("8_xth4b")]
+position = Vector2(7640, 0)
+
+[node name="SmartBombCollectable52" parent="UpBonus" index="103" instance=ExtResource("9_1k3jd")]
+position = Vector2(7712, 0)
+
+[node name="Heal53" parent="UpBonus" index="104" instance=ExtResource("8_xth4b")]
+position = Vector2(7792, 0)
+
+[node name="SmartBombCollectable53" parent="UpBonus" index="105" instance=ExtResource("9_1k3jd")]
+position = Vector2(7864, 0)
+
+[node name="Heal54" parent="UpBonus" index="106" instance=ExtResource("8_xth4b")]
+position = Vector2(7944, 0)
+
+[node name="SmartBombCollectable54" parent="UpBonus" index="107" instance=ExtResource("9_1k3jd")]
+position = Vector2(8016, 0)
+
+[node name="Heal55" parent="UpBonus" index="108" instance=ExtResource("8_xth4b")]
+position = Vector2(8096, 0)
+
+[node name="SmartBombCollectable55" parent="UpBonus" index="109" instance=ExtResource("9_1k3jd")]
+position = Vector2(8168, 0)
+
+[node name="Heal56" parent="UpBonus" index="110" instance=ExtResource("8_xth4b")]
+position = Vector2(8248, 0)
+
+[node name="SmartBombCollectable56" parent="UpBonus" index="111" instance=ExtResource("9_1k3jd")]
+position = Vector2(8320, 0)
+
+[node name="Heal57" parent="UpBonus" index="112" instance=ExtResource("8_xth4b")]
+position = Vector2(8392, 0)
+
+[node name="SmartBombCollectable57" parent="UpBonus" index="113" instance=ExtResource("9_1k3jd")]
+position = Vector2(8464, 0)
+
+[node name="Heal58" parent="UpBonus" index="114" instance=ExtResource("8_xth4b")]
+position = Vector2(8544, 0)
+
+[node name="SmartBombCollectable58" parent="UpBonus" index="115" instance=ExtResource("9_1k3jd")]
+position = Vector2(8616, 0)
+
+[node name="Heal59" parent="UpBonus" index="116" instance=ExtResource("8_xth4b")]
+position = Vector2(8696, 0)
+
+[node name="SmartBombCollectable59" parent="UpBonus" index="117" instance=ExtResource("9_1k3jd")]
+position = Vector2(8768, 0)
+
+[node name="Heal60" parent="UpBonus" index="118" instance=ExtResource("8_xth4b")]
+position = Vector2(8848, 0)
+
+[node name="SmartBombCollectable60" parent="UpBonus" index="119" instance=ExtResource("9_1k3jd")]
+position = Vector2(8920, 0)
+
+[node name="Heal61" parent="UpBonus" index="120" instance=ExtResource("8_xth4b")]
+position = Vector2(9000, 0)
+
+[node name="SmartBombCollectable61" parent="UpBonus" index="121" instance=ExtResource("9_1k3jd")]
+position = Vector2(9072, 0)
+
+[node name="Heal62" parent="UpBonus" index="122" instance=ExtResource("8_xth4b")]
+position = Vector2(9152, 0)
+
+[node name="SmartBombCollectable62" parent="UpBonus" index="123" instance=ExtResource("9_1k3jd")]
+position = Vector2(9224, 0)
+
+[node name="Heal63" parent="UpBonus" index="124" instance=ExtResource("8_xth4b")]
+position = Vector2(9304, 0)
+
+[node name="SmartBombCollectable63" parent="UpBonus" index="125" instance=ExtResource("9_1k3jd")]
+position = Vector2(9376, 0)
+
+[node name="Heal64" parent="UpBonus" index="126" instance=ExtResource("8_xth4b")]
+position = Vector2(9456, 0)
+
+[node name="SmartBombCollectable64" parent="UpBonus" index="127" instance=ExtResource("9_1k3jd")]
+position = Vector2(9528, 0)
+
+[node name="UpBonus2" type="Node2D" parent="." index="8"]
+position = Vector2(9784, 160)
+
+[node name="Heal" parent="UpBonus2" index="0" instance=ExtResource("8_xth4b")]
+position = Vector2(-88, 0)
+
+[node name="SmartBombCollectable" parent="UpBonus2" index="1" instance=ExtResource("9_1k3jd")]
+position = Vector2(-16, 0)
+
+[node name="Heal2" parent="UpBonus2" index="2" instance=ExtResource("8_xth4b")]
+position = Vector2(64, 0)
+
+[node name="SmartBombCollectable2" parent="UpBonus2" index="3" instance=ExtResource("9_1k3jd")]
+position = Vector2(136, 0)
+
+[node name="Heal3" parent="UpBonus2" index="4" instance=ExtResource("8_xth4b")]
+position = Vector2(216, 0)
+
+[node name="SmartBombCollectable3" parent="UpBonus2" index="5" instance=ExtResource("9_1k3jd")]
+position = Vector2(288, 0)
+
+[node name="Heal4" parent="UpBonus2" index="6" instance=ExtResource("8_xth4b")]
+position = Vector2(368, 0)
+
+[node name="SmartBombCollectable4" parent="UpBonus2" index="7" instance=ExtResource("9_1k3jd")]
+position = Vector2(440, 0)
+
+[node name="Heal5" parent="UpBonus2" index="8" instance=ExtResource("8_xth4b")]
+position = Vector2(520, 0)
+
+[node name="SmartBombCollectable5" parent="UpBonus2" index="9" instance=ExtResource("9_1k3jd")]
+position = Vector2(592, 0)
+
+[node name="Heal6" parent="UpBonus2" index="10" instance=ExtResource("8_xth4b")]
+position = Vector2(672, 0)
+
+[node name="SmartBombCollectable6" parent="UpBonus2" index="11" instance=ExtResource("9_1k3jd")]
+position = Vector2(744, 0)
+
+[node name="Heal7" parent="UpBonus2" index="12" instance=ExtResource("8_xth4b")]
+position = Vector2(824, 0)
+
+[node name="SmartBombCollectable7" parent="UpBonus2" index="13" instance=ExtResource("9_1k3jd")]
+position = Vector2(896, 0)
+
+[node name="Heal8" parent="UpBonus2" index="14" instance=ExtResource("8_xth4b")]
+position = Vector2(976, 0)
+
+[node name="SmartBombCollectable8" parent="UpBonus2" index="15" instance=ExtResource("9_1k3jd")]
+position = Vector2(1048, 0)
+
+[node name="Heal9" parent="UpBonus2" index="16" instance=ExtResource("8_xth4b")]
+position = Vector2(1120, 0)
+
+[node name="SmartBombCollectable9" parent="UpBonus2" index="17" instance=ExtResource("9_1k3jd")]
+position = Vector2(1192, 0)
+
+[node name="Heal10" parent="UpBonus2" index="18" instance=ExtResource("8_xth4b")]
+position = Vector2(1272, 0)
+
+[node name="SmartBombCollectable10" parent="UpBonus2" index="19" instance=ExtResource("9_1k3jd")]
+position = Vector2(1344, 0)
+
+[node name="Heal11" parent="UpBonus2" index="20" instance=ExtResource("8_xth4b")]
+position = Vector2(1424, 0)
+
+[node name="SmartBombCollectable11" parent="UpBonus2" index="21" instance=ExtResource("9_1k3jd")]
+position = Vector2(1496, 0)
+
+[node name="Heal12" parent="UpBonus2" index="22" instance=ExtResource("8_xth4b")]
+position = Vector2(1576, 0)
+
+[node name="SmartBombCollectable12" parent="UpBonus2" index="23" instance=ExtResource("9_1k3jd")]
+position = Vector2(1648, 0)
+
+[node name="Heal13" parent="UpBonus2" index="24" instance=ExtResource("8_xth4b")]
+position = Vector2(1728, 0)
+
+[node name="SmartBombCollectable13" parent="UpBonus2" index="25" instance=ExtResource("9_1k3jd")]
+position = Vector2(1800, 0)
+
+[node name="Heal14" parent="UpBonus2" index="26" instance=ExtResource("8_xth4b")]
+position = Vector2(1880, 0)
+
+[node name="SmartBombCollectable14" parent="UpBonus2" index="27" instance=ExtResource("9_1k3jd")]
+position = Vector2(1952, 0)
+
+[node name="Heal15" parent="UpBonus2" index="28" instance=ExtResource("8_xth4b")]
+position = Vector2(2032, 0)
+
+[node name="SmartBombCollectable15" parent="UpBonus2" index="29" instance=ExtResource("9_1k3jd")]
+position = Vector2(2104, 0)
+
+[node name="Heal16" parent="UpBonus2" index="30" instance=ExtResource("8_xth4b")]
+position = Vector2(2184, 0)
+
+[node name="SmartBombCollectable16" parent="UpBonus2" index="31" instance=ExtResource("9_1k3jd")]
+position = Vector2(2256, 0)
+
+[node name="Heal17" parent="UpBonus2" index="32" instance=ExtResource("8_xth4b")]
+position = Vector2(2336, 0)
+
+[node name="SmartBombCollectable17" parent="UpBonus2" index="33" instance=ExtResource("9_1k3jd")]
+position = Vector2(2408, 0)
+
+[node name="Heal18" parent="UpBonus2" index="34" instance=ExtResource("8_xth4b")]
+position = Vector2(2488, 0)
+
+[node name="SmartBombCollectable18" parent="UpBonus2" index="35" instance=ExtResource("9_1k3jd")]
+position = Vector2(2560, 0)
+
+[node name="Heal19" parent="UpBonus2" index="36" instance=ExtResource("8_xth4b")]
+position = Vector2(2640, 0)
+
+[node name="SmartBombCollectable19" parent="UpBonus2" index="37" instance=ExtResource("9_1k3jd")]
+position = Vector2(2712, 0)
+
+[node name="Heal20" parent="UpBonus2" index="38" instance=ExtResource("8_xth4b")]
+position = Vector2(2792, 0)
+
+[node name="SmartBombCollectable20" parent="UpBonus2" index="39" instance=ExtResource("9_1k3jd")]
+position = Vector2(2864, 0)
+
+[node name="Heal21" parent="UpBonus2" index="40" instance=ExtResource("8_xth4b")]
+position = Vector2(2944, 0)
+
+[node name="SmartBombCollectable21" parent="UpBonus2" index="41" instance=ExtResource("9_1k3jd")]
+position = Vector2(3016, 0)
+
+[node name="Heal22" parent="UpBonus2" index="42" instance=ExtResource("8_xth4b")]
+position = Vector2(3096, 0)
+
+[node name="SmartBombCollectable22" parent="UpBonus2" index="43" instance=ExtResource("9_1k3jd")]
+position = Vector2(3168, 0)
+
+[node name="Heal23" parent="UpBonus2" index="44" instance=ExtResource("8_xth4b")]
+position = Vector2(3248, 0)
+
+[node name="SmartBombCollectable23" parent="UpBonus2" index="45" instance=ExtResource("9_1k3jd")]
+position = Vector2(3320, 0)
+
+[node name="Heal24" parent="UpBonus2" index="46" instance=ExtResource("8_xth4b")]
+position = Vector2(3400, 0)
+
+[node name="SmartBombCollectable24" parent="UpBonus2" index="47" instance=ExtResource("9_1k3jd")]
+position = Vector2(3472, 0)
+
+[node name="Heal25" parent="UpBonus2" index="48" instance=ExtResource("8_xth4b")]
+position = Vector2(3544, 0)
+
+[node name="SmartBombCollectable25" parent="UpBonus2" index="49" instance=ExtResource("9_1k3jd")]
+position = Vector2(3616, 0)
+
+[node name="Heal26" parent="UpBonus2" index="50" instance=ExtResource("8_xth4b")]
+position = Vector2(3696, 0)
+
+[node name="SmartBombCollectable26" parent="UpBonus2" index="51" instance=ExtResource("9_1k3jd")]
+position = Vector2(3768, 0)
+
+[node name="Heal27" parent="UpBonus2" index="52" instance=ExtResource("8_xth4b")]
+position = Vector2(3848, 0)
+
+[node name="SmartBombCollectable27" parent="UpBonus2" index="53" instance=ExtResource("9_1k3jd")]
+position = Vector2(3920, 0)
+
+[node name="Heal28" parent="UpBonus2" index="54" instance=ExtResource("8_xth4b")]
+position = Vector2(4000, 0)
+
+[node name="SmartBombCollectable28" parent="UpBonus2" index="55" instance=ExtResource("9_1k3jd")]
+position = Vector2(4072, 0)
+
+[node name="Heal29" parent="UpBonus2" index="56" instance=ExtResource("8_xth4b")]
+position = Vector2(4152, 0)
+
+[node name="SmartBombCollectable29" parent="UpBonus2" index="57" instance=ExtResource("9_1k3jd")]
+position = Vector2(4224, 0)
+
+[node name="Heal30" parent="UpBonus2" index="58" instance=ExtResource("8_xth4b")]
+position = Vector2(4304, 0)
+
+[node name="SmartBombCollectable30" parent="UpBonus2" index="59" instance=ExtResource("9_1k3jd")]
+position = Vector2(4376, 0)
+
+[node name="Heal31" parent="UpBonus2" index="60" instance=ExtResource("8_xth4b")]
+position = Vector2(4456, 0)
+
+[node name="SmartBombCollectable31" parent="UpBonus2" index="61" instance=ExtResource("9_1k3jd")]
+position = Vector2(4528, 0)
+
+[node name="Heal32" parent="UpBonus2" index="62" instance=ExtResource("8_xth4b")]
+position = Vector2(4608, 0)
+
+[node name="SmartBombCollectable32" parent="UpBonus2" index="63" instance=ExtResource("9_1k3jd")]
+position = Vector2(4680, 0)
+
+[node name="Heal33" parent="UpBonus2" index="64" instance=ExtResource("8_xth4b")]
+position = Vector2(4760, 0)
+
+[node name="SmartBombCollectable33" parent="UpBonus2" index="65" instance=ExtResource("9_1k3jd")]
+position = Vector2(4832, 0)
+
+[node name="Heal34" parent="UpBonus2" index="66" instance=ExtResource("8_xth4b")]
+position = Vector2(4912, 0)
+
+[node name="SmartBombCollectable34" parent="UpBonus2" index="67" instance=ExtResource("9_1k3jd")]
+position = Vector2(4984, 0)
+
+[node name="Heal35" parent="UpBonus2" index="68" instance=ExtResource("8_xth4b")]
+position = Vector2(5064, 0)
+
+[node name="SmartBombCollectable35" parent="UpBonus2" index="69" instance=ExtResource("9_1k3jd")]
+position = Vector2(5136, 0)
+
+[node name="Heal36" parent="UpBonus2" index="70" instance=ExtResource("8_xth4b")]
+position = Vector2(5216, 0)
+
+[node name="SmartBombCollectable36" parent="UpBonus2" index="71" instance=ExtResource("9_1k3jd")]
+position = Vector2(5288, 0)
+
+[node name="Heal37" parent="UpBonus2" index="72" instance=ExtResource("8_xth4b")]
+position = Vector2(5368, 0)
+
+[node name="SmartBombCollectable37" parent="UpBonus2" index="73" instance=ExtResource("9_1k3jd")]
+position = Vector2(5440, 0)
+
+[node name="Heal38" parent="UpBonus2" index="74" instance=ExtResource("8_xth4b")]
+position = Vector2(5520, 0)
+
+[node name="SmartBombCollectable38" parent="UpBonus2" index="75" instance=ExtResource("9_1k3jd")]
+position = Vector2(5592, 0)
+
+[node name="Heal39" parent="UpBonus2" index="76" instance=ExtResource("8_xth4b")]
+position = Vector2(5672, 0)
+
+[node name="SmartBombCollectable39" parent="UpBonus2" index="77" instance=ExtResource("9_1k3jd")]
+position = Vector2(5744, 0)
+
+[node name="Heal40" parent="UpBonus2" index="78" instance=ExtResource("8_xth4b")]
+position = Vector2(5824, 0)
+
+[node name="SmartBombCollectable40" parent="UpBonus2" index="79" instance=ExtResource("9_1k3jd")]
+position = Vector2(5896, 0)
+
+[node name="Heal41" parent="UpBonus2" index="80" instance=ExtResource("8_xth4b")]
+position = Vector2(5968, 0)
+
+[node name="SmartBombCollectable41" parent="UpBonus2" index="81" instance=ExtResource("9_1k3jd")]
+position = Vector2(6040, 0)
+
+[node name="Heal42" parent="UpBonus2" index="82" instance=ExtResource("8_xth4b")]
+position = Vector2(6120, 0)
+
+[node name="SmartBombCollectable42" parent="UpBonus2" index="83" instance=ExtResource("9_1k3jd")]
+position = Vector2(6192, 0)
+
+[node name="Heal43" parent="UpBonus2" index="84" instance=ExtResource("8_xth4b")]
+position = Vector2(6272, 0)
+
+[node name="SmartBombCollectable43" parent="UpBonus2" index="85" instance=ExtResource("9_1k3jd")]
+position = Vector2(6344, 0)
+
+[node name="Heal44" parent="UpBonus2" index="86" instance=ExtResource("8_xth4b")]
+position = Vector2(6424, 0)
+
+[node name="SmartBombCollectable44" parent="UpBonus2" index="87" instance=ExtResource("9_1k3jd")]
+position = Vector2(6496, 0)
+
+[node name="Heal45" parent="UpBonus2" index="88" instance=ExtResource("8_xth4b")]
+position = Vector2(6576, 0)
+
+[node name="SmartBombCollectable45" parent="UpBonus2" index="89" instance=ExtResource("9_1k3jd")]
+position = Vector2(6648, 0)
+
+[node name="Heal46" parent="UpBonus2" index="90" instance=ExtResource("8_xth4b")]
+position = Vector2(6728, 0)
+
+[node name="SmartBombCollectable46" parent="UpBonus2" index="91" instance=ExtResource("9_1k3jd")]
+position = Vector2(6800, 0)
+
+[node name="Heal47" parent="UpBonus2" index="92" instance=ExtResource("8_xth4b")]
+position = Vector2(6880, 0)
+
+[node name="SmartBombCollectable47" parent="UpBonus2" index="93" instance=ExtResource("9_1k3jd")]
+position = Vector2(6952, 0)
+
+[node name="Heal48" parent="UpBonus2" index="94" instance=ExtResource("8_xth4b")]
+position = Vector2(7032, 0)
+
+[node name="SmartBombCollectable48" parent="UpBonus2" index="95" instance=ExtResource("9_1k3jd")]
+position = Vector2(7104, 0)
+
+[node name="Heal49" parent="UpBonus2" index="96" instance=ExtResource("8_xth4b")]
+position = Vector2(7184, 0)
+
+[node name="SmartBombCollectable49" parent="UpBonus2" index="97" instance=ExtResource("9_1k3jd")]
+position = Vector2(7256, 0)
+
+[node name="Heal50" parent="UpBonus2" index="98" instance=ExtResource("8_xth4b")]
+position = Vector2(7336, 0)
+
+[node name="SmartBombCollectable50" parent="UpBonus2" index="99" instance=ExtResource("9_1k3jd")]
+position = Vector2(7408, 0)
+
+[node name="Heal51" parent="UpBonus2" index="100" instance=ExtResource("8_xth4b")]
+position = Vector2(7488, 0)
+
+[node name="SmartBombCollectable51" parent="UpBonus2" index="101" instance=ExtResource("9_1k3jd")]
+position = Vector2(7560, 0)
+
+[node name="Heal52" parent="UpBonus2" index="102" instance=ExtResource("8_xth4b")]
+position = Vector2(7640, 0)
+
+[node name="SmartBombCollectable52" parent="UpBonus2" index="103" instance=ExtResource("9_1k3jd")]
+position = Vector2(7712, 0)
+
+[node name="Heal53" parent="UpBonus2" index="104" instance=ExtResource("8_xth4b")]
+position = Vector2(7792, 0)
+
+[node name="SmartBombCollectable53" parent="UpBonus2" index="105" instance=ExtResource("9_1k3jd")]
+position = Vector2(7864, 0)
+
+[node name="Heal54" parent="UpBonus2" index="106" instance=ExtResource("8_xth4b")]
+position = Vector2(7944, 0)
+
+[node name="SmartBombCollectable54" parent="UpBonus2" index="107" instance=ExtResource("9_1k3jd")]
+position = Vector2(8016, 0)
+
+[node name="Heal55" parent="UpBonus2" index="108" instance=ExtResource("8_xth4b")]
+position = Vector2(8096, 0)
+
+[node name="SmartBombCollectable55" parent="UpBonus2" index="109" instance=ExtResource("9_1k3jd")]
+position = Vector2(8168, 0)
+
+[node name="Heal56" parent="UpBonus2" index="110" instance=ExtResource("8_xth4b")]
+position = Vector2(8248, 0)
+
+[node name="SmartBombCollectable56" parent="UpBonus2" index="111" instance=ExtResource("9_1k3jd")]
+position = Vector2(8320, 0)
+
+[node name="Heal57" parent="UpBonus2" index="112" instance=ExtResource("8_xth4b")]
+position = Vector2(8392, 0)
+
+[node name="SmartBombCollectable57" parent="UpBonus2" index="113" instance=ExtResource("9_1k3jd")]
+position = Vector2(8464, 0)
+
+[node name="Heal58" parent="UpBonus2" index="114" instance=ExtResource("8_xth4b")]
+position = Vector2(8544, 0)
+
+[node name="SmartBombCollectable58" parent="UpBonus2" index="115" instance=ExtResource("9_1k3jd")]
+position = Vector2(8616, 0)
+
+[node name="Heal59" parent="UpBonus2" index="116" instance=ExtResource("8_xth4b")]
+position = Vector2(8696, 0)
+
+[node name="SmartBombCollectable59" parent="UpBonus2" index="117" instance=ExtResource("9_1k3jd")]
+position = Vector2(8768, 0)
+
+[node name="Heal60" parent="UpBonus2" index="118" instance=ExtResource("8_xth4b")]
+position = Vector2(8848, 0)
+
+[node name="SmartBombCollectable60" parent="UpBonus2" index="119" instance=ExtResource("9_1k3jd")]
+position = Vector2(8920, 0)
+
+[node name="Heal61" parent="UpBonus2" index="120" instance=ExtResource("8_xth4b")]
+position = Vector2(9000, 0)
+
+[node name="SmartBombCollectable61" parent="UpBonus2" index="121" instance=ExtResource("9_1k3jd")]
+position = Vector2(9072, 0)
+
+[node name="Heal62" parent="UpBonus2" index="122" instance=ExtResource("8_xth4b")]
+position = Vector2(9152, 0)
+
+[node name="SmartBombCollectable62" parent="UpBonus2" index="123" instance=ExtResource("9_1k3jd")]
+position = Vector2(9224, 0)
+
+[node name="Heal63" parent="UpBonus2" index="124" instance=ExtResource("8_xth4b")]
+position = Vector2(9304, 0)
+
+[node name="SmartBombCollectable63" parent="UpBonus2" index="125" instance=ExtResource("9_1k3jd")]
+position = Vector2(9376, 0)
+
+[node name="Heal64" parent="UpBonus2" index="126" instance=ExtResource("8_xth4b")]
+position = Vector2(9456, 0)
+
+[node name="SmartBombCollectable64" parent="UpBonus2" index="127" instance=ExtResource("9_1k3jd")]
+position = Vector2(9528, 0)
+
+[node name="DownBonus" type="Node2D" parent="." index="9"]
+position = Vector2(56, 576)
+
+[node name="LevelUp" parent="DownBonus" index="0" instance=ExtResource("10_s5syx")]
+
+[node name="LevelUp2" parent="DownBonus" index="1" instance=ExtResource("10_s5syx")]
+position = Vector2(80, 0)
+
+[node name="LevelUp3" parent="DownBonus" index="2" instance=ExtResource("10_s5syx")]
+position = Vector2(152, 0)
+
+[node name="LevelUp4" parent="DownBonus" index="3" instance=ExtResource("10_s5syx")]
+position = Vector2(232, 0)
+
+[node name="LevelUp5" parent="DownBonus" index="4" instance=ExtResource("10_s5syx")]
+position = Vector2(312, 0)
+
+[node name="LevelUp6" parent="DownBonus" index="5" instance=ExtResource("10_s5syx")]
+position = Vector2(392, 0)
+
+[node name="LevelUp7" parent="DownBonus" index="6" instance=ExtResource("10_s5syx")]
+position = Vector2(464, 0)
+
+[node name="LevelUp8" parent="DownBonus" index="7" instance=ExtResource("10_s5syx")]
+position = Vector2(544, 0)
+
+[node name="LevelUp9" parent="DownBonus" index="8" instance=ExtResource("10_s5syx")]
+position = Vector2(624, 0)
+
+[node name="LevelUp10" parent="DownBonus" index="9" instance=ExtResource("10_s5syx")]
+position = Vector2(704, 0)
+
+[node name="LevelUp11" parent="DownBonus" index="10" instance=ExtResource("10_s5syx")]
+position = Vector2(776, 0)
+
+[node name="LevelUp12" parent="DownBonus" index="11" instance=ExtResource("10_s5syx")]
+position = Vector2(856, 0)
+
+[node name="LevelUp13" parent="DownBonus" index="12" instance=ExtResource("10_s5syx")]
+position = Vector2(936, 0)
+
+[node name="LevelUp14" parent="DownBonus" index="13" instance=ExtResource("10_s5syx")]
+position = Vector2(1016, 0)
+
+[node name="LevelUp15" parent="DownBonus" index="14" instance=ExtResource("10_s5syx")]
+position = Vector2(1088, 0)
+
+[node name="LevelUp16" parent="DownBonus" index="15" instance=ExtResource("10_s5syx")]
+position = Vector2(1168, 0)
+
+[node name="LevelUp17" parent="DownBonus" index="16" instance=ExtResource("10_s5syx")]
+position = Vector2(1248, 0)
+
+[node name="LevelUp18" parent="DownBonus" index="17" instance=ExtResource("10_s5syx")]
+position = Vector2(1328, 0)
+
+[node name="LevelUp19" parent="DownBonus" index="18" instance=ExtResource("10_s5syx")]
+position = Vector2(1400, 0)
+
+[node name="LevelUp20" parent="DownBonus" index="19" instance=ExtResource("10_s5syx")]
+position = Vector2(1480, 0)
+
+[node name="LevelUp21" parent="DownBonus" index="20" instance=ExtResource("10_s5syx")]
+position = Vector2(1560, 0)
+
+[node name="LevelUp22" parent="DownBonus" index="21" instance=ExtResource("10_s5syx")]
+position = Vector2(1640, 0)
+
+[node name="LevelUp23" parent="DownBonus" index="22" instance=ExtResource("10_s5syx")]
+position = Vector2(1712, 0)
+
+[node name="LevelUp24" parent="DownBonus" index="23" instance=ExtResource("10_s5syx")]
+position = Vector2(1792, 0)
+
+[node name="LevelUp25" parent="DownBonus" index="24" instance=ExtResource("10_s5syx")]
+position = Vector2(1872, 0)
+
+[node name="LevelUp26" parent="DownBonus" index="25" instance=ExtResource("10_s5syx")]
+position = Vector2(1952, 0)
+
+[node name="LevelUp27" parent="DownBonus" index="26" instance=ExtResource("10_s5syx")]
+position = Vector2(2024, 0)
+
+[node name="LevelUp28" parent="DownBonus" index="27" instance=ExtResource("10_s5syx")]
+position = Vector2(2104, 0)
+
+[node name="LevelUp29" parent="DownBonus" index="28" instance=ExtResource("10_s5syx")]
+position = Vector2(2184, 0)
+
+[node name="LevelUp30" parent="DownBonus" index="29" instance=ExtResource("10_s5syx")]
+position = Vector2(2264, 0)
+
+[node name="LevelUp31" parent="DownBonus" index="30" instance=ExtResource("10_s5syx")]
+position = Vector2(2336, 0)
+
+[node name="LevelUp32" parent="DownBonus" index="31" instance=ExtResource("10_s5syx")]
+position = Vector2(2416, 0)
+
+[node name="LevelUp33" parent="DownBonus" index="32" instance=ExtResource("10_s5syx")]
+position = Vector2(2488, 0)
+
+[node name="LevelUp34" parent="DownBonus" index="33" instance=ExtResource("10_s5syx")]
+position = Vector2(2568, 0)
+
+[node name="LevelUp35" parent="DownBonus" index="34" instance=ExtResource("10_s5syx")]
+position = Vector2(2640, 0)
+
+[node name="LevelUp36" parent="DownBonus" index="35" instance=ExtResource("10_s5syx")]
+position = Vector2(2720, 0)
+
+[node name="LevelUp37" parent="DownBonus" index="36" instance=ExtResource("10_s5syx")]
+position = Vector2(2800, 0)
+
+[node name="LevelUp38" parent="DownBonus" index="37" instance=ExtResource("10_s5syx")]
+position = Vector2(2880, 0)
+
+[node name="LevelUp39" parent="DownBonus" index="38" instance=ExtResource("10_s5syx")]
+position = Vector2(2952, 0)
+
+[node name="LevelUp40" parent="DownBonus" index="39" instance=ExtResource("10_s5syx")]
+position = Vector2(3032, 0)
+
+[node name="LevelUp41" parent="DownBonus" index="40" instance=ExtResource("10_s5syx")]
+position = Vector2(3112, 0)
+
+[node name="LevelUp42" parent="DownBonus" index="41" instance=ExtResource("10_s5syx")]
+position = Vector2(3192, 0)
+
+[node name="LevelUp43" parent="DownBonus" index="42" instance=ExtResource("10_s5syx")]
+position = Vector2(3264, 0)
+
+[node name="LevelUp44" parent="DownBonus" index="43" instance=ExtResource("10_s5syx")]
+position = Vector2(3344, 0)
+
+[node name="LevelUp45" parent="DownBonus" index="44" instance=ExtResource("10_s5syx")]
+position = Vector2(3424, 0)
+
+[node name="LevelUp46" parent="DownBonus" index="45" instance=ExtResource("10_s5syx")]
+position = Vector2(3504, 0)
+
+[node name="LevelUp47" parent="DownBonus" index="46" instance=ExtResource("10_s5syx")]
+position = Vector2(3576, 0)
+
+[node name="LevelUp48" parent="DownBonus" index="47" instance=ExtResource("10_s5syx")]
+position = Vector2(3656, 0)
+
+[node name="LevelUp49" parent="DownBonus" index="48" instance=ExtResource("10_s5syx")]
+position = Vector2(3736, 0)
+
+[node name="LevelUp50" parent="DownBonus" index="49" instance=ExtResource("10_s5syx")]
+position = Vector2(3816, 0)
+
+[node name="LevelUp51" parent="DownBonus" index="50" instance=ExtResource("10_s5syx")]
+position = Vector2(3888, 0)
+
+[node name="LevelUp52" parent="DownBonus" index="51" instance=ExtResource("10_s5syx")]
+position = Vector2(3968, 0)
+
+[node name="LevelUp53" parent="DownBonus" index="52" instance=ExtResource("10_s5syx")]
+position = Vector2(4048, 0)
+
+[node name="LevelUp54" parent="DownBonus" index="53" instance=ExtResource("10_s5syx")]
+position = Vector2(4128, 0)
+
+[node name="LevelUp55" parent="DownBonus" index="54" instance=ExtResource("10_s5syx")]
+position = Vector2(4200, 0)
+
+[node name="LevelUp56" parent="DownBonus" index="55" instance=ExtResource("10_s5syx")]
+position = Vector2(4280, 0)
+
+[node name="LevelUp57" parent="DownBonus" index="56" instance=ExtResource("10_s5syx")]
+position = Vector2(4360, 0)
+
+[node name="LevelUp58" parent="DownBonus" index="57" instance=ExtResource("10_s5syx")]
+position = Vector2(4440, 0)
+
+[node name="LevelUp59" parent="DownBonus" index="58" instance=ExtResource("10_s5syx")]
+position = Vector2(4512, 0)
+
+[node name="LevelUp60" parent="DownBonus" index="59" instance=ExtResource("10_s5syx")]
+position = Vector2(4592, 0)
+
+[node name="LevelUp61" parent="DownBonus" index="60" instance=ExtResource("10_s5syx")]
+position = Vector2(4672, 0)
+
+[node name="LevelUp62" parent="DownBonus" index="61" instance=ExtResource("10_s5syx")]
+position = Vector2(4752, 0)
+
+[node name="LevelUp63" parent="DownBonus" index="62" instance=ExtResource("10_s5syx")]
+position = Vector2(4824, 0)
+
+[node name="LevelUp64" parent="DownBonus" index="63" instance=ExtResource("10_s5syx")]
+position = Vector2(4904, 0)
+
+[node name="LevelUp65" parent="DownBonus" index="64" instance=ExtResource("10_s5syx")]
+position = Vector2(4952, 0)
+
+[node name="LevelUp66" parent="DownBonus" index="65" instance=ExtResource("10_s5syx")]
+position = Vector2(5032, 0)
+
+[node name="LevelUp67" parent="DownBonus" index="66" instance=ExtResource("10_s5syx")]
+position = Vector2(5104, 0)
+
+[node name="LevelUp68" parent="DownBonus" index="67" instance=ExtResource("10_s5syx")]
+position = Vector2(5184, 0)
+
+[node name="LevelUp69" parent="DownBonus" index="68" instance=ExtResource("10_s5syx")]
+position = Vector2(5264, 0)
+
+[node name="LevelUp70" parent="DownBonus" index="69" instance=ExtResource("10_s5syx")]
+position = Vector2(5344, 0)
+
+[node name="LevelUp71" parent="DownBonus" index="70" instance=ExtResource("10_s5syx")]
+position = Vector2(5416, 0)
+
+[node name="LevelUp72" parent="DownBonus" index="71" instance=ExtResource("10_s5syx")]
+position = Vector2(5496, 0)
+
+[node name="LevelUp73" parent="DownBonus" index="72" instance=ExtResource("10_s5syx")]
+position = Vector2(5576, 0)
+
+[node name="LevelUp74" parent="DownBonus" index="73" instance=ExtResource("10_s5syx")]
+position = Vector2(5656, 0)
+
+[node name="LevelUp75" parent="DownBonus" index="74" instance=ExtResource("10_s5syx")]
+position = Vector2(5728, 0)
+
+[node name="LevelUp76" parent="DownBonus" index="75" instance=ExtResource("10_s5syx")]
+position = Vector2(5808, 0)
+
+[node name="LevelUp77" parent="DownBonus" index="76" instance=ExtResource("10_s5syx")]
+position = Vector2(5888, 0)
+
+[node name="LevelUp78" parent="DownBonus" index="77" instance=ExtResource("10_s5syx")]
+position = Vector2(5968, 0)
+
+[node name="LevelUp79" parent="DownBonus" index="78" instance=ExtResource("10_s5syx")]
+position = Vector2(6040, 0)
+
+[node name="LevelUp80" parent="DownBonus" index="79" instance=ExtResource("10_s5syx")]
+position = Vector2(6120, 0)
+
+[node name="LevelUp81" parent="DownBonus" index="80" instance=ExtResource("10_s5syx")]
+position = Vector2(6200, 0)
+
+[node name="LevelUp82" parent="DownBonus" index="81" instance=ExtResource("10_s5syx")]
+position = Vector2(6280, 0)
+
+[node name="LevelUp83" parent="DownBonus" index="82" instance=ExtResource("10_s5syx")]
+position = Vector2(6352, 0)
+
+[node name="LevelUp84" parent="DownBonus" index="83" instance=ExtResource("10_s5syx")]
+position = Vector2(6432, 0)
+
+[node name="LevelUp85" parent="DownBonus" index="84" instance=ExtResource("10_s5syx")]
+position = Vector2(6512, 0)
+
+[node name="LevelUp86" parent="DownBonus" index="85" instance=ExtResource("10_s5syx")]
+position = Vector2(6592, 0)
+
+[node name="LevelUp87" parent="DownBonus" index="86" instance=ExtResource("10_s5syx")]
+position = Vector2(6664, 0)
+
+[node name="LevelUp88" parent="DownBonus" index="87" instance=ExtResource("10_s5syx")]
+position = Vector2(6744, 0)
+
+[node name="LevelUp89" parent="DownBonus" index="88" instance=ExtResource("10_s5syx")]
+position = Vector2(6824, 0)
+
+[node name="LevelUp90" parent="DownBonus" index="89" instance=ExtResource("10_s5syx")]
+position = Vector2(6904, 0)
+
+[node name="LevelUp91" parent="DownBonus" index="90" instance=ExtResource("10_s5syx")]
+position = Vector2(6976, 0)
+
+[node name="LevelUp92" parent="DownBonus" index="91" instance=ExtResource("10_s5syx")]
+position = Vector2(7056, 0)
+
+[node name="LevelUp93" parent="DownBonus" index="92" instance=ExtResource("10_s5syx")]
+position = Vector2(7136, 0)
+
+[node name="LevelUp94" parent="DownBonus" index="93" instance=ExtResource("10_s5syx")]
+position = Vector2(7216, 0)
+
+[node name="LevelUp95" parent="DownBonus" index="94" instance=ExtResource("10_s5syx")]
+position = Vector2(7288, 0)
+
+[node name="LevelUp96" parent="DownBonus" index="95" instance=ExtResource("10_s5syx")]
+position = Vector2(7368, 0)
+
+[node name="LevelUp97" parent="DownBonus" index="96" instance=ExtResource("10_s5syx")]
+position = Vector2(7440, 0)
+
+[node name="LevelUp98" parent="DownBonus" index="97" instance=ExtResource("10_s5syx")]
+position = Vector2(7520, 0)
+
+[node name="LevelUp99" parent="DownBonus" index="98" instance=ExtResource("10_s5syx")]
+position = Vector2(7592, 0)
+
+[node name="LevelUp100" parent="DownBonus" index="99" instance=ExtResource("10_s5syx")]
+position = Vector2(7672, 0)
+
+[node name="LevelUp101" parent="DownBonus" index="100" instance=ExtResource("10_s5syx")]
+position = Vector2(7752, 0)
+
+[node name="LevelUp102" parent="DownBonus" index="101" instance=ExtResource("10_s5syx")]
+position = Vector2(7832, 0)
+
+[node name="LevelUp103" parent="DownBonus" index="102" instance=ExtResource("10_s5syx")]
+position = Vector2(7904, 0)
+
+[node name="LevelUp104" parent="DownBonus" index="103" instance=ExtResource("10_s5syx")]
+position = Vector2(7984, 0)
+
+[node name="LevelUp105" parent="DownBonus" index="104" instance=ExtResource("10_s5syx")]
+position = Vector2(8064, 0)
+
+[node name="LevelUp106" parent="DownBonus" index="105" instance=ExtResource("10_s5syx")]
+position = Vector2(8144, 0)
+
+[node name="LevelUp107" parent="DownBonus" index="106" instance=ExtResource("10_s5syx")]
+position = Vector2(8216, 0)
+
+[node name="LevelUp108" parent="DownBonus" index="107" instance=ExtResource("10_s5syx")]
+position = Vector2(8296, 0)
+
+[node name="LevelUp109" parent="DownBonus" index="108" instance=ExtResource("10_s5syx")]
+position = Vector2(8376, 0)
+
+[node name="LevelUp110" parent="DownBonus" index="109" instance=ExtResource("10_s5syx")]
+position = Vector2(8456, 0)
+
+[node name="LevelUp111" parent="DownBonus" index="110" instance=ExtResource("10_s5syx")]
+position = Vector2(8528, 0)
+
+[node name="LevelUp112" parent="DownBonus" index="111" instance=ExtResource("10_s5syx")]
+position = Vector2(8608, 0)
+
+[node name="LevelUp113" parent="DownBonus" index="112" instance=ExtResource("10_s5syx")]
+position = Vector2(8688, 0)
+
+[node name="LevelUp114" parent="DownBonus" index="113" instance=ExtResource("10_s5syx")]
+position = Vector2(8768, 0)
+
+[node name="LevelUp115" parent="DownBonus" index="114" instance=ExtResource("10_s5syx")]
+position = Vector2(8840, 0)
+
+[node name="LevelUp116" parent="DownBonus" index="115" instance=ExtResource("10_s5syx")]
+position = Vector2(8920, 0)
+
+[node name="LevelUp117" parent="DownBonus" index="116" instance=ExtResource("10_s5syx")]
+position = Vector2(9000, 0)
+
+[node name="LevelUp118" parent="DownBonus" index="117" instance=ExtResource("10_s5syx")]
+position = Vector2(9080, 0)
+
+[node name="LevelUp119" parent="DownBonus" index="118" instance=ExtResource("10_s5syx")]
+position = Vector2(9152, 0)
+
+[node name="LevelUp120" parent="DownBonus" index="119" instance=ExtResource("10_s5syx")]
+position = Vector2(9232, 0)
+
+[node name="LevelUp121" parent="DownBonus" index="120" instance=ExtResource("10_s5syx")]
+position = Vector2(9312, 0)
+
+[node name="LevelUp122" parent="DownBonus" index="121" instance=ExtResource("10_s5syx")]
+position = Vector2(9392, 0)
+
+[node name="LevelUp123" parent="DownBonus" index="122" instance=ExtResource("10_s5syx")]
+position = Vector2(9464, 0)
+
+[node name="LevelUp124" parent="DownBonus" index="123" instance=ExtResource("10_s5syx")]
+position = Vector2(9544, 0)
+
+[node name="LevelUp125" parent="DownBonus" index="124" instance=ExtResource("10_s5syx")]
+position = Vector2(9624, 0)
+
+[node name="LevelUp126" parent="DownBonus" index="125" instance=ExtResource("10_s5syx")]
+position = Vector2(9704, 0)
+
+[node name="LevelUp127" parent="DownBonus" index="126" instance=ExtResource("10_s5syx")]
+position = Vector2(9776, 0)
+
+[node name="LevelUp128" parent="DownBonus" index="127" instance=ExtResource("10_s5syx")]
+position = Vector2(9856, 0)
+
+[node name="DownBonus2" type="Node2D" parent="." index="10"]
+position = Vector2(9984, 576)
+
+[node name="LevelUp" parent="DownBonus2" index="0" instance=ExtResource("10_s5syx")]
+
+[node name="LevelUp2" parent="DownBonus2" index="1" instance=ExtResource("10_s5syx")]
+position = Vector2(80, 0)
+
+[node name="LevelUp3" parent="DownBonus2" index="2" instance=ExtResource("10_s5syx")]
+position = Vector2(152, 0)
+
+[node name="LevelUp4" parent="DownBonus2" index="3" instance=ExtResource("10_s5syx")]
+position = Vector2(232, 0)
+
+[node name="LevelUp5" parent="DownBonus2" index="4" instance=ExtResource("10_s5syx")]
+position = Vector2(312, 0)
+
+[node name="LevelUp6" parent="DownBonus2" index="5" instance=ExtResource("10_s5syx")]
+position = Vector2(392, 0)
+
+[node name="LevelUp7" parent="DownBonus2" index="6" instance=ExtResource("10_s5syx")]
+position = Vector2(464, 0)
+
+[node name="LevelUp8" parent="DownBonus2" index="7" instance=ExtResource("10_s5syx")]
+position = Vector2(544, 0)
+
+[node name="LevelUp9" parent="DownBonus2" index="8" instance=ExtResource("10_s5syx")]
+position = Vector2(624, 0)
+
+[node name="LevelUp10" parent="DownBonus2" index="9" instance=ExtResource("10_s5syx")]
+position = Vector2(704, 0)
+
+[node name="LevelUp11" parent="DownBonus2" index="10" instance=ExtResource("10_s5syx")]
+position = Vector2(776, 0)
+
+[node name="LevelUp12" parent="DownBonus2" index="11" instance=ExtResource("10_s5syx")]
+position = Vector2(856, 0)
+
+[node name="LevelUp13" parent="DownBonus2" index="12" instance=ExtResource("10_s5syx")]
+position = Vector2(936, 0)
+
+[node name="LevelUp14" parent="DownBonus2" index="13" instance=ExtResource("10_s5syx")]
+position = Vector2(1016, 0)
+
+[node name="LevelUp15" parent="DownBonus2" index="14" instance=ExtResource("10_s5syx")]
+position = Vector2(1088, 0)
+
+[node name="LevelUp16" parent="DownBonus2" index="15" instance=ExtResource("10_s5syx")]
+position = Vector2(1168, 0)
+
+[node name="LevelUp17" parent="DownBonus2" index="16" instance=ExtResource("10_s5syx")]
+position = Vector2(1248, 0)
+
+[node name="LevelUp18" parent="DownBonus2" index="17" instance=ExtResource("10_s5syx")]
+position = Vector2(1328, 0)
+
+[node name="LevelUp19" parent="DownBonus2" index="18" instance=ExtResource("10_s5syx")]
+position = Vector2(1400, 0)
+
+[node name="LevelUp20" parent="DownBonus2" index="19" instance=ExtResource("10_s5syx")]
+position = Vector2(1480, 0)
+
+[node name="LevelUp21" parent="DownBonus2" index="20" instance=ExtResource("10_s5syx")]
+position = Vector2(1560, 0)
+
+[node name="LevelUp22" parent="DownBonus2" index="21" instance=ExtResource("10_s5syx")]
+position = Vector2(1640, 0)
+
+[node name="LevelUp23" parent="DownBonus2" index="22" instance=ExtResource("10_s5syx")]
+position = Vector2(1712, 0)
+
+[node name="LevelUp24" parent="DownBonus2" index="23" instance=ExtResource("10_s5syx")]
+position = Vector2(1792, 0)
+
+[node name="LevelUp25" parent="DownBonus2" index="24" instance=ExtResource("10_s5syx")]
+position = Vector2(1872, 0)
+
+[node name="LevelUp26" parent="DownBonus2" index="25" instance=ExtResource("10_s5syx")]
+position = Vector2(1952, 0)
+
+[node name="LevelUp27" parent="DownBonus2" index="26" instance=ExtResource("10_s5syx")]
+position = Vector2(2024, 0)
+
+[node name="LevelUp28" parent="DownBonus2" index="27" instance=ExtResource("10_s5syx")]
+position = Vector2(2104, 0)
+
+[node name="LevelUp29" parent="DownBonus2" index="28" instance=ExtResource("10_s5syx")]
+position = Vector2(2184, 0)
+
+[node name="LevelUp30" parent="DownBonus2" index="29" instance=ExtResource("10_s5syx")]
+position = Vector2(2264, 0)
+
+[node name="LevelUp31" parent="DownBonus2" index="30" instance=ExtResource("10_s5syx")]
+position = Vector2(2336, 0)
+
+[node name="LevelUp32" parent="DownBonus2" index="31" instance=ExtResource("10_s5syx")]
+position = Vector2(2416, 0)
+
+[node name="LevelUp33" parent="DownBonus2" index="32" instance=ExtResource("10_s5syx")]
+position = Vector2(2488, 0)
+
+[node name="LevelUp34" parent="DownBonus2" index="33" instance=ExtResource("10_s5syx")]
+position = Vector2(2568, 0)
+
+[node name="LevelUp35" parent="DownBonus2" index="34" instance=ExtResource("10_s5syx")]
+position = Vector2(2640, 0)
+
+[node name="LevelUp36" parent="DownBonus2" index="35" instance=ExtResource("10_s5syx")]
+position = Vector2(2720, 0)
+
+[node name="LevelUp37" parent="DownBonus2" index="36" instance=ExtResource("10_s5syx")]
+position = Vector2(2800, 0)
+
+[node name="LevelUp38" parent="DownBonus2" index="37" instance=ExtResource("10_s5syx")]
+position = Vector2(2880, 0)
+
+[node name="LevelUp39" parent="DownBonus2" index="38" instance=ExtResource("10_s5syx")]
+position = Vector2(2952, 0)
+
+[node name="LevelUp40" parent="DownBonus2" index="39" instance=ExtResource("10_s5syx")]
+position = Vector2(3032, 0)
+
+[node name="LevelUp41" parent="DownBonus2" index="40" instance=ExtResource("10_s5syx")]
+position = Vector2(3112, 0)
+
+[node name="LevelUp42" parent="DownBonus2" index="41" instance=ExtResource("10_s5syx")]
+position = Vector2(3192, 0)
+
+[node name="LevelUp43" parent="DownBonus2" index="42" instance=ExtResource("10_s5syx")]
+position = Vector2(3264, 0)
+
+[node name="LevelUp44" parent="DownBonus2" index="43" instance=ExtResource("10_s5syx")]
+position = Vector2(3344, 0)
+
+[node name="LevelUp45" parent="DownBonus2" index="44" instance=ExtResource("10_s5syx")]
+position = Vector2(3424, 0)
+
+[node name="LevelUp46" parent="DownBonus2" index="45" instance=ExtResource("10_s5syx")]
+position = Vector2(3504, 0)
+
+[node name="LevelUp47" parent="DownBonus2" index="46" instance=ExtResource("10_s5syx")]
+position = Vector2(3576, 0)
+
+[node name="LevelUp48" parent="DownBonus2" index="47" instance=ExtResource("10_s5syx")]
+position = Vector2(3656, 0)
+
+[node name="LevelUp49" parent="DownBonus2" index="48" instance=ExtResource("10_s5syx")]
+position = Vector2(3736, 0)
+
+[node name="LevelUp50" parent="DownBonus2" index="49" instance=ExtResource("10_s5syx")]
+position = Vector2(3816, 0)
+
+[node name="LevelUp51" parent="DownBonus2" index="50" instance=ExtResource("10_s5syx")]
+position = Vector2(3888, 0)
+
+[node name="LevelUp52" parent="DownBonus2" index="51" instance=ExtResource("10_s5syx")]
+position = Vector2(3968, 0)
+
+[node name="LevelUp53" parent="DownBonus2" index="52" instance=ExtResource("10_s5syx")]
+position = Vector2(4048, 0)
+
+[node name="LevelUp54" parent="DownBonus2" index="53" instance=ExtResource("10_s5syx")]
+position = Vector2(4128, 0)
+
+[node name="LevelUp55" parent="DownBonus2" index="54" instance=ExtResource("10_s5syx")]
+position = Vector2(4200, 0)
+
+[node name="LevelUp56" parent="DownBonus2" index="55" instance=ExtResource("10_s5syx")]
+position = Vector2(4280, 0)
+
+[node name="LevelUp57" parent="DownBonus2" index="56" instance=ExtResource("10_s5syx")]
+position = Vector2(4360, 0)
+
+[node name="LevelUp58" parent="DownBonus2" index="57" instance=ExtResource("10_s5syx")]
+position = Vector2(4440, 0)
+
+[node name="LevelUp59" parent="DownBonus2" index="58" instance=ExtResource("10_s5syx")]
+position = Vector2(4512, 0)
+
+[node name="LevelUp60" parent="DownBonus2" index="59" instance=ExtResource("10_s5syx")]
+position = Vector2(4592, 0)
+
+[node name="LevelUp61" parent="DownBonus2" index="60" instance=ExtResource("10_s5syx")]
+position = Vector2(4672, 0)
+
+[node name="LevelUp62" parent="DownBonus2" index="61" instance=ExtResource("10_s5syx")]
+position = Vector2(4752, 0)
+
+[node name="LevelUp63" parent="DownBonus2" index="62" instance=ExtResource("10_s5syx")]
+position = Vector2(4824, 0)
+
+[node name="LevelUp64" parent="DownBonus2" index="63" instance=ExtResource("10_s5syx")]
+position = Vector2(4904, 0)
+
+[node name="LevelUp65" parent="DownBonus2" index="64" instance=ExtResource("10_s5syx")]
+position = Vector2(4952, 0)
+
+[node name="LevelUp66" parent="DownBonus2" index="65" instance=ExtResource("10_s5syx")]
+position = Vector2(5032, 0)
+
+[node name="LevelUp67" parent="DownBonus2" index="66" instance=ExtResource("10_s5syx")]
+position = Vector2(5104, 0)
+
+[node name="LevelUp68" parent="DownBonus2" index="67" instance=ExtResource("10_s5syx")]
+position = Vector2(5184, 0)
+
+[node name="LevelUp69" parent="DownBonus2" index="68" instance=ExtResource("10_s5syx")]
+position = Vector2(5264, 0)
+
+[node name="LevelUp70" parent="DownBonus2" index="69" instance=ExtResource("10_s5syx")]
+position = Vector2(5344, 0)
+
+[node name="LevelUp71" parent="DownBonus2" index="70" instance=ExtResource("10_s5syx")]
+position = Vector2(5416, 0)
+
+[node name="LevelUp72" parent="DownBonus2" index="71" instance=ExtResource("10_s5syx")]
+position = Vector2(5496, 0)
+
+[node name="LevelUp73" parent="DownBonus2" index="72" instance=ExtResource("10_s5syx")]
+position = Vector2(5576, 0)
+
+[node name="LevelUp74" parent="DownBonus2" index="73" instance=ExtResource("10_s5syx")]
+position = Vector2(5656, 0)
+
+[node name="LevelUp75" parent="DownBonus2" index="74" instance=ExtResource("10_s5syx")]
+position = Vector2(5728, 0)
+
+[node name="LevelUp76" parent="DownBonus2" index="75" instance=ExtResource("10_s5syx")]
+position = Vector2(5808, 0)
+
+[node name="LevelUp77" parent="DownBonus2" index="76" instance=ExtResource("10_s5syx")]
+position = Vector2(5888, 0)
+
+[node name="LevelUp78" parent="DownBonus2" index="77" instance=ExtResource("10_s5syx")]
+position = Vector2(5968, 0)
+
+[node name="LevelUp79" parent="DownBonus2" index="78" instance=ExtResource("10_s5syx")]
+position = Vector2(6040, 0)
+
+[node name="LevelUp80" parent="DownBonus2" index="79" instance=ExtResource("10_s5syx")]
+position = Vector2(6120, 0)
+
+[node name="LevelUp81" parent="DownBonus2" index="80" instance=ExtResource("10_s5syx")]
+position = Vector2(6200, 0)
+
+[node name="LevelUp82" parent="DownBonus2" index="81" instance=ExtResource("10_s5syx")]
+position = Vector2(6280, 0)
+
+[node name="LevelUp83" parent="DownBonus2" index="82" instance=ExtResource("10_s5syx")]
+position = Vector2(6352, 0)
+
+[node name="LevelUp84" parent="DownBonus2" index="83" instance=ExtResource("10_s5syx")]
+position = Vector2(6432, 0)
+
+[node name="LevelUp85" parent="DownBonus2" index="84" instance=ExtResource("10_s5syx")]
+position = Vector2(6512, 0)
+
+[node name="LevelUp86" parent="DownBonus2" index="85" instance=ExtResource("10_s5syx")]
+position = Vector2(6592, 0)
+
+[node name="LevelUp87" parent="DownBonus2" index="86" instance=ExtResource("10_s5syx")]
+position = Vector2(6664, 0)
+
+[node name="LevelUp88" parent="DownBonus2" index="87" instance=ExtResource("10_s5syx")]
+position = Vector2(6744, 0)
+
+[node name="LevelUp89" parent="DownBonus2" index="88" instance=ExtResource("10_s5syx")]
+position = Vector2(6824, 0)
+
+[node name="LevelUp90" parent="DownBonus2" index="89" instance=ExtResource("10_s5syx")]
+position = Vector2(6904, 0)
+
+[node name="LevelUp91" parent="DownBonus2" index="90" instance=ExtResource("10_s5syx")]
+position = Vector2(6976, 0)
+
+[node name="LevelUp92" parent="DownBonus2" index="91" instance=ExtResource("10_s5syx")]
+position = Vector2(7056, 0)
+
+[node name="LevelUp93" parent="DownBonus2" index="92" instance=ExtResource("10_s5syx")]
+position = Vector2(7136, 0)
+
+[node name="LevelUp94" parent="DownBonus2" index="93" instance=ExtResource("10_s5syx")]
+position = Vector2(7216, 0)
+
+[node name="LevelUp95" parent="DownBonus2" index="94" instance=ExtResource("10_s5syx")]
+position = Vector2(7288, 0)
+
+[node name="LevelUp96" parent="DownBonus2" index="95" instance=ExtResource("10_s5syx")]
+position = Vector2(7368, 0)
+
+[node name="LevelUp97" parent="DownBonus2" index="96" instance=ExtResource("10_s5syx")]
+position = Vector2(7440, 0)
+
+[node name="LevelUp98" parent="DownBonus2" index="97" instance=ExtResource("10_s5syx")]
+position = Vector2(7520, 0)
+
+[node name="LevelUp99" parent="DownBonus2" index="98" instance=ExtResource("10_s5syx")]
+position = Vector2(7592, 0)
+
+[node name="LevelUp100" parent="DownBonus2" index="99" instance=ExtResource("10_s5syx")]
+position = Vector2(7672, 0)
+
+[node name="LevelUp101" parent="DownBonus2" index="100" instance=ExtResource("10_s5syx")]
+position = Vector2(7752, 0)
+
+[node name="LevelUp102" parent="DownBonus2" index="101" instance=ExtResource("10_s5syx")]
+position = Vector2(7832, 0)
+
+[node name="LevelUp103" parent="DownBonus2" index="102" instance=ExtResource("10_s5syx")]
+position = Vector2(7904, 0)
+
+[node name="LevelUp104" parent="DownBonus2" index="103" instance=ExtResource("10_s5syx")]
+position = Vector2(7984, 0)
+
+[node name="LevelUp105" parent="DownBonus2" index="104" instance=ExtResource("10_s5syx")]
+position = Vector2(8064, 0)
+
+[node name="LevelUp106" parent="DownBonus2" index="105" instance=ExtResource("10_s5syx")]
+position = Vector2(8144, 0)
+
+[node name="LevelUp107" parent="DownBonus2" index="106" instance=ExtResource("10_s5syx")]
+position = Vector2(8216, 0)
+
+[node name="LevelUp108" parent="DownBonus2" index="107" instance=ExtResource("10_s5syx")]
+position = Vector2(8296, 0)
+
+[node name="LevelUp109" parent="DownBonus2" index="108" instance=ExtResource("10_s5syx")]
+position = Vector2(8376, 0)
+
+[node name="LevelUp110" parent="DownBonus2" index="109" instance=ExtResource("10_s5syx")]
+position = Vector2(8456, 0)
+
+[node name="LevelUp111" parent="DownBonus2" index="110" instance=ExtResource("10_s5syx")]
+position = Vector2(8528, 0)
+
+[node name="LevelUp112" parent="DownBonus2" index="111" instance=ExtResource("10_s5syx")]
+position = Vector2(8608, 0)
+
+[node name="LevelUp113" parent="DownBonus2" index="112" instance=ExtResource("10_s5syx")]
+position = Vector2(8688, 0)
+
+[node name="LevelUp114" parent="DownBonus2" index="113" instance=ExtResource("10_s5syx")]
+position = Vector2(8768, 0)
+
+[node name="LevelUp115" parent="DownBonus2" index="114" instance=ExtResource("10_s5syx")]
+position = Vector2(8840, 0)
+
+[node name="LevelUp116" parent="DownBonus2" index="115" instance=ExtResource("10_s5syx")]
+position = Vector2(8920, 0)
+
+[node name="LevelUp117" parent="DownBonus2" index="116" instance=ExtResource("10_s5syx")]
+position = Vector2(9000, 0)
+
+[node name="LevelUp118" parent="DownBonus2" index="117" instance=ExtResource("10_s5syx")]
+position = Vector2(9080, 0)
+
+[node name="LevelUp119" parent="DownBonus2" index="118" instance=ExtResource("10_s5syx")]
+position = Vector2(9152, 0)
+
+[node name="LevelUp120" parent="DownBonus2" index="119" instance=ExtResource("10_s5syx")]
+position = Vector2(9232, 0)
+
+[node name="LevelUp121" parent="DownBonus2" index="120" instance=ExtResource("10_s5syx")]
+position = Vector2(9312, 0)
+
+[node name="LevelUp122" parent="DownBonus2" index="121" instance=ExtResource("10_s5syx")]
+position = Vector2(9392, 0)
+
+[node name="LevelUp123" parent="DownBonus2" index="122" instance=ExtResource("10_s5syx")]
+position = Vector2(9464, 0)
+
+[node name="LevelUp124" parent="DownBonus2" index="123" instance=ExtResource("10_s5syx")]
+position = Vector2(9544, 0)
+
+[node name="LevelUp125" parent="DownBonus2" index="124" instance=ExtResource("10_s5syx")]
+position = Vector2(9624, 0)
+
+[node name="LevelUp126" parent="DownBonus2" index="125" instance=ExtResource("10_s5syx")]
+position = Vector2(9704, 0)
+
+[node name="LevelUp127" parent="DownBonus2" index="126" instance=ExtResource("10_s5syx")]
+position = Vector2(9776, 0)
+
+[node name="LevelUp128" parent="DownBonus2" index="127" instance=ExtResource("10_s5syx")]
+position = Vector2(9856, 0)
+
+[node name="BossManager" parent="." index="11" instance=ExtResource("5_vyblc")]
+position = Vector2(4320, 336)
+
+[editable path="EnemyOne/EnemyOneSpawner"]
+[editable path="EnemyOne/EnemyOneSpawner2"]
+[editable path="EnemyOne/EnemyOneSpawner3"]
+[editable path="EnemyTwo/EnemyTwoSpawner"]
+[editable path="EnemyTwo/EnemyTwoSpawner2"]
+[editable path="EnemyTwo/EnemyTwoSpawner3"]
+[editable path="EnemyThree/EnemyThreeSpawner"]
+[editable path="EnemyThree/EnemyThreeSpawner2"]
+[editable path="EnemyThree/EnemyThreeSpawner3"]

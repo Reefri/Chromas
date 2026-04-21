@@ -1,0 +1,102 @@
+[gd_scene load_steps=15 format=3 uid="uid://dagjchve17wj8"]
+
+[ext_resource type="PackedScene" uid="uid://c1yqr246fwp8w" path="res://Scenes/ColoredEntity/ColoredEntity.tscn" id="1_vskco"]
+[ext_resource type="Script" path="res://Scripts/Boss/BossA.cs" id="2_hcup4"]
+[ext_resource type="Texture2D" uid="uid://bjesqplngg04u" path="res://Assets/Boss/boss.png" id="3_t6d3x"]
+[ext_resource type="Script" path="res://Scripts/Boss/Spiner.cs" id="4_50p06"]
+[ext_resource type="PackedScene" uid="uid://cxo3yun7cm3c4" path="res://Scenes/Boss/BossExplosion.tscn" id="5_4lbje"]
+[ext_resource type="Texture2D" uid="uid://dh33dmx1pn370" path="res://Assets/Star.png" id="6_npux6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_84og4"]
+radius = 66.1211
+
+[sub_resource type="Gradient" id="Gradient_048e4"]
+offsets = PackedFloat32Array(0.0052356, 0.115183, 0.832461, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_47ahc"]
+gradient = SubResource("Gradient_048e4")
+
+[sub_resource type="Curve" id="Curve_f7p0f"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.206573, 0.0117648), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_xqasc"]
+curve = SubResource("Curve_f7p0f")
+
+[sub_resource type="Curve" id="Curve_dsfvy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.0704225, 0.447059), 0.0, 0.0, 0, 0, Vector2(0.15493, 1), 0.0, 0.0, 0, 0, Vector2(0.197183, 0.411765), 0.0, 0.0, 0, 0, Vector2(0.295775, 1), 0.0, 0.0, 0, 0, Vector2(0.333333, 0.376471), 0.0, 0.0, 0, 0, Vector2(0.408451, 0.976471), 0.0, 0.0, 0, 0, Vector2(0.488263, 0.352941), 0.0, 0.0, 0, 0, Vector2(0.577465, 0.882353), 0.0, 0.0, 0, 0, Vector2(0.629108, 0.294118), 0.0, 0.0, 0, 0, Vector2(0.755869, 0.917647), 0.0, 0.0, 0, 0, Vector2(0.788732, 0.223529), 0.0, 0.0, 0, 0, Vector2(0.849765, 0.764706), 0.0, 0.0, 0, 0, Vector2(0.873239, 0.341177), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.811765), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 16
+
+[sub_resource type="CurveTexture" id="CurveTexture_3j41i"]
+curve = SubResource("Curve_dsfvy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3hay4"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(0, -1, 0)
+spread = 180.0
+flatness = 0.529
+initial_velocity_min = 56.11
+initial_velocity_max = 259.36
+angular_velocity_min = -187.32
+angular_velocity_max = 187.32
+gravity = Vector3(0, 50, 0)
+linear_accel_min = -28.45
+linear_accel_max = -8.13
+linear_accel_curve = SubResource("CurveTexture_xqasc")
+scale_min = 0.1
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_3j41i")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_47ahc")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="BossA" node_paths=PackedStringArray("enemyOneContainer", "explosionParticules", "finalExplosion") instance=ExtResource("1_vskco")]
+script = ExtResource("2_hcup4")
+enemyOneContainer = NodePath("EnemyOneContainer")
+explosionParticules = NodePath("GPUParticles2D")
+finalExplosion = NodePath("FinalExplosion")
+colorIndex = 5
+colorGivenTroughtCode = false
+color = Color(1, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Renderer" index="0"]
+scale = Vector2(0.086, 0.086)
+texture = ExtResource("3_t6d3x")
+script = ExtResource("4_50p06")
+
+[node name="Marker2D" type="Marker2D" parent="Renderer/Sprite2D" index="0"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Renderer" index="1"]
+scale = Vector2(0.086, 0.086)
+texture = ExtResource("3_t6d3x")
+script = ExtResource("4_50p06")
+
+[node name="Marker2D2" type="Marker2D" parent="Renderer/Sprite2D2" index="0"]
+
+[node name="Sprite2D3" type="Sprite2D" parent="Renderer" index="2"]
+scale = Vector2(0.086, 0.086)
+texture = ExtResource("3_t6d3x")
+script = ExtResource("4_50p06")
+
+[node name="Marker2D3" type="Marker2D" parent="Renderer/Sprite2D3" index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" index="0"]
+shape = SubResource("CircleShape2D_84og4")
+
+[node name="EnemyOneContainer" type="Node2D" parent="." index="2"]
+
+[node name="GPUParticles2D" parent="." index="3" instance=ExtResource("5_4lbje")]
+
+[node name="FinalExplosion" type="GPUParticles2D" parent="." index="4"]
+emitting = false
+amount = 800
+process_material = SubResource("ParticleProcessMaterial_3hay4")
+texture = ExtResource("6_npux6")
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.81
+randomness = 1.0

@@ -1,0 +1,728 @@
+[gd_scene load_steps=9 format=3 uid="uid://duovlwyilgmkk"]
+
+[ext_resource type="Script" path="res://Scripts/Manager/LevelManager.cs" id="1_pteb5"]
+[ext_resource type="PackedScene" uid="uid://bb26kgrx7bx71" path="res://ParallaxBackground.tscn" id="2_evg72"]
+[ext_resource type="Shader" uid="uid://daoxuoeo5nqfc" path="res://Resources/Shaders/PixelShader.tres" id="4_6j8pk"]
+[ext_resource type="PackedScene" uid="uid://b5rhtfc0p8yj2" path="res://Scenes/GameLayer.tscn" id="5_vo53r"]
+[ext_resource type="PackedScene" uid="uid://cgbn3co3v65sy" path="res://Scenes/LevelParralaxe.tscn" id="5_yu3vx"]
+[ext_resource type="PackedScene" uid="uid://m4age58r4w2c" path="res://Scenes/ColoredEntity/ColoredBlock.tscn" id="6_o5h7l"]
+[ext_resource type="PackedScene" uid="uid://h8fbgcr6chyo" path="res://Resources/Utils/Effects/Shake/shaker.tscn" id="8_3ug27"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gm0b1"]
+shader = ExtResource("4_6j8pk")
+shader_parameter/pixelSize = 0.742
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("creatingPlayerShaker", "gameLayer", "pixelShaderSupport", "onKillShaker", "smartBombShaker")]
+script = ExtResource("1_pteb5")
+creatingPlayerShaker = NodePath("ShakerContainer/CreatingPlayerShaker")
+gameLayer = NodePath("Parallax/GameLayer")
+pixelShaderSupport = NodePath("ParallaxBackground/ParallaxLayer/CanvasLayer/PixelShaderSupportBackground")
+onKillShaker = NodePath("ShakerContainer/OnKillShaker")
+smartBombShaker = NodePath("ShakerContainer/SmartBomb")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_evg72")]
+
+[node name="Parallax" type="Node2D" parent="."]
+
+[node name="LevelParralaxe3" parent="Parallax" instance=ExtResource("5_yu3vx")]
+
+[node name="ColoredBlock4" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(1663, 265)
+scale = Vector2(0.932, 0.932)
+colorIndex = 2
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock5" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(2419, 528)
+scale = Vector2(0.932, 0.932)
+colorIndex = 5
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock7" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(3177, 334)
+scale = Vector2(0.932, 0.932)
+colorIndex = 8
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock9" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(4691, 311)
+scale = Vector2(0.932, 0.932)
+colorIndex = 5
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock10" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(5449, 506)
+scale = Vector2(0.932, 0.932)
+colorIndex = 8
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock11" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(3936, 509)
+scale = Vector2(0.932, 0.932)
+colorIndex = 2
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock6" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(6205, 269)
+scale = Vector2(0.932, 0.932)
+colorIndex = 2
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock8" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(6961, 532)
+scale = Vector2(0.932, 0.932)
+colorIndex = 5
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock12" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(7719, 338)
+scale = Vector2(0.932, 0.932)
+colorIndex = 8
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock13" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(9233, 315)
+scale = Vector2(0.932, 0.932)
+colorIndex = 5
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock14" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(9991, 510)
+scale = Vector2(0.932, 0.932)
+colorIndex = 8
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock15" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(8478, 513)
+scale = Vector2(0.932, 0.932)
+colorIndex = 2
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock16" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(10749, 264)
+scale = Vector2(0.932, 0.932)
+colorIndex = 2
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock17" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(11505, 527)
+scale = Vector2(0.932, 0.932)
+colorIndex = 5
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock18" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(12263, 333)
+scale = Vector2(0.932, 0.932)
+colorIndex = 8
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock19" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(13777, 310)
+scale = Vector2(0.932, 0.932)
+colorIndex = 5
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock20" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(14535, 505)
+scale = Vector2(0.932, 0.932)
+colorIndex = 8
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock21" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(13022, 508)
+scale = Vector2(0.932, 0.932)
+colorIndex = 2
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock22" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(15291, 268)
+scale = Vector2(0.932, 0.932)
+colorIndex = 2
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock23" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(16047, 531)
+scale = Vector2(0.932, 0.932)
+colorIndex = 5
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock24" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(16805, 337)
+scale = Vector2(0.932, 0.932)
+colorIndex = 8
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock25" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(18319, 314)
+scale = Vector2(0.932, 0.932)
+colorIndex = 5
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock26" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(19077, 509)
+scale = Vector2(0.932, 0.932)
+colorIndex = 8
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock27" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(17564, 512)
+scale = Vector2(0.932, 0.932)
+colorIndex = 2
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock28" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(19838, 262)
+scale = Vector2(0.932, 0.932)
+colorIndex = 2
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock29" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(20594, 525)
+scale = Vector2(0.932, 0.932)
+colorIndex = 5
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock30" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(21352, 331)
+scale = Vector2(0.932, 0.932)
+colorIndex = 8
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock31" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(22866, 308)
+scale = Vector2(0.932, 0.932)
+colorIndex = 5
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock32" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(23624, 503)
+scale = Vector2(0.932, 0.932)
+colorIndex = 8
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock33" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(22111, 506)
+scale = Vector2(0.932, 0.932)
+colorIndex = 2
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock34" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(24380, 266)
+scale = Vector2(0.932, 0.932)
+colorIndex = 2
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock35" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(25136, 529)
+scale = Vector2(0.932, 0.932)
+colorIndex = 5
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock36" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(25894, 335)
+scale = Vector2(0.932, 0.932)
+colorIndex = 8
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock39" parent="Parallax/LevelParralaxe3" instance=ExtResource("6_o5h7l")]
+position = Vector2(26653, 510)
+scale = Vector2(0.932, 0.932)
+colorIndex = 2
+colorGivenTroughtCode = false
+
+[node name="LevelParralaxe2" parent="Parallax" instance=ExtResource("5_yu3vx")]
+
+[node name="ColoredBlock4" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(1969, 185)
+scale = Vector2(1.863, 1.863)
+colorIndex = 1
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock5" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(1419, 587)
+scale = Vector2(1.863, 1.863)
+colorIndex = 4
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock6" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(2531, 585)
+scale = Vector2(1.863, 1.863)
+colorIndex = 7
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock7" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(3775, 589)
+scale = Vector2(1.863, 1.863)
+colorIndex = 1
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock8" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(3143, 178)
+scale = Vector2(1.863, 1.863)
+colorIndex = 4
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock9" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(4435, 190)
+scale = Vector2(1.863, 1.863)
+colorIndex = 7
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock10" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(5623, 208)
+scale = Vector2(1.863, 1.863)
+colorIndex = 1
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock11" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(5073, 610)
+scale = Vector2(1.863, 1.863)
+colorIndex = 4
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock12" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(6185, 608)
+scale = Vector2(1.863, 1.863)
+colorIndex = 7
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock13" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(7429, 612)
+scale = Vector2(1.863, 1.863)
+colorIndex = 1
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock14" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(6797, 201)
+scale = Vector2(1.863, 1.863)
+colorIndex = 4
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock15" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(8089, 213)
+scale = Vector2(1.863, 1.863)
+colorIndex = 7
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock28" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(9358, 203)
+scale = Vector2(1.863, 1.863)
+colorIndex = 1
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock29" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(8808, 605)
+scale = Vector2(1.863, 1.863)
+colorIndex = 4
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock30" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(9920, 603)
+scale = Vector2(1.863, 1.863)
+colorIndex = 7
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock31" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(11164, 607)
+scale = Vector2(1.863, 1.863)
+colorIndex = 1
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock32" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(10532, 196)
+scale = Vector2(1.863, 1.863)
+colorIndex = 4
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock33" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(11824, 208)
+scale = Vector2(1.863, 1.863)
+colorIndex = 7
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock34" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(13012, 226)
+scale = Vector2(1.863, 1.863)
+colorIndex = 1
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock35" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(12462, 628)
+scale = Vector2(1.863, 1.863)
+colorIndex = 4
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock36" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(13574, 626)
+scale = Vector2(1.863, 1.863)
+colorIndex = 7
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock37" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(14818, 630)
+scale = Vector2(1.863, 1.863)
+colorIndex = 1
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock38" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(14186, 219)
+scale = Vector2(1.863, 1.863)
+colorIndex = 4
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock39" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(15478, 231)
+scale = Vector2(1.863, 1.863)
+colorIndex = 7
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock40" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(16716, 221)
+scale = Vector2(1.863, 1.863)
+colorIndex = 1
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock41" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(16166, 623)
+scale = Vector2(1.863, 1.863)
+colorIndex = 4
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock42" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(17278, 621)
+scale = Vector2(1.863, 1.863)
+colorIndex = 7
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock43" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(18522, 625)
+scale = Vector2(1.863, 1.863)
+colorIndex = 1
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock44" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(17890, 214)
+scale = Vector2(1.863, 1.863)
+colorIndex = 4
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock45" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(19182, 226)
+scale = Vector2(1.863, 1.863)
+colorIndex = 7
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock46" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(20370, 244)
+scale = Vector2(1.863, 1.863)
+colorIndex = 1
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock47" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(19820, 646)
+scale = Vector2(1.863, 1.863)
+colorIndex = 4
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock48" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(20932, 644)
+scale = Vector2(1.863, 1.863)
+colorIndex = 7
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock49" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(22176, 648)
+scale = Vector2(1.863, 1.863)
+colorIndex = 1
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock50" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(21544, 237)
+scale = Vector2(1.863, 1.863)
+colorIndex = 4
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock64" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(24105, 239)
+scale = Vector2(1.863, 1.863)
+colorIndex = 1
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock65" parent="Parallax/LevelParralaxe2" instance=ExtResource("6_o5h7l")]
+position = Vector2(23555, 641)
+scale = Vector2(1.863, 1.863)
+colorIndex = 4
+colorGivenTroughtCode = false
+
+[node name="LevelParralaxe" parent="Parallax" instance=ExtResource("5_yu3vx")]
+
+[node name="ColoredBlock4" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(1384, -75)
+scale = Vector2(3.72549, 3.72549)
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock5" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(1993, 827)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 3
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock6" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(2604, -72.0001)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 6
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock7" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(3203, 841)
+scale = Vector2(3.72549, 3.72549)
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock8" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(3799, -67)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 3
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock9" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(4405, 838)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 6
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock10" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(4986, -75)
+scale = Vector2(3.72549, 3.72549)
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock11" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(5595, 827)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 3
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock12" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(6206, -72.0001)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 6
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock13" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(6805, 841)
+scale = Vector2(3.72549, 3.72549)
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock14" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(7401, -67)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 3
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock15" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(8007, 838)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 6
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock16" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(8611, -70)
+scale = Vector2(3.72549, 3.72549)
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock17" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(9220, 832)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 3
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock18" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(9831, -67.0001)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 6
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock19" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(10430, 846)
+scale = Vector2(3.72549, 3.72549)
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock20" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(11026, -62)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 3
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock21" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(11632, 843)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 6
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock22" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(12213, -70)
+scale = Vector2(3.72549, 3.72549)
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock23" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(12822, 832)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 3
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock24" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(13433, -67.0001)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 6
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock25" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(14032, 846)
+scale = Vector2(3.72549, 3.72549)
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock26" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(14628, -62)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 3
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock27" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(15234, 843)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 6
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock28" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(15824, -71)
+scale = Vector2(3.72549, 3.72549)
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock29" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(16433, 831)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 3
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock30" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(17044, -68.0001)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 6
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock31" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(17643, 845)
+scale = Vector2(3.72549, 3.72549)
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock32" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(18239, -63)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 3
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock33" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(18845, 842)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 6
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock34" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(19426, -71)
+scale = Vector2(3.72549, 3.72549)
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock36" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(20646, -68.0001)
+scale = Vector2(3.72549, 3.72549)
+colorIndex = 6
+colorGivenTroughtCode = false
+
+[node name="ColoredBlock37" parent="Parallax/LevelParralaxe" instance=ExtResource("6_o5h7l")]
+position = Vector2(21245, 845)
+scale = Vector2(3.72549, 3.72549)
+colorGivenTroughtCode = false
+
+[node name="GameLayer" parent="Parallax" instance=ExtResource("5_vo53r")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="PixelShaderSupport" type="ColorRect" parent="CanvasLayer"]
+z_index = 1000
+material = SubResource("ShaderMaterial_gm0b1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ShakerContainer" type="Node2D" parent="."]
+
+[node name="OnKillShaker" parent="ShakerContainer" node_paths=PackedStringArray("_targets") instance=ExtResource("8_3ug27")]
+_targets = [NodePath("../..")]
+duration = 0.5
+duration_ = 0.0
+
+[node name="SmartBomb" parent="ShakerContainer" node_paths=PackedStringArray("_targets") instance=ExtResource("8_3ug27")]
+_targets = [NodePath("../..")]
+duration = 0.3
+amplitude = Vector2(10, 5)
+transition_ = 5
+ease_ = 1
+duration_ = 0.3
+_transition = 5
+_ease = 0
+_duration = 0.0
+
+[node name="CreatingPlayerShaker" parent="ShakerContainer" node_paths=PackedStringArray("_targets") instance=ExtResource("8_3ug27")]
+_targets = [NodePath("../..")]
+duration = 0.2
+step = 0.025
+transition_ = 5
+ease_ = 1
+duration_ = 0.0
+_transition = 5
+_ease = 0
+_duration = 0.1
+
+[node name="BossShaker" parent="ShakerContainer" instance=ExtResource("8_3ug27")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 28840.0
+offset_bottom = 136.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+offset_top = 649.0
+offset_right = 28752.0
+offset_bottom = 723.0
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 19143.0
+offset_top = 820.0
+offset_right = 19295.0
+offset_bottom = 2535.0
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 22172.0
+offset_top = 886.0
+offset_right = 22324.0
+offset_bottom = 2646.0
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+offset_left = 25196.0
+offset_top = 846.0
+offset_right = 25333.0
+offset_bottom = 2712.0
+
+[node name="ColorRect8" type="ColorRect" parent="."]
+offset_left = 28223.0
+offset_top = 1036.0
+offset_right = 28375.0
+offset_bottom = 2781.0
+
+[editable path="ParallaxBackground"]

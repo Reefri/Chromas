@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgky6fb515kki"]
+
+[ext_resource type="Script" path="res://Scripts/UI/SpamControl.cs" id="1_cy5xl"]
+[ext_resource type="TileSet" uid="uid://cn4fvavfcnwy6" path="res://Resources/TileSet/SpamControlsTileSet.tres" id="2_n5bu0"]
+
+[node name="SpamControls" type="Node2D" node_paths=PackedStringArray("top", "bottom")]
+texture_filter = 1
+texture_repeat = 1
+script = ExtResource("1_cy5xl")
+top = NodePath("controler")
+bottom = NodePath("keyboard")
+metadata/_edit_use_anchors_ = true
+
+[node name="controler" type="Node2D" parent="."]
+position = Vector2(-16, 29)
+scale = Vector2(0.456089, 0.456089)
+
+[node name="TileMap" type="TileMap" parent="controler"]
+position = Vector2(3.35401, 1.27945e-05)
+scale = Vector2(9, 9)
+tile_set = ExtResource("2_n5bu0")
+format = 2
+layer_0/tile_data = PackedInt32Array(196613, 524288, 4, 196610, 65536, 1, 65537, 589824, 4)
+
+[node name="TileMap3" type="TileMap" parent="controler"]
+scale = Vector2(3, 3)
+tile_set = ExtResource("2_n5bu0")
+format = 2
+layer_0/tile_data = PackedInt32Array(262162, 786432, 0, 327699, 786432, 0, 262164, 786432, 0, 196627, 524288, 10)
+
+[node name="keyboard" type="Node2D" parent="."]
+position = Vector2(551, 319)
+scale = Vector2(3, 3)
+
+[node name="TileMap4" type="TileMap" parent="keyboard"]
+tile_set = ExtResource("2_n5bu0")
+format = 2
+layer_0/tile_data = PackedInt32Array(196610, 1114112, 2, 196611, 1245184, 3, 196612, 1310720, 3, 131075, 1245184, 4, 327686, 2097152, 6, 196616, 1638400, 3, 196617, 1703936, 3, 196618, 1638400, 4, 327685, 2031616, 6, 327687, 2162688, 6)

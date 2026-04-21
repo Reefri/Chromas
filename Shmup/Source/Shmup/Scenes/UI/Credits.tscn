@@ -1,0 +1,431 @@
+[gd_scene load_steps=11 format=3 uid="uid://dk26f4op5eorx"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Credits.cs" id="1_bvtn5"]
+
+[sub_resource type="FontFile" id="FontFile_ue67u"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/4/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/1/0/ascent = 0.0
+cache/0/1/0/descent = 0.0
+cache/0/1/0/underline_position = 0.0
+cache/0/1/0/underline_thickness = 0.0
+cache/0/1/0/scale = 1.0
+cache/0/1/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/4/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/2/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/4/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/3/0/ascent = 0.0
+cache/0/3/0/descent = 0.0
+cache/0/3/0/underline_position = 0.0
+cache/0/3/0/underline_thickness = 0.0
+cache/0/3/0/scale = 1.0
+cache/0/3/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/4/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/4/0/ascent = 0.0
+cache/0/4/0/descent = 0.0
+cache/0/4/0/underline_position = 0.0
+cache/0/4/0/underline_thickness = 0.0
+cache/0/4/0/scale = 1.0
+cache/0/4/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/4/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/4/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/4/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/4/0/kerning_overrides/4/0 = Vector2(0, 0)
+cache/0/4/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/4/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/4/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/4/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/4/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/25/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/4/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/25/0 = Vector2(0, 0)
+
+[sub_resource type="Theme" id="Theme_ig5w1"]
+default_base_scale = 2.0
+default_font = SubResource("FontFile_ue67u")
+default_font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqu6f"]
+bg_color = Color(0, 0, 0, 0.752941)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_lhjeq"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_xwcwq"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_eqle1"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_k8q2i"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_krerf"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_n42xp"]
+font_size = 20
+
+[node name="Credits" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ig5w1")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pqu6f")
+script = ExtResource("1_bvtn5")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+anchor_left = 0.403
+anchor_right = 0.563
+anchor_bottom = 0.235
+offset_left = 0.53598
+offset_right = 0.455994
+offset_bottom = -0.240005
+text = "KEY_GAME_BY"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="Title2" type="Label" parent="."]
+layout_mode = 2
+anchor_left = 0.568
+anchor_right = 0.585
+anchor_bottom = 0.235
+offset_left = 0.0159912
+offset_right = 0.519958
+offset_bottom = -0.240005
+text = " : "
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="Workers" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.21
+anchor_right = 1.0
+anchor_bottom = 0.519
+offset_top = -0.0800018
+offset_bottom = -0.312042
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="FOURNIER" type="HBoxContainer" parent="Workers"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Job" type="Label" parent="Workers/FOURNIER"]
+layout_mode = 2
+text = "KEY_PROJECT_MANAGER"
+label_settings = SubResource("LabelSettings_lhjeq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Separator" type="Label" parent="Workers/FOURNIER"]
+layout_mode = 2
+text = " : "
+label_settings = SubResource("LabelSettings_xwcwq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="Workers/FOURNIER"]
+layout_mode = 2
+text = " FOURNIER Julien"
+label_settings = SubResource("LabelSettings_eqle1")
+vertical_alignment = 1
+
+[node name="ANTOINE" type="HBoxContainer" parent="Workers"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Job" type="Label" parent="Workers/ANTOINE"]
+layout_mode = 2
+text = "KEY_GAME_DIRECTOR"
+label_settings = SubResource("LabelSettings_lhjeq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Separator" type="Label" parent="Workers/ANTOINE"]
+layout_mode = 2
+text = " : "
+label_settings = SubResource("LabelSettings_xwcwq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="Workers/ANTOINE"]
+layout_mode = 2
+text = "ANTOINE Mathieu"
+label_settings = SubResource("LabelSettings_eqle1")
+vertical_alignment = 1
+
+[node name="QUENEDEY" type="HBoxContainer" parent="Workers"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Job" type="Label" parent="Workers/QUENEDEY"]
+layout_mode = 2
+text = "KEY_LEAD_GAME_DESIGNER"
+label_settings = SubResource("LabelSettings_lhjeq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Separator" type="Label" parent="Workers/QUENEDEY"]
+layout_mode = 2
+text = " : "
+label_settings = SubResource("LabelSettings_xwcwq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="Workers/QUENEDEY"]
+layout_mode = 2
+text = "QUENEDEY Alexandre"
+label_settings = SubResource("LabelSettings_eqle1")
+vertical_alignment = 1
+
+[node name="LE MOAL" type="HBoxContainer" parent="Workers"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Job" type="Label" parent="Workers/LE MOAL"]
+layout_mode = 2
+text = "KEY_ART_DIRECTOR"
+label_settings = SubResource("LabelSettings_lhjeq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Separator" type="Label" parent="Workers/LE MOAL"]
+layout_mode = 2
+text = " : "
+label_settings = SubResource("LabelSettings_xwcwq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="Workers/LE MOAL"]
+layout_mode = 2
+text = " LE MOAL Damien"
+label_settings = SubResource("LabelSettings_eqle1")
+vertical_alignment = 1
+
+[node name="HOUDENT" type="HBoxContainer" parent="Workers"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Job" type="Label" parent="Workers/HOUDENT"]
+layout_mode = 2
+text = "KEY_LEAD_UX"
+label_settings = SubResource("LabelSettings_lhjeq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Separator" type="Label" parent="Workers/HOUDENT"]
+layout_mode = 2
+text = " : "
+label_settings = SubResource("LabelSettings_xwcwq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="Workers/HOUDENT"]
+layout_mode = 2
+text = "HOUDENT Alexandre"
+label_settings = SubResource("LabelSettings_eqle1")
+vertical_alignment = 1
+
+[node name="YAHI" type="HBoxContainer" parent="Workers"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Job" type="Label" parent="Workers/YAHI"]
+layout_mode = 2
+text = "KEY_LEAD_SOUND_DESIGNER"
+label_settings = SubResource("LabelSettings_lhjeq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Separator" type="Label" parent="Workers/YAHI"]
+layout_mode = 2
+text = " : "
+label_settings = SubResource("LabelSettings_xwcwq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="Workers/YAHI"]
+layout_mode = 2
+text = "YAHI Malik"
+label_settings = SubResource("LabelSettings_eqle1")
+vertical_alignment = 1
+
+[node name="ALCASOU" type="HBoxContainer" parent="Workers"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Job" type="Label" parent="Workers/ALCASOU"]
+layout_mode = 2
+text = "KEY_MS"
+label_settings = SubResource("LabelSettings_lhjeq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Separator" type="Label" parent="Workers/ALCASOU"]
+layout_mode = 2
+text = " : "
+label_settings = SubResource("LabelSettings_xwcwq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="Workers/ALCASOU"]
+layout_mode = 2
+text = " ALCASOU Guillaume"
+label_settings = SubResource("LabelSettings_eqle1")
+vertical_alignment = 1
+
+[node name="GRAMATIKOFF" type="HBoxContainer" parent="Workers"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Job" type="Label" parent="Workers/GRAMATIKOFF"]
+layout_mode = 2
+text = "KEY_GDP"
+label_settings = SubResource("LabelSettings_k8q2i")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Separator" type="Label" parent="Workers/GRAMATIKOFF"]
+layout_mode = 2
+text = " : "
+label_settings = SubResource("LabelSettings_krerf")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="Workers/GRAMATIKOFF"]
+layout_mode = 2
+text = "GRAMATIKOFF Sacha"
+label_settings = SubResource("LabelSettings_n42xp")
+vertical_alignment = 1
+
+[node name="SpecialThanks" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+anchor_top = 0.616
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.255981
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="SpecialThanks"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.443
+anchor_right = 0.557
+anchor_bottom = 0.103
+offset_left = -0.336029
+offset_right = 0.335938
+offset_bottom = -0.0720024
+grow_horizontal = 2
+text = "KEY_SPECIAL_THANKS_LABEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="SpecialThanks" type="Label" parent="SpecialThanks"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.143
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.0320015
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_SPECIAL_THANKS_TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 35

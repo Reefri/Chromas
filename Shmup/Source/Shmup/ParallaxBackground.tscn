@@ -1,0 +1,137 @@
+[gd_scene load_steps=12 format=3 uid="uid://bb26kgrx7bx71"]
+
+[ext_resource type="Texture2D" uid="uid://dh33dmx1pn370" path="res://Assets/Star.png" id="1_1jnso"]
+[ext_resource type="Script" path="res://Scripts/Particules/BackgroundStarParticule.cs" id="2_djkgb"]
+[ext_resource type="Shader" uid="uid://daoxuoeo5nqfc" path="res://Resources/Shaders/PixelShader.tres" id="3_6csev"]
+
+[sub_resource type="Curve" id="Curve_qap56"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_nekaw"]
+curve = SubResource("Curve_qap56")
+
+[sub_resource type="Curve" id="Curve_mjk51"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.046875, 0.610828), 0.0, 0.0, 0, 0, Vector2(0.159375, 0.519745), 0.0, 0.0, 0, 0, Vector2(0.265625, 0.743312), 0.0, 0.0, 0, 0, Vector2(0.43125, 0.710191), 0.0, 0.0, 0, 0, Vector2(0.515625, 0.842675), 0.0, 0.0, 0, 0, Vector2(0.64375, 0.585987), 0.0, 0.0, 0, 0, Vector2(0.715625, 0.950318), 0.0, 0.0, 0, 0, Vector2(0.796875, 0.710191), 0.0, 0.0, 0, 0, Vector2(0.90625, 0.792994), 0.0, 0.0, 0, 0, Vector2(1, 0.00636935), -0.213684, 0.0, 0, 0]
+point_count = 11
+
+[sub_resource type="CurveTexture" id="CurveTexture_mamfm"]
+curve = SubResource("Curve_mjk51")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_unoif"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(576, 324, 0)
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+angular_velocity_curve = SubResource("CurveTexture_nekaw")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.6
+scale_curve = SubResource("CurveTexture_mamfm")
+color = Color(0.8, 0.208, 0.208, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2n4m8"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(576, 324, 0)
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+angular_velocity_curve = SubResource("CurveTexture_nekaw")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.6
+scale_curve = SubResource("CurveTexture_mamfm")
+color = Color(0.9, 0.234, 0.234, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uxmag"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(576, 324, 0)
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+initial_velocity_min = 80.0
+initial_velocity_max = 80.0
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+angular_velocity_curve = SubResource("CurveTexture_nekaw")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.6
+scale_curve = SubResource("CurveTexture_mamfm")
+color = Color(1, 0.26, 0.26, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nas2v"]
+shader = ExtResource("3_6csev")
+shader_parameter/pixelSize = 0.001
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ParallaxLayer"]
+layer = -20
+
+[node name="background" type="ColorRect" parent="ParallaxLayer/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.00784314, 0.027451, 0.117647, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="ParallaxLayer/CanvasLayer/background"]
+position = Vector2(600, 312)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_unoif")
+texture = ExtResource("1_1jnso")
+lifetime = 5.0
+preprocess = 10.0
+script = ExtResource("2_djkgb")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="ParallaxLayer/CanvasLayer/background"]
+position = Vector2(600, 312)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_2n4m8")
+texture = ExtResource("1_1jnso")
+lifetime = 5.0
+preprocess = 10.0
+script = ExtResource("2_djkgb")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="ParallaxLayer/CanvasLayer/background"]
+position = Vector2(600, 312)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_uxmag")
+texture = ExtResource("1_1jnso")
+lifetime = 5.0
+preprocess = 10.0
+script = ExtResource("2_djkgb")
+
+[node name="PixelShaderSupportBackground" type="ColorRect" parent="ParallaxLayer/CanvasLayer"]
+z_index = 1000
+material = SubResource("ShaderMaterial_nas2v")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

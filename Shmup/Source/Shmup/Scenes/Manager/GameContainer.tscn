@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm80s3dsq2xn2"]
+
+[ext_resource type="Script" path="res://Scripts/Manager/GameManager.cs" id="1_rrjjc"]
+[ext_resource type="PackedScene" uid="uid://bdt6gnfdv3qoh" path="res://Scenes/Camera.tscn" id="2_3u7qo"]
+[ext_resource type="PackedScene" uid="uid://f8843dp22jl7" path="res://Scenes/Manager/JuiceManager.tscn" id="2_aphic"]
+[ext_resource type="PackedScene" uid="uid://duovlwyilgmkk" path="res://Scenes/Level/Level.tscn" id="2_hvveb"]
+
+[node name="GameContainer" type="Node2D"]
+z_index = -2
+script = ExtResource("1_rrjjc")
+
+[node name="CameraContainer" parent="." instance=ExtResource("2_3u7qo")]
+
+[node name="Level" parent="." instance=ExtResource("2_hvveb")]
+z_index = -4
+
+[node name="BulletContainer" type="Node2D" parent="."]
+
+[node name="ExplosionContainer" type="Node2D" parent="."]
+
+[node name="PermanantMarkContainer" type="Node2D" parent="."]
+
+[node name="JuiceManager" parent="." instance=ExtResource("2_aphic")]
+
+[node name="CollectableContainer" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[editable path="Level"]
+[editable path="Level/ParallaxBackground"]

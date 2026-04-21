@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://3e1dkaspgknx"]
+
+[ext_resource type="PackedScene" uid="uid://dhfxd2fnfb7it" path="res://Scenes/ColoredEntity/Enemy/Enemy.tscn" id="1_ytptk"]
+[ext_resource type="Script" path="res://Scripts/Enemy/EnemyTwo.cs" id="2_51cqn"]
+[ext_resource type="Texture2D" uid="uid://cqbqdj1iljb43" path="res://Assets/Enemies/EnemyTwo.png" id="3_q7c4v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rold"]
+size = Vector2(72.0104, 63.4699)
+
+[node name="EnemyTwo" instance=ExtResource("1_ytptk")]
+script = ExtResource("2_51cqn")
+
+[node name="Sprite2D" parent="Renderer" index="0"]
+position = Vector2(8, 0)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_q7c4v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" index="0"]
+scale = Vector2(1.11095, 1.26044)
+shape = SubResource("RectangleShape2D_6rold")

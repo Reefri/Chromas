@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgwihjla1h5mo"]
+
+[ext_resource type="Script" path="res://Scripts/PermanentMark.cs" id="1_388it"]
+[ext_resource type="PackedScene" uid="uid://vsxbcxrmchv6" path="res://Resources/Utils/Effects/Trail/Trail.tscn" id="2_tbcff"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m0m3l"]
+radius = 16.0
+
+[sub_resource type="Curve" id="Curve_4p5vq"]
+_data = [Vector2(0, 0.677241), 0.0, 0.0, 0, 0, Vector2(1, 0.471035), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_gofda"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0.686275)
+
+[sub_resource type="Curve" id="Curve_i5nmy"]
+_data = [Vector2(0, 0.246897), 0.0, 0.0, 0, 0, Vector2(1, 0.211035), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_4h5vp"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0.666667)
+
+[node name="PermanentMark" type="RigidBody2D" node_paths=PackedStringArray("spriteContainer")]
+script = ExtResource("1_388it")
+spriteContainer = NodePath("SpriteContainer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m0m3l")
+
+[node name="SpriteContainer" type="Node2D" parent="."]
+
+[node name="Trail" parent="." node_paths=PackedStringArray("reparentTarget", "positionTarget") instance=ExtResource("2_tbcff")]
+width_curve = SubResource("Curve_4p5vq")
+gradient = SubResource("Gradient_gofda")
+reparent = true
+reparentTarget = NodePath("..")
+changePosition = true
+positionTarget = NodePath("..")
+changeColor = false
+
+[node name="Trail2" parent="." node_paths=PackedStringArray("reparentTarget", "positionTarget") instance=ExtResource("2_tbcff")]
+width_curve = SubResource("Curve_i5nmy")
+gradient = SubResource("Gradient_4h5vp")
+reparent = true
+reparentTarget = NodePath("..")
+changePosition = true
+positionTarget = NodePath("..")
+changeColor = false

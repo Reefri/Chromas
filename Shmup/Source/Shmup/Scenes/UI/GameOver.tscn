@@ -1,0 +1,242 @@
+[gd_scene load_steps=12 format=3 uid="uid://cojvggq2o2bx0"]
+
+[ext_resource type="Script" path="res://Scripts/UI/GameOver.cs" id="1_k1li5"]
+[ext_resource type="Texture2D" uid="uid://dfotu1l2qkl0y" path="res://Assets/icon/exit.png" id="2_dntb0"]
+[ext_resource type="Script" path="res://Scripts/UI/CustomButton.cs" id="3_m5k7b"]
+[ext_resource type="Texture2D" uid="uid://byv1keivlex6v" path="res://Assets/icon/retry.png" id="4_cy3qu"]
+[ext_resource type="Texture2D" uid="uid://bxot2qqr5pm1v" path="res://Assets/Collectables/Base.png" id="5_mmi41"]
+
+[sub_resource type="Curve" id="Curve_o107b"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.881517, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_jfotx"]
+curve = SubResource("Curve_o107b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tu380"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 157.41
+initial_velocity_max = 222.23
+gravity = Vector3(0, 100, 0)
+scale_min = 0.01
+scale_max = 0.02
+scale_curve = SubResource("CurveTexture_jfotx")
+color = Color(1, 0, 0, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_uhrpu"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_qg5nv"]
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_4glou"]
+font_size = 50
+
+[node name="GameOver" type="Control" node_paths=PackedStringArray("gameOverLabel", "labelContainer", "scoreLabel", "retryButton", "quitButton", "partsContainer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k1li5")
+gameOverLabel = NodePath("GameOver")
+labelContainer = NodePath("Control")
+scoreLabel = NodePath("Score")
+retryButton = NodePath("Control2/RETRY")
+quitButton = NodePath("Control2/QUIT")
+partsContainer = NodePath("partsContainer")
+
+[node name="partsContainer" type="Node2D" parent="."]
+
+[node name="GPUParticles2D5" type="GPUParticles2D" parent="partsContainer"]
+position = Vector2(571, 593)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_tu380")
+texture = ExtResource("5_mmi41")
+lifetime = 5.69
+preprocess = 20.17
+speed_scale = 3.45
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 1.3
+
+[node name="GPUParticles2D6" type="GPUParticles2D" parent="partsContainer"]
+position = Vector2(265, 93)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_tu380")
+texture = ExtResource("5_mmi41")
+lifetime = 9.44
+preprocess = 20.17
+speed_scale = 3.42
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 1.3
+
+[node name="GPUParticles2D9" type="GPUParticles2D" parent="partsContainer"]
+position = Vector2(937, 93)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_tu380")
+texture = ExtResource("5_mmi41")
+lifetime = 11.39
+preprocess = 20.17
+speed_scale = 3.42
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 1.3
+
+[node name="GPUParticles2D7" type="GPUParticles2D" parent="partsContainer"]
+position = Vector2(1065, 495)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_tu380")
+texture = ExtResource("5_mmi41")
+lifetime = 8.09
+preprocess = 20.17
+speed_scale = 3.42
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 1.3
+
+[node name="GPUParticles2D8" type="GPUParticles2D" parent="partsContainer"]
+position = Vector2(95, 495)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_tu380")
+texture = ExtResource("5_mmi41")
+lifetime = 6.94
+preprocess = 20.17
+speed_scale = 3.42
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 1.3
+
+[node name="GameOver" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.367
+anchor_top = 0.058
+anchor_right = 0.633
+anchor_bottom = 0.143
+offset_left = -0.284027
+offset_top = -0.0839996
+offset_right = 0.283997
+offset_bottom = -0.164001
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_GAMEOVER"
+label_settings = SubResource("LabelSettings_uhrpu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.328
+anchor_top = 0.193
+anchor_right = 0.671
+anchor_bottom = 0.321
+offset_left = 0.143982
+offset_top = -0.064003
+offset_right = -0.992004
+offset_bottom = -0.00801086
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Victory" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.988
+offset_bottom = 0.995995
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_VICTORY"
+label_settings = SubResource("LabelSettings_qg5nv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Defeat" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_DEFEAT"
+label_settings = SubResource("LabelSettings_qg5nv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.367
+anchor_top = 0.448
+anchor_right = 0.635
+anchor_bottom = 0.554
+offset_left = -0.784027
+offset_top = -0.304016
+offset_right = -0.520081
+offset_bottom = 0.00799561
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_SCORE"
+label_settings = SubResource("LabelSettings_4glou")
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.230035
+anchor_top = 0.515432
+anchor_right = 0.764758
+anchor_bottom = 1.03627
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="QUIT" type="Button" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.644
+anchor_right = 0.825
+anchor_bottom = 1.08
+offset_left = 0.295258
+offset_top = -9.53674e-05
+offset_right = -0.200378
+offset_bottom = -9.91821e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+icon = ExtResource("2_dntb0")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_m5k7b")
+metadata/_edit_use_anchors_ = true
+
+[node name="RETRY" type="Button" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0840254
+anchor_top = -0.159999
+anchor_right = 0.319596
+anchor_bottom = 1.24
+offset_left = 0.240295
+offset_top = -0.000125885
+offset_right = -0.871353
+offset_bottom = -0.0001297
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+icon = ExtResource("4_cy3qu")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_m5k7b")
+metadata/_edit_use_anchors_ = true

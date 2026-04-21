@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxer54tavfsps"]
+
+[ext_resource type="Shader" uid="uid://bk0fxo4ycep3b" path="res://Resources/Shaders/Glitch.tres" id="1_r40hh"]
+[ext_resource type="Texture2D" uid="uid://dgna6aygmi21u" path="res://Assets/icon.svg" id="2_7oq2x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p8y5h"]
+shader = ExtResource("1_r40hh")
+shader_parameter/accuracy = 0.198
+shader_parameter/position = Vector2(0.1, 0.1)
+
+[node name="test" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(596, 348)
+scale = Vector2(9.3125, 5.4375)
+texture = ExtResource("2_7oq2x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_p8y5h")
+offset_left = -72.0
+offset_top = -80.0
+offset_right = 1104.0
+offset_bottom = 872.0

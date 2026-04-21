@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://b815j3hvkx0vh"]
+
+[ext_resource type="PackedScene" uid="uid://bc2myea7tv33a" path="res://Scenes/Collectables/GenericCollectable.tscn" id="1_iem88"]
+[ext_resource type="Script" path="res://Scripts/Collectables/Heal.cs" id="2_0fjsw"]
+[ext_resource type="Texture2D" uid="uid://c8kpcx26ll55q" path="res://Assets/Collectables/health.png" id="3_5ask7"]
+
+[node name="Heal" instance=ExtResource("1_iem88")]
+script = ExtResource("2_0fjsw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Renderer" index="1"]
+position = Vector2(-36, 36)
+texture = ExtResource("3_5ask7")

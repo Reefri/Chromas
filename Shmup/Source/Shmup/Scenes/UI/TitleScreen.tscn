@@ -1,0 +1,189 @@
+[gd_scene load_steps=11 format=3 uid="uid://m3bdi4b5kyio"]
+
+[ext_resource type="Script" path="res://Scripts/UI/TitleScreen.cs" id="1_syrfj"]
+[ext_resource type="Texture2D" uid="uid://dglx5hpke4ah1" path="res://Assets/icon/continue.png" id="2_2nn04"]
+[ext_resource type="Texture2D" uid="uid://bjesqplngg04u" path="res://Assets/Boss/boss.png" id="2_ib01h"]
+[ext_resource type="Script" path="res://Scripts/UI/CustomButton.cs" id="3_k6j6h"]
+[ext_resource type="Script" path="res://Scripts/UI/ConstrolSpiner.cs" id="3_p35ac"]
+[ext_resource type="Texture2D" uid="uid://davcn8ju4fyow" path="res://Assets/icon/credit.png" id="4_8vsy5"]
+[ext_resource type="Script" path="res://Scripts/UI/StartButton.cs" id="5_ffrhy"]
+[ext_resource type="PackedScene" uid="uid://cdlvug6c55y62" path="res://Scenes/UI/ColorFilterPanel.tscn" id="6_w6dqv"]
+[ext_resource type="PackedScene" uid="uid://dm752wak4flpg" path="res://Scenes/UI/LanguagePanel.tscn" id="7_o78si"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_on4l0"]
+font_size = 40
+
+[node name="TitleScreen" type="Control" node_paths=PackedStringArray("labelLeft", "labelRight", "bossIcon", "startButton", "creditsButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_syrfj")
+labelLeft = NodePath("Title/LabelLeft")
+labelRight = NodePath("Title/LabelRight")
+bossIcon = NodePath("Title/Control")
+startButton = NodePath("Start")
+creditsButton = NodePath("Credits")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.0703125
+anchor_top = -0.0524691
+anchor_right = 1.07031
+anchor_bottom = 0.947531
+offset_left = -96.0
+offset_right = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelLeft" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.453
+anchor_top = 0.159
+anchor_right = 0.453
+anchor_bottom = 0.349
+offset_left = -121.856
+offset_top = 36.968
+offset_right = -7.85602
+offset_bottom = -31.152
+grow_horizontal = 0
+grow_vertical = 0
+text = "KEY_LEFT_TITLE"
+label_settings = SubResource("LabelSettings_on4l0")
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="Title"]
+layout_mode = 1
+anchor_left = 0.462
+anchor_top = 0.167
+anchor_right = 0.544
+anchor_bottom = 0.327
+offset_left = -10.762
+offset_top = -5.216
+offset_right = 2.85596
+offset_bottom = 14.104
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Title/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ib01h")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_p35ac")
+spinSpeed = 10.0
+
+[node name="TextureRect2" type="TextureRect" parent="Title/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ib01h")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_p35ac")
+spinSpeed = -5.0
+
+[node name="TextureRect3" type="TextureRect" parent="Title/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ib01h")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_p35ac")
+spinSpeed = 2.0
+
+[node name="LabelRight" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.547
+anchor_top = 0.159
+anchor_right = 0.547
+anchor_bottom = 0.349
+offset_left = 0.855957
+offset_top = 15.968
+offset_right = 103.856
+offset_bottom = -4.15201
+grow_vertical = 0
+text = "KEY_RIGHT_TITLE"
+label_settings = SubResource("LabelSettings_on4l0")
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -35.0
+offset_right = 53.5
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_START"
+icon = ExtResource("2_2nn04")
+flat = true
+script = ExtResource("5_ffrhy")
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = 121.5
+offset_right = 4.0
+offset_bottom = 129.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_CREDITS"
+icon = ExtResource("4_8vsy5")
+flat = true
+script = ExtResource("3_k6j6h")
+
+[node name="ColorFilterPanel" parent="." instance=ExtResource("6_w6dqv")]
+layout_mode = 1
+anchor_left = 0.758
+anchor_top = 0.622
+anchor_right = 0.813
+anchor_bottom = 0.721
+offset_left = -0.216003
+offset_top = -0.0560303
+offset_right = 0.423889
+offset_bottom = -0.208008
+
+[node name="LanguagePanel" parent="." instance=ExtResource("7_o78si")]
+layout_mode = 1
+anchor_left = 0.145
+anchor_top = 0.631
+anchor_right = 0.201
+anchor_bottom = 0.73
+offset_left = -0.0400085
+offset_top = 0.111969
+offset_right = -0.552063
+offset_bottom = -0.0400085

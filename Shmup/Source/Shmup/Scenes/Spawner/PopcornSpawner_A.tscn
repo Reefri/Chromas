@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://chv7p4iumjiwl"]
+
+[ext_resource type="PackedScene" uid="uid://dxwsbg3s8lha" path="res://Scenes/Spawner/EnemySpawner.tscn" id="1_8mfx0"]
+[ext_resource type="PackedScene" uid="uid://d330w1fsc8kva" path="res://Scenes/ColoredEntity/Enemy/EnemyOne.tscn" id="2_1fnj3"]
+
+[node name="PopCornSpawner1" instance=ExtResource("1_8mfx0")]
+
+[node name="EnemyOne" parent="." index="0" instance=ExtResource("2_1fnj3")]
+position = Vector2(18, -74)
+
+[node name="EnemyOne2" parent="." index="1" instance=ExtResource("2_1fnj3")]
+position = Vector2(64, -49)
+colorIndex = 2
+
+[node name="EnemyOne3" parent="." index="2" instance=ExtResource("2_1fnj3")]
+position = Vector2(77, -4.76837e-07)
+colorIndex = 4
+
+[node name="EnemyOne4" parent="." index="3" instance=ExtResource("2_1fnj3")]
+position = Vector2(63, 39)
+colorIndex = 6
+
+[node name="EnemyOne5" parent="." index="4" instance=ExtResource("2_1fnj3")]
+position = Vector2(18, 69)
+colorIndex = 8
+
+[node name="EnemyOne6" parent="." index="5" instance=ExtResource("2_1fnj3")]
+position = Vector2(-32, 52)
+colorIndex = 1
+
+[node name="EnemyOne7" parent="." index="6" instance=ExtResource("2_1fnj3")]
+position = Vector2(-60, 12)
+colorIndex = 3
+
+[node name="EnemyOne8" parent="." index="7" instance=ExtResource("2_1fnj3")]
+position = Vector2(-61, -27)
+colorIndex = 5
+
+[node name="EnemyOne9" parent="." index="8" instance=ExtResource("2_1fnj3")]
+position = Vector2(-37, -64)
+colorIndex = 7

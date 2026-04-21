@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkhx10kht8sdc"]
+
+[ext_resource type="PackedScene" uid="uid://dxwsbg3s8lha" path="res://Scenes/Spawner/EnemySpawner.tscn" id="1_haorh"]
+[ext_resource type="PackedScene" uid="uid://ccjabk2euu8yx" path="res://Scenes/ColoredEntity/Enemy/EnemyThree.tscn" id="2_v8llc"]
+
+[node name="EnemyThreeSpawner" instance=ExtResource("1_haorh")]
+marginBeforeActivating = 50.0
+
+[node name="EnemyThree" parent="." index="0" instance=ExtResource("2_v8llc")]
+position = Vector2(0, -8)

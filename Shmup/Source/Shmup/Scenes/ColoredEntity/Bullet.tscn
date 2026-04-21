@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4jmcec763bka"]
+
+[ext_resource type="Script" path="res://Scripts/Bullet/Bullet.cs" id="1_2ktqr"]
+[ext_resource type="PackedScene" uid="uid://c1yqr246fwp8w" path="res://Scenes/ColoredEntity/ColoredEntity.tscn" id="1_ylcbs"]
+[ext_resource type="Texture2D" uid="uid://gqqa1mpro433" path="res://Assets/ColorWheel/ColorCircle.png" id="2_upvad"]
+[ext_resource type="Shader" uid="uid://bwx21avv53vd0" path="res://Resources/Shaders/FlashDamage.tres" id="3_5vdi1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3pjrv"]
+shader = ExtResource("3_5vdi1")
+shader_parameter/isActive = false
+shader_parameter/Color = null
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_moy2a"]
+radius = 70.0702
+
+[node name="Bullet" instance=ExtResource("1_ylcbs")]
+scale = Vector2(0.225152, 0.225152)
+script = ExtResource("1_2ktqr")
+
+[node name="Renderer" parent="." index="0"]
+material = SubResource("ShaderMaterial_3pjrv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Renderer" index="0"]
+use_parent_material = true
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("2_upvad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" index="0"]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_moy2a")

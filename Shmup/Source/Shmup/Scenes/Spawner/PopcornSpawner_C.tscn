@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0s06hb5svoiw"]
+
+[ext_resource type="PackedScene" uid="uid://dxwsbg3s8lha" path="res://Scenes/Spawner/EnemySpawner.tscn" id="1_4edek"]
+[ext_resource type="PackedScene" uid="uid://d330w1fsc8kva" path="res://Scenes/ColoredEntity/Enemy/EnemyOne.tscn" id="2_bxr2m"]
+
+[node name="PopCornSpawnerC" instance=ExtResource("1_4edek")]
+
+[node name="EnemyOne" parent="." index="0" instance=ExtResource("2_bxr2m")]
+position = Vector2(8, -4)
+colorIndex = 5
+
+[node name="EnemyOne2" parent="." index="1" instance=ExtResource("2_bxr2m")]
+position = Vector2(397, 2)
+colorIndex = 1
+
+[node name="EnemyOne3" parent="." index="2" instance=ExtResource("2_bxr2m")]
+position = Vector2(72, 54)
+colorIndex = 1
+
+[node name="EnemyOne4" parent="." index="3" instance=ExtResource("2_bxr2m")]
+position = Vector2(70, -70)
+
+[node name="EnemyOne5" parent="." index="4" instance=ExtResource("2_bxr2m")]
+position = Vector2(156, 68)
+colorIndex = 6
+
+[node name="EnemyOne6" parent="." index="5" instance=ExtResource("2_bxr2m")]
+position = Vector2(338, -56)
+colorIndex = 6
+
+[node name="EnemyOne7" parent="." index="6" instance=ExtResource("2_bxr2m")]
+position = Vector2(108, 118)
+colorIndex = 2
+
+[node name="EnemyOne8" parent="." index="7" instance=ExtResource("2_bxr2m")]
+position = Vector2(153, -89)
+colorIndex = 4
+
+[node name="EnemyOne9" parent="." index="8" instance=ExtResource("2_bxr2m")]
+position = Vector2(312, -122)
+colorIndex = 2
+
+[node name="EnemyOne10" parent="." index="9" instance=ExtResource("2_bxr2m")]
+position = Vector2(200, 131)
+colorIndex = 7
+
+[node name="EnemyOne11" parent="." index="10" instance=ExtResource("2_bxr2m")]
+position = Vector2(99, -134)
+colorIndex = 8
+
+[node name="EnemyOne12" parent="." index="11" instance=ExtResource("2_bxr2m")]
+position = Vector2(246, -86)
+colorIndex = 7
+
+[node name="EnemyOne13" parent="." index="12" instance=ExtResource("2_bxr2m")]
+position = Vector2(310, 108)
+colorIndex = 8
+
+[node name="EnemyOne14" parent="." index="13" instance=ExtResource("2_bxr2m")]
+position = Vector2(193, -159)
+colorIndex = 3
+
+[node name="EnemyOne15" parent="." index="14" instance=ExtResource("2_bxr2m")]
+position = Vector2(340, 52)
+colorIndex = 4
+
+[node name="EnemyOne16" parent="." index="15" instance=ExtResource("2_bxr2m")]
+position = Vector2(246, 67)
+colorIndex = 3
